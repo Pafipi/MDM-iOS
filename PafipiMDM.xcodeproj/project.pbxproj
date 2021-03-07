@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
+		CACC36F625F5261C00E51C29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F525F5261C00E51C29 /* SceneDelegate.swift */; };
+		CACC36F825F5261C00E51C29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F725F5261C00E51C29 /* ViewController.swift */; };
+		CACC36FB25F5261C00E51C29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36F925F5261C00E51C29 /* Main.storyboard */; };
+		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
+		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
+		CACC370B25F5261C00E51C29 /* PafipiMDMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */; };
+		CACC371625F5261C00E51C29 /* PafipiMDMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC371525F5261C00E51C29 /* PafipiMDMUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CACC370725F5261C00E51C29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC36E825F5261B00E51C29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACC36EF25F5261B00E51C29;
+			remoteInfo = PafipiMDM;
+		};
+		CACC371225F5261C00E51C29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CACC36E825F5261B00E51C29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CACC36EF25F5261B00E51C29;
+			remoteInfo = PafipiMDM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CACC36F525F5261C00E51C29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CACC36F725F5261C00E51C29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CACC36FA25F5261C00E51C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CACC36FF25F5261C00E51C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CACC370125F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACC370625F5261C00E51C29 /* PafipiMDMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PafipiMDMTests.swift; sourceTree = "<group>"; };
+		CACC370C25F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CACC371525F5261C00E51C29 /* PafipiMDMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PafipiMDMUITests.swift; sourceTree = "<group>"; };
+		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CACC36ED25F5261B00E51C29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACC370325F5261C00E51C29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACC370E25F5261C00E51C29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CACC36E725F5261B00E51C29 = {
+			isa = PBXGroup;
+			children = (
+				CACC36F225F5261C00E51C29 /* PafipiMDM */,
+				CACC370925F5261C00E51C29 /* PafipiMDMTests */,
+				CACC371425F5261C00E51C29 /* PafipiMDMUITests */,
+				CACC36F125F5261C00E51C29 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CACC36F125F5261C00E51C29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CACC36F025F5261C00E51C29 /* PafipiMDM.app */,
+				CACC370625F5261C00E51C29 /* PafipiMDMTests.xctest */,
+				CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CACC36F225F5261C00E51C29 /* PafipiMDM */ = {
+			isa = PBXGroup;
+			children = (
+				CACC36F325F5261C00E51C29 /* AppDelegate.swift */,
+				CACC36F525F5261C00E51C29 /* SceneDelegate.swift */,
+				CACC36F725F5261C00E51C29 /* ViewController.swift */,
+				CACC36F925F5261C00E51C29 /* Main.storyboard */,
+				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
+				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
+				CACC370125F5261C00E51C29 /* Info.plist */,
+			);
+			path = PafipiMDM;
+			sourceTree = "<group>";
+		};
+		CACC370925F5261C00E51C29 /* PafipiMDMTests */ = {
+			isa = PBXGroup;
+			children = (
+				CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */,
+				CACC370C25F5261C00E51C29 /* Info.plist */,
+			);
+			path = PafipiMDMTests;
+			sourceTree = "<group>";
+		};
+		CACC371425F5261C00E51C29 /* PafipiMDMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CACC371525F5261C00E51C29 /* PafipiMDMUITests.swift */,
+				CACC371725F5261C00E51C29 /* Info.plist */,
+			);
+			path = PafipiMDMUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CACC36EF25F5261B00E51C29 /* PafipiMDM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACC371A25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDM" */;
+			buildPhases = (
+				CACC36EC25F5261B00E51C29 /* Sources */,
+				CACC36ED25F5261B00E51C29 /* Frameworks */,
+				CACC36EE25F5261B00E51C29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PafipiMDM;
+			productName = PafipiMDM;
+			productReference = CACC36F025F5261C00E51C29 /* PafipiMDM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CACC370525F5261C00E51C29 /* PafipiMDMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACC371D25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDMTests" */;
+			buildPhases = (
+				CACC370225F5261C00E51C29 /* Sources */,
+				CACC370325F5261C00E51C29 /* Frameworks */,
+				CACC370425F5261C00E51C29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACC370825F5261C00E51C29 /* PBXTargetDependency */,
+			);
+			name = PafipiMDMTests;
+			productName = PafipiMDMTests;
+			productReference = CACC370625F5261C00E51C29 /* PafipiMDMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CACC371025F5261C00E51C29 /* PafipiMDMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CACC372025F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDMUITests" */;
+			buildPhases = (
+				CACC370D25F5261C00E51C29 /* Sources */,
+				CACC370E25F5261C00E51C29 /* Frameworks */,
+				CACC370F25F5261C00E51C29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CACC371325F5261C00E51C29 /* PBXTargetDependency */,
+			);
+			name = PafipiMDMUITests;
+			productName = PafipiMDMUITests;
+			productReference = CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CACC36E825F5261B00E51C29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CACC36EF25F5261B00E51C29 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CACC370525F5261C00E51C29 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = CACC36EF25F5261B00E51C29;
+					};
+					CACC371025F5261C00E51C29 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = CACC36EF25F5261B00E51C29;
+					};
+				};
+			};
+			buildConfigurationList = CACC36EB25F5261B00E51C29 /* Build configuration list for PBXProject "PafipiMDM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CACC36E725F5261B00E51C29;
+			productRefGroup = CACC36F125F5261C00E51C29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CACC36EF25F5261B00E51C29 /* PafipiMDM */,
+				CACC370525F5261C00E51C29 /* PafipiMDMTests */,
+				CACC371025F5261C00E51C29 /* PafipiMDMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CACC36EE25F5261B00E51C29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */,
+				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
+				CACC36FB25F5261C00E51C29 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACC370425F5261C00E51C29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACC370F25F5261C00E51C29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CACC36EC25F5261B00E51C29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACC36F825F5261C00E51C29 /* ViewController.swift in Sources */,
+				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
+				CACC36F625F5261C00E51C29 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACC370225F5261C00E51C29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACC370B25F5261C00E51C29 /* PafipiMDMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CACC370D25F5261C00E51C29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CACC371625F5261C00E51C29 /* PafipiMDMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CACC370825F5261C00E51C29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACC36EF25F5261B00E51C29 /* PafipiMDM */;
+			targetProxy = CACC370725F5261C00E51C29 /* PBXContainerItemProxy */;
+		};
+		CACC371325F5261C00E51C29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CACC36EF25F5261B00E51C29 /* PafipiMDM */;
+			targetProxy = CACC371225F5261C00E51C29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CACC36F925F5261C00E51C29 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CACC36FA25F5261C00E51C29 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CACC36FF25F5261C00E51C29 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CACC371825F5261D00E51C29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CACC371925F5261D00E51C29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CACC371B25F5261D00E51C29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CK2H346J6A;
+				INFOPLIST_FILE = PafipiMDM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.PafipiMDM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CACC371C25F5261D00E51C29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CK2H346J6A;
+				INFOPLIST_FILE = PafipiMDM/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.PafipiMDM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CACC371E25F5261D00E51C29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CK2H346J6A;
+				INFOPLIST_FILE = PafipiMDMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.PafipiMDMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PafipiMDM.app/PafipiMDM";
+			};
+			name = Debug;
+		};
+		CACC371F25F5261D00E51C29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CK2H346J6A;
+				INFOPLIST_FILE = PafipiMDMTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.PafipiMDMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PafipiMDM.app/PafipiMDM";
+			};
+			name = Release;
+		};
+		CACC372125F5261D00E51C29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CK2H346J6A;
+				INFOPLIST_FILE = PafipiMDMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.PafipiMDMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PafipiMDM;
+			};
+			name = Debug;
+		};
+		CACC372225F5261D00E51C29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CK2H346J6A;
+				INFOPLIST_FILE = PafipiMDMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.PafipiMDMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PafipiMDM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CACC36EB25F5261B00E51C29 /* Build configuration list for PBXProject "PafipiMDM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACC371825F5261D00E51C29 /* Debug */,
+				CACC371925F5261D00E51C29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACC371A25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACC371B25F5261D00E51C29 /* Debug */,
+				CACC371C25F5261D00E51C29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACC371D25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACC371E25F5261D00E51C29 /* Debug */,
+				CACC371F25F5261D00E51C29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CACC372025F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CACC372125F5261D00E51C29 /* Debug */,
+				CACC372225F5261D00E51C29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CACC36E825F5261B00E51C29 /* Project object */;
+}
