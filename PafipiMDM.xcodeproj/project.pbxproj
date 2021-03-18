@@ -94,6 +94,7 @@
 		CA2998D62603FD2B00A2748C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -121,15 +122,14 @@
 		CACC36F225F5261C00E51C29 /* PafipiMDM */ = {
 			isa = PBXGroup;
 			children = (
-				CA2998D62603FD2B00A2748C /* Resources */,
-				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D42603FC8400A2748C /* Configuration */,
+				CA2998D52603FD0700A2748C /* Sources */,
+				CA2998D62603FD2B00A2748C /* Resources */,
 				CACC36F325F5261C00E51C29 /* AppDelegate.swift */,
+				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
+				CACC36F925F5261C00E51C29 /* Main.storyboard */,
 				CACC36F525F5261C00E51C29 /* SceneDelegate.swift */,
 				CACC36F725F5261C00E51C29 /* ViewController.swift */,
-				CACC36F925F5261C00E51C29 /* Main.storyboard */,
-				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
-				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
 			);
 			path = PafipiMDM;
 			sourceTree = "<group>";
