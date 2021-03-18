@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
-		CACC36F625F5261C00E51C29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F525F5261C00E51C29 /* SceneDelegate.swift */; };
-		CACC36F825F5261C00E51C29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F725F5261C00E51C29 /* ViewController.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
 		CACC370B25F5261C00E51C29 /* PafipiMDMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */; };
@@ -36,8 +34,6 @@
 /* Begin PBXFileReference section */
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CACC36F525F5261C00E51C29 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CACC36F725F5261C00E51C29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CACC36FF25F5261C00E51C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CACC370125F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,8 +121,6 @@
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D62603FD2B00A2748C /* Resources */,
-				CACC36F525F5261C00E51C29 /* SceneDelegate.swift */,
-				CACC36F725F5261C00E51C29 /* ViewController.swift */,
 			);
 			path = PafipiMDM;
 			sourceTree = "<group>";
@@ -278,9 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACC36F825F5261C00E51C29 /* ViewController.swift in Sources */,
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
-				CACC36F625F5261C00E51C29 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
