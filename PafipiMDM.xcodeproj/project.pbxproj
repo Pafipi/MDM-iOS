@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA2998E72604024800A2748C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA2998E62604024800A2748C /* .gitignore */; };
+		CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CA2998EC2604037300A2748C /* .swiftlint.yml */; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		CA2998D42603FC8400A2748C /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				CA2998EC2604037300A2748C /* .swiftlint.yml */,
+				CA2998E62604024800A2748C /* .gitignore */,
 				CACC370125F5261C00E51C29 /* Info.plist */,
 			);
 			path = Configuration;
@@ -150,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CACC371A25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDM" */;
 			buildPhases = (
+				CA2998EB260402E300A2748C /* ShellScript */,
 				CACC36EC25F5261B00E51C29 /* Sources */,
 				CACC36ED25F5261B00E51C29 /* Frameworks */,
 				CACC36EE25F5261B00E51C29 /* Resources */,
@@ -246,7 +253,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */,
 				CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */,
+				CA2998E72604024800A2748C /* .gitignore in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +275,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CA2998EB260402E300A2748C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CACC36EC25F5261B00E51C29 /* Sources */ = {
