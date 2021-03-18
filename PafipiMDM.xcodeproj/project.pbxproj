@@ -91,6 +91,13 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		CA2998D62603FD2B00A2748C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CACC36E725F5261B00E51C29 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +121,7 @@
 		CACC36F225F5261C00E51C29 /* PafipiMDM */ = {
 			isa = PBXGroup;
 			children = (
+				CA2998D62603FD2B00A2748C /* Resources */,
 				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CACC36F325F5261C00E51C29 /* AppDelegate.swift */,
