@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CA2998E72604024800A2748C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA2998E62604024800A2748C /* .gitignore */; };
 		CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CA2998EC2604037300A2748C /* .swiftlint.yml */; };
 		CA2998F22604044400A2748C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA2998F12604044400A2748C /* README.md */; };
+		CA3DCEF42606A77400414D0E /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCEF32606A77400414D0E /* Resolver-Dynamic */; };
+		CA3DCEF52606A77400414D0E /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCEF32606A77400414D0E /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
@@ -34,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CA3DCEF82606A77400414D0E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CA3DCEF52606A77400414D0E /* Resolver-Dynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
@@ -57,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3DCEF42606A77400414D0E /* Resolver-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,12 +190,16 @@
 				CACC36EC25F5261B00E51C29 /* Sources */,
 				CACC36ED25F5261B00E51C29 /* Frameworks */,
 				CACC36EE25F5261B00E51C29 /* Resources */,
+				CA3DCEF82606A77400414D0E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PafipiMDM;
+			packageProductDependencies = (
+				CA3DCEF32606A77400414D0E /* Resolver-Dynamic */,
+			);
 			productName = PafipiMDM;
 			productReference = CACC36F025F5261C00E51C29 /* PafipiMDM.app */;
 			productType = "com.apple.product-type.application";
@@ -250,6 +271,9 @@
 				Base,
 			);
 			mainGroup = CACC36E725F5261B00E51C29;
+			packageReferences = (
+				CA3DCEF22606A77400414D0E /* XCRemoteSwiftPackageReference "Resolver" */,
+			);
 			productRefGroup = CACC36F125F5261C00E51C29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -644,6 +668,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CA3DCEF22606A77400414D0E /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CA3DCEF32606A77400414D0E /* Resolver-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA3DCEF22606A77400414D0E /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = "Resolver-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CACC36E825F5261B00E51C29 /* Project object */;
 }

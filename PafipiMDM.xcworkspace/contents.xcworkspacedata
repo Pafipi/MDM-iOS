@@ -5,6 +5,6 @@
       location = "group:PafipiMDM.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../Core/Core.xcodeproj">
+      location = "group:Core/Core.xcodeproj">
    </FileRef>
 </Workspace>
