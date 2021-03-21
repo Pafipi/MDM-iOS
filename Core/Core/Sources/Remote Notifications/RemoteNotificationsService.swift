@@ -56,6 +56,7 @@ extension RemoteNotificationsServiceImpl: RemoteNotificationsService {
             self.authorizationStatus = AuthorizationStatus(
                 rawValue: authStatus.rawValue
             ) ?? .notDetermined
+            log(.debug, "Current remote notification auth status: \(authStatus).")
         }
     }
     
@@ -63,9 +64,16 @@ extension RemoteNotificationsServiceImpl: RemoteNotificationsService {
         guard authorizationStatus != .granted else { return }
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         notificationCenter.requestAuthorization(options: options) { granted, error in
-                completion(granted, error)
-                self.authorizationStatus = granted ? .granted : .denied
+            completion(granted, error)
+            if granted {
+                self.authorizationStatus = .granted
+                log(.success, "User has authorized for remote notifications.")
+            } else {
+                self.authorizationStatus = .denied
+                log(.warning, "User denied remote notifications authorization.")
             }
+        }
+        log(.debug, "User has been requested for remote notifications authorization.")
     }
     
     func registerForRemoteNotifications() {
