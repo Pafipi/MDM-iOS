@@ -9,8 +9,8 @@
 // MARK: - Common
 
 "ok" = "Ok";
-"Settings" = "Settings";
-"Error" = "Error!";
+"settings" = "Settings";
+"error" = "Error!";
 
 // MARK: - Remote Notifications
 
