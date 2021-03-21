@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum LogIcon: String {
+public enum LogIcon: String {
     case save = "[💾]"
     case push = "[📲]"
     case network = "[🌐]"
@@ -19,7 +19,7 @@ enum LogIcon: String {
     case error = "[❌]"
 }
 
-func log(_ icon: LogIcon, _ args: Any) {
+public func log(_ icon: LogIcon, _ args: Any) {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "HH:mm:ss.SSS"
     print("\(dateFormatter.string(from: Date())) \(icon.rawValue) \(args)")
