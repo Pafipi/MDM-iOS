@@ -9,10 +9,10 @@ import UIKit
 import UserNotifications
 import Resolver
 
-typealias PushAuthStatusResponse = (AuthorizationStatus) -> Void
-typealias UserAuthorizationResponse = (Bool, Error?) -> Void
+public typealias PushAuthStatusResponse = (AuthorizationStatus) -> Void
+public typealias UserAuthorizationResponse = (Bool, Error?) -> Void
 
-enum AuthorizationStatus: Int {
+public enum AuthorizationStatus: Int {
     case notDetermined
     case denied
     case granted
@@ -20,7 +20,7 @@ enum AuthorizationStatus: Int {
     case ephemeral
 }
 
-protocol RemoteNotificationsService {
+public protocol RemoteNotificationsService {
     
     /// Requests authorization statuts and returns it as callback parameter
     /// - parameter completion: block of code invoked after getting authorizatiton status
@@ -34,11 +34,16 @@ protocol RemoteNotificationsService {
     func registerForRemoteNotifications()
 }
 
-final class RemoteNotificationsServiceImpl {
+final class RemoteNotificationsServiceImpl: NSObject {
     
     @Injected private var notificationCenter: UNUserNotificationCenter
     
     private var authorizationStatus: AuthorizationStatus = .notDetermined
+    
+    override init() {
+        super.init()
+        notificationCenter.delegate = self
+    }
 }
 
 // MARK: - RemoteNotificationsService
