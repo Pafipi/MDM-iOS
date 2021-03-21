@@ -81,5 +81,28 @@ extension RemoteNotificationsServiceImpl: RemoteNotificationsService {
         Thread.asyncOnMain {
             UIApplication.shared.registerForRemoteNotifications()
         }
+        log(.debug, "App has requested for registration in remote notification service.")
+    }
+}
+
+// MARK: - UNUserNotificationCenterDelegate
+
+extension RemoteNotificationsServiceImpl: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+    }
+
+    @available(iOS 12.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
+        
     }
 }
