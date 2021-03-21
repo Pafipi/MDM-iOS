@@ -36,7 +36,7 @@ protocol RemoteNotificationsService {
 
 final class RemoteNotificationsServiceImpl {
     
-    @LazyInjected private var notificationCenter: UNUserNotificationCenter
+    @Injected private var notificationCenter: UNUserNotificationCenter
     
     private var authorizationStatus: AuthorizationStatus = .notDetermined
 }
