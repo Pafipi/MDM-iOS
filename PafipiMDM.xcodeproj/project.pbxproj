@@ -12,6 +12,7 @@
 		CA2998F22604044400A2748C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA2998F12604044400A2748C /* README.md */; };
 		CA3DCEF42606A77400414D0E /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCEF32606A77400414D0E /* Resolver-Dynamic */; };
 		CA3DCEF52606A77400414D0E /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCEF32606A77400414D0E /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CA3DCF7A26073FDA00414D0E /* ApplicationBootloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF7926073FDA00414D0E /* ApplicationBootloader.swift */; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
@@ -55,6 +56,7 @@
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CA3DCEB4260651CA00414D0E /* PafipiMDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PafipiMDM.entitlements; sourceTree = "<group>"; };
+		CA3DCF7926073FDA00414D0E /* ApplicationBootloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		CA3DCEEA2606636F00414D0E /* Bootloader */ = {
 			isa = PBXGroup;
 			children = (
+				CA3DCF7926073FDA00414D0E /* ApplicationBootloader.swift */,
 			);
 			path = Bootloader;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
+				CA3DCF7A26073FDA00414D0E /* ApplicationBootloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
