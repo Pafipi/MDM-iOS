@@ -15,6 +15,10 @@
 		CA3DCF752606BE7500414D0E /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCF742606BE7500414D0E /* Resolver-Dynamic */; };
 		CA3DCF762606BE7500414D0E /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCF742606BE7500414D0E /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CA3DCF89260755E800414D0E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF88260755E800414D0E /* Log.swift */; };
+		CA3DCF9E2607A3E600414D0E /* BundleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF9D2607A3E600414D0E /* BundleType.swift */; };
+		CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFA12607A41200414D0E /* String+Localized.swift */; };
+		CA3DCFA72607A5C200414D0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA3DCFA92607A5C200414D0E /* Localizable.strings */; };
+		CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,11 @@
 		CA3DCF672606BE0100414D0E /* Thread+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+Main.swift"; sourceTree = "<group>"; };
 		CA3DCF6F2606BE1E00414D0E /* RemoteNotificationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationsService.swift; sourceTree = "<group>"; };
 		CA3DCF88260755E800414D0E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		CA3DCF9D2607A3E600414D0E /* BundleType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleType.swift; sourceTree = "<group>"; };
+		CA3DCFA12607A41200414D0E /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		CA3DCFA82607A5C200414D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CA3DCFAC2607A6AF00414D0E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				CA3DCF602606BDC800414D0E /* Sources */,
+				CA3DCF9C2607A3B800414D0E /* Localization */,
 				CA3DCF472606BDBF00414D0E /* Core.h */,
 				CA3DCF482606BDBF00414D0E /* Info.plist */,
 			);
@@ -142,6 +152,17 @@
 				CA3DCF88260755E800414D0E /* Log.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CA3DCF9C2607A3B800414D0E /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DCF9D2607A3E600414D0E /* BundleType.swift */,
+				CA3DCFA12607A41200414D0E /* String+Localized.swift */,
+				CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */,
+				CA3DCFA92607A5C200414D0E /* Localizable.strings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +243,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = CA3DCF3A2606BDBF00414D0E;
 			packageReferences = (
@@ -242,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA3DCFA72607A5C200414D0E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +285,9 @@
 				CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */,
 				CA3DCF682606BE0100414D0E /* Thread+Main.swift in Sources */,
 				CA3DCF89260755E800414D0E /* Log.swift in Sources */,
+				CA3DCF9E2607A3E600414D0E /* BundleType.swift in Sources */,
+				CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */,
+				CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,11 +309,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		CA3DCFA92607A5C200414D0E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA3DCFA82607A5C200414D0E /* en */,
+				CA3DCFAC2607A6AF00414D0E /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		CA3DCF562606BDC000414D0E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -352,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -423,9 +463,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,9 +490,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pafipi.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
