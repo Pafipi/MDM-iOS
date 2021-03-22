@@ -92,7 +92,6 @@ opt_in_rules:
 - nimble_operator
 - no_fallthrough_only
 - no_space_in_method_call
-- nslocalizedstring_key
 - nslocalizedstring_require_bundle
 - nsobject_prefer_isequal
 - opening_brace
