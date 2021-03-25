@@ -10,14 +10,16 @@
 		CA2998E72604024800A2748C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA2998E62604024800A2748C /* .gitignore */; };
 		CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CA2998EC2604037300A2748C /* .swiftlint.yml */; };
 		CA2998F22604044400A2748C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA2998F12604044400A2748C /* README.md */; };
+		CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE723260D1E7800132DC0 /* Coordinable.swift */; };
+		CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */; };
+		CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE731260D203500132DC0 /* CoordinatorActions.swift */; };
+		CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */; };
 		CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */; };
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
-		CACC370B25F5261C00E51C29 /* PafipiMDMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */; };
-		CACC371625F5261C00E51C29 /* PafipiMDMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC371525F5261C00E51C29 /* PafipiMDMUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,10 @@
 		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		CA9CE723260D1E7800132DC0 /* Coordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinable.swift; sourceTree = "<group>"; };
+		CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinable.swift; sourceTree = "<group>"; };
+		CA9CE731260D203500132DC0 /* CoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorActions.swift; sourceTree = "<group>"; };
+		CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinableView.swift; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,10 +68,8 @@
 		CACC36FF25F5261C00E51C29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CACC370125F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACC370625F5261C00E51C29 /* PafipiMDMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PafipiMDMTests.swift; sourceTree = "<group>"; };
 		CACC370C25F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CACC371525F5261C00E51C29 /* PafipiMDMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PafipiMDMUITests.swift; sourceTree = "<group>"; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				CAAE1AB12607D4810048872D /* Bootloader */,
+				CA9CE71B260D1DCC00132DC0 /* Coordinators */,
+				CA9CE719260D1D8500132DC0 /* Scenes */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -121,6 +127,32 @@
 				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA9CE719260D1D8500132DC0 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CA9CE71B260D1DCC00132DC0 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CE722260D1E6E00132DC0 /* Protocol */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		CA9CE722260D1E6E00132DC0 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CE723260D1E7800132DC0 /* Coordinable.swift */,
+				CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */,
+				CA9CE731260D203500132DC0 /* CoordinatorActions.swift */,
+				CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CAAE1AB12607D4810048872D /* Bootloader */ = {
@@ -165,7 +197,6 @@
 		CACC370925F5261C00E51C29 /* PafipiMDMTests */ = {
 			isa = PBXGroup;
 			children = (
-				CACC370A25F5261C00E51C29 /* PafipiMDMTests.swift */,
 				CACC370C25F5261C00E51C29 /* Info.plist */,
 			);
 			path = PafipiMDMTests;
@@ -174,7 +205,6 @@
 		CACC371425F5261C00E51C29 /* PafipiMDMUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CACC371525F5261C00E51C29 /* PafipiMDMUITests.swift */,
 				CACC371725F5261C00E51C29 /* Info.plist */,
 			);
 			path = PafipiMDMUITests;
@@ -341,7 +371,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
+				CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
+				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
+				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
+				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +383,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACC370B25F5261C00E51C29 /* PafipiMDMTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +390,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CACC371625F5261C00E51C29 /* PafipiMDMUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
