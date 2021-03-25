@@ -8,13 +8,13 @@
 import UIKit
 import Core
 
-// Stackable coordinator this is used for coordinator objects that will be pushed within the flow
 protocol StackCoordinable: NSObject, UINavigationControllerDelegate, Coordinable, CoordinatorActions {
-    /// Any children that is part of the flow for the stackable object
+    
     var childCoordinators: [StackCoordinable] { get set }
 }
 
 // MARK: StackCoordinable Extension
+
 extension StackCoordinable where Self: Coordinable {
     
     func didFinish(_ child: StackCoordinable?) {

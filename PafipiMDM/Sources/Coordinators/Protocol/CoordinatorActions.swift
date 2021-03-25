@@ -8,7 +8,6 @@
 import UIKit
 import Core
 
-// Protocol for the actions needed for objects conforming to coordinator actions
 protocol CoordinatorActions {
     
     /// Function to start the flow, this is where the flow is init so do any custom logic here

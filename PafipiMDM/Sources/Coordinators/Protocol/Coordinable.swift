@@ -8,7 +8,6 @@
 import UIKit
 import Core
 
-// Base protocol for defining the root navigation controller that will be used to manage the flow
 protocol Coordinable: AnyObject {
     
     /// The root navigation controller object that will be used to either present or push the current view controller
