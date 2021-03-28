@@ -14,6 +14,8 @@
 		CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */; };
 		CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE731260D203500132DC0 /* CoordinatorActions.swift */; };
 		CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */; };
+		CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */; };
+		CA9CE743260DC38000132DC0 /* TabCoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE742260DC38000132DC0 /* TabCoordinatorActions.swift */; };
 		CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */; };
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -61,6 +63,8 @@
 		CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinable.swift; sourceTree = "<group>"; };
 		CA9CE731260D203500132DC0 /* CoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorActions.swift; sourceTree = "<group>"; };
 		CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinableView.swift; sourceTree = "<group>"; };
+		CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		CA9CE742260DC38000132DC0 /* TabCoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorActions.swift; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9CE722260D1E6E00132DC0 /* Protocol */,
+				CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */,
 				CA9CE731260D203500132DC0 /* CoordinatorActions.swift */,
 				CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */,
+				CA9CE742260DC38000132DC0 /* TabCoordinatorActions.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -372,10 +378,12 @@
 			files = (
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
 				CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */,
+				CA9CE743260DC38000132DC0 /* TabCoordinatorActions.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
 				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
+				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -526,7 +534,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -544,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CK2H346J6A;
 				INFOPLIST_FILE = PafipiMDM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -565,7 +573,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CK2H346J6A;
 				INFOPLIST_FILE = PafipiMDM/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
