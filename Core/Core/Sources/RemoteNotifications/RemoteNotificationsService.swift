@@ -34,7 +34,7 @@ public protocol RemoteNotificationsService {
     func registerForRemoteNotifications()
 }
 
-final class RemoteNotificationsServiceImpl: NSObject {
+final class RemoteNotificationsServiceImpl: NSObject, RemoteNotificationsService {
     
     @Injected private var notificationCenter: UNUserNotificationCenter
     
@@ -44,11 +44,6 @@ final class RemoteNotificationsServiceImpl: NSObject {
         super.init()
         notificationCenter.delegate = self
     }
-}
-
-// MARK: - RemoteNotificationsService
-
-extension RemoteNotificationsServiceImpl: RemoteNotificationsService {
     
     func getAuthorizationStatus(completion: PushAuthStatusResponse) {
         notificationCenter.getNotificationSettings { settings in

@@ -18,7 +18,10 @@
 		CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFA12607A41200414D0E /* String+Localized.swift */; };
 		CA3DCFA72607A5C200414D0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA3DCFA92607A5C200414D0E /* Localizable.strings */; };
 		CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */; };
+		CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */; };
+		CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56CE2621875F00BEE52E /* Colors.swift */; };
 		CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */; };
+		CAA5E4E426112168002557AD /* FatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4E326112168002557AD /* FatalError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +62,10 @@
 		CA3DCFA82607A5C200414D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CA3DCFAC2607A6AF00414D0E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteNotifications+Injection.swift"; sourceTree = "<group>"; };
+		CA6B56CE2621875F00BEE52E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CAA5E4E326112168002557AD /* FatalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +128,9 @@
 		CA3DCF602606BDC800414D0E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CA6B56B526217D0300BEE52E /* Containers */,
 				CA9CE72D260D1F7600132DC0 /* NavigationController */,
-				CA3DCF622606BDD300414D0E /* Remote Notifications */,
+				CA3DCF622606BDD300414D0E /* RemoteNotifications */,
 				CA3DCF612606BDCD00414D0E /* Extensions */,
 				CA3DCF87260755D300414D0E /* Utils */,
 			);
@@ -138,18 +145,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CA3DCF622606BDD300414D0E /* Remote Notifications */ = {
+		CA3DCF622606BDD300414D0E /* RemoteNotifications */ = {
 			isa = PBXGroup;
 			children = (
 				CA3DCF6F2606BE1E00414D0E /* RemoteNotificationsService.swift */,
 			);
-			path = "Remote Notifications";
+			path = RemoteNotifications;
 			sourceTree = "<group>";
 		};
 		CA3DCF87260755D300414D0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CA6B56CE2621875F00BEE52E /* Colors.swift */,
 				CA3DCF88260755E800414D0E /* Log.swift */,
+				CAA5E4E326112168002557AD /* FatalError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,6 +172,14 @@
 				CA3DCFA92607A5C200414D0E /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		CA6B56B526217D0300BEE52E /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */,
+			);
+			path = Containers;
 			sourceTree = "<group>";
 		};
 		CA9CE72D260D1F7600132DC0 /* NavigationController */ = {
@@ -291,12 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */,
+				CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */,
 				CA3DCF682606BE0100414D0E /* Thread+Main.swift in Sources */,
 				CA3DCF89260755E800414D0E /* Log.swift in Sources */,
 				CA3DCF9E2607A3E600414D0E /* BundleType.swift in Sources */,
 				CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */,
+				CAA5E4E426112168002557AD /* FatalError.swift in Sources */,
 				CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */,
 				CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */,
+				CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

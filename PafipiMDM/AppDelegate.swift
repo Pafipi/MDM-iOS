@@ -10,18 +10,17 @@ import Core
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    private let applicationBootloader = ApplicationBootloaderImpl()
+    
     var window: UIWindow?
-    private var applicationBootloader: ApplicationBootloader?
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         configureWindow()
-        
-        applicationBootloader = ApplicationBootloaderImpl()
-        applicationBootloader?.delegate = self
-        applicationBootloader?.boot()
+        applicationBootloader.delegate = self
+//        applicationBootloader?.boot()
         
         return true
     }
@@ -46,6 +45,10 @@ private extension AppDelegate {
     
     func configureWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
+        let rootCoordinator = RootCoordinator()
+        rootCoordinator.start()
+        window?.rootViewController = rootCoordinator.rootViewController
+        window?.makeKeyAndVisible()
     }
     
     func showRemoteNotificationsDeniedAlert() {
@@ -68,7 +71,7 @@ private extension AppDelegate {
         let settingsAction = UIAlertAction(
             title: LocalizedStrings.Common.settings,
             style: .default) { _ in
-                self.openSettings()
+                self.openSystemSettings()
         }
         
         alert.addAction(settingsAction)
@@ -86,7 +89,7 @@ private extension AppDelegate {
         return alert
     }
     
-    func openSettings() {
+    func openSystemSettings() {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
               UIApplication.shared.canOpenURL(settingsUrl) else { return }
         

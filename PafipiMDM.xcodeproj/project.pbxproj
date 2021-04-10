@@ -10,12 +10,23 @@
 		CA2998E72604024800A2748C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CA2998E62604024800A2748C /* .gitignore */; };
 		CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CA2998EC2604037300A2748C /* .swiftlint.yml */; };
 		CA2998F22604044400A2748C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CA2998F12604044400A2748C /* README.md */; };
+		CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */; };
+		CA6B56BE26217DC000BEE52E /* Core+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56BD26217DC000BEE52E /* Core+Injection.swift */; };
+		CA6B56C7262181D900BEE52E /* Root+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C6262181D900BEE52E /* Root+Injection.swift */; };
+		CA6B56CB262186E200BEE52E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6B56CA262186E200BEE52E /* Colors.xcassets */; };
+		CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56D826218BA500BEE52E /* HomeViewModel.swift */; };
+		CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E026218BB000BEE52E /* HomeViewController.swift */; };
+		CA6B56E526218E7900BEE52E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E426218E7900BEE52E /* HomeView.swift */; };
+		CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E82621A71800BEE52E /* Home+Injection.swift */; };
 		CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE723260D1E7800132DC0 /* Coordinable.swift */; };
 		CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */; };
 		CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE731260D203500132DC0 /* CoordinatorActions.swift */; };
 		CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */; };
 		CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */; };
 		CA9CE743260DC38000132DC0 /* TabCoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE742260DC38000132DC0 /* TabCoordinatorActions.swift */; };
+		CAA5E4D22610929E002557AD /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4D12610929E002557AD /* HomeCoordinator.swift */; };
+		CAA5E4D626111BE5002557AD /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4D526111BE5002557AD /* RootTabBarController.swift */; };
+		CAA5E4E026111E7D002557AD /* RootTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4DF26111E7D002557AD /* RootTabBarViewModel.swift */; };
 		CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */; };
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -59,12 +70,23 @@
 		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		CA6B56BD26217DC000BEE52E /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
+		CA6B56C6262181D900BEE52E /* Root+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Injection.swift"; sourceTree = "<group>"; };
+		CA6B56CA262186E200BEE52E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../Core/Core/Resources/Colors.xcassets; sourceTree = "<group>"; };
+		CA6B56D826218BA500BEE52E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CA6B56E026218BB000BEE52E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CA6B56E426218E7900BEE52E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CA6B56E82621A71800BEE52E /* Home+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+Injection.swift"; sourceTree = "<group>"; };
 		CA9CE723260D1E7800132DC0 /* Coordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinable.swift; sourceTree = "<group>"; };
 		CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinable.swift; sourceTree = "<group>"; };
 		CA9CE731260D203500132DC0 /* CoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorActions.swift; sourceTree = "<group>"; };
 		CA9CE73A260D21EE00132DC0 /* CoordinableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinableView.swift; sourceTree = "<group>"; };
 		CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		CA9CE742260DC38000132DC0 /* TabCoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorActions.swift; sourceTree = "<group>"; };
+		CAA5E4D12610929E002557AD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		CAA5E4D526111BE5002557AD /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
+		CAA5E4DF26111E7D002557AD /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				CAAE1AB12607D4810048872D /* Bootloader */,
+				CA60C53F26173D8900CCBC8D /* Containers */,
 				CA9CE71B260D1DCC00132DC0 /* Coordinators */,
 				CA9CE719260D1D8500132DC0 /* Scenes */,
 			);
@@ -129,13 +152,61 @@
 			children = (
 				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
 				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
+				CA6B56CA262186E200BEE52E /* Colors.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA60C53F26173D8900CCBC8D /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */,
+				CA6B56BD26217DC000BEE52E /* Core+Injection.swift */,
+				CA6B56C6262181D900BEE52E /* Root+Injection.swift */,
+				CA6B56E82621A71800BEE52E /* Home+Injection.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		CA6B56D426218B4B00BEE52E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56D526218B5600BEE52E /* View */,
+				CA6B56D626218B5D00BEE52E /* ViewController */,
+				CA6B56D726218B6100BEE52E /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CA6B56D526218B5600BEE52E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56E426218E7900BEE52E /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6B56D626218B5D00BEE52E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56E026218BB000BEE52E /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA6B56D726218B6100BEE52E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56D826218BA500BEE52E /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CA9CE719260D1D8500132DC0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				CAA5E4D926111C33002557AD /* Root */,
+				CA6B56D426218B4B00BEE52E /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -145,6 +216,7 @@
 			children = (
 				CA9CE722260D1E6E00132DC0 /* Protocol */,
 				CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */,
+				CAA5E4D12610929E002557AD /* HomeCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -159,6 +231,31 @@
 				CA9CE742260DC38000132DC0 /* TabCoordinatorActions.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CAA5E4D926111C33002557AD /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5E4DA26111CD4002557AD /* ViewController */,
+				CAA5E4DB26111CDA002557AD /* ViewModel */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		CAA5E4DA26111CD4002557AD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5E4D526111BE5002557AD /* RootTabBarController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CAA5E4DB26111CDA002557AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5E4DF26111E7D002557AD /* RootTabBarViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CAAE1AB12607D4810048872D /* Bootloader */ = {
@@ -330,6 +427,7 @@
 				CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */,
 				CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */,
 				CA2998F22604044400A2748C /* README.md in Resources */,
+				CA6B56CB262186E200BEE52E /* Colors.xcassets in Resources */,
 				CA2998E72604024800A2748C /* .gitignore in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
 			);
@@ -377,12 +475,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
+				CAA5E4E026111E7D002557AD /* RootTabBarViewModel.swift in Sources */,
+				CAA5E4D626111BE5002557AD /* RootTabBarController.swift in Sources */,
 				CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */,
+				CAA5E4D22610929E002557AD /* HomeCoordinator.swift in Sources */,
+				CA6B56E526218E7900BEE52E /* HomeView.swift in Sources */,
+				CA6B56C7262181D900BEE52E /* Root+Injection.swift in Sources */,
 				CA9CE743260DC38000132DC0 /* TabCoordinatorActions.swift in Sources */,
+				CA6B56BE26217DC000BEE52E /* Core+Injection.swift in Sources */,
+				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
+				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
 				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
+				CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */,
+				CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */,
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
