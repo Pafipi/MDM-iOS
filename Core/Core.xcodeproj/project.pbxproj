@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CA3DCF4E2606BDC000414D0E /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA3DCF442606BDBF00414D0E /* Core.framework */; };
-		CA3DCF532606BDC000414D0E /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF522606BDC000414D0E /* CoreTests.swift */; };
 		CA3DCF552606BDC000414D0E /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = CA3DCF472606BDBF00414D0E /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA3DCF682606BE0100414D0E /* Thread+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF672606BE0100414D0E /* Thread+Main.swift */; };
 		CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF6F2606BE1E00414D0E /* RemoteNotificationsService.swift */; };
@@ -19,6 +18,10 @@
 		CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFA12607A41200414D0E /* String+Localized.swift */; };
 		CA3DCFA72607A5C200414D0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA3DCFA92607A5C200414D0E /* Localizable.strings */; };
 		CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */; };
+		CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */; };
+		CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56CE2621875F00BEE52E /* Colors.swift */; };
+		CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */; };
+		CAA5E4E426112168002557AD /* FatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4E326112168002557AD /* FatalError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +53,6 @@
 		CA3DCF472606BDBF00414D0E /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		CA3DCF482606BDBF00414D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA3DCF4D2606BDC000414D0E /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA3DCF522606BDC000414D0E /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		CA3DCF542606BDC000414D0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA3DCF672606BE0100414D0E /* Thread+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+Main.swift"; sourceTree = "<group>"; };
 		CA3DCF6F2606BE1E00414D0E /* RemoteNotificationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationsService.swift; sourceTree = "<group>"; };
@@ -60,6 +62,10 @@
 		CA3DCFA82607A5C200414D0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CA3DCFAC2607A6AF00414D0E /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteNotifications+Injection.swift"; sourceTree = "<group>"; };
+		CA6B56CE2621875F00BEE52E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		CAA5E4E326112168002557AD /* FatalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +120,6 @@
 		CA3DCF512606BDC000414D0E /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				CA3DCF522606BDC000414D0E /* CoreTests.swift */,
 				CA3DCF542606BDC000414D0E /* Info.plist */,
 			);
 			path = CoreTests;
@@ -123,7 +128,9 @@
 		CA3DCF602606BDC800414D0E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CA3DCF622606BDD300414D0E /* Remote Notifications */,
+				CA6B56B526217D0300BEE52E /* Containers */,
+				CA9CE72D260D1F7600132DC0 /* NavigationController */,
+				CA3DCF622606BDD300414D0E /* RemoteNotifications */,
 				CA3DCF612606BDCD00414D0E /* Extensions */,
 				CA3DCF87260755D300414D0E /* Utils */,
 			);
@@ -138,18 +145,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		CA3DCF622606BDD300414D0E /* Remote Notifications */ = {
+		CA3DCF622606BDD300414D0E /* RemoteNotifications */ = {
 			isa = PBXGroup;
 			children = (
 				CA3DCF6F2606BE1E00414D0E /* RemoteNotificationsService.swift */,
 			);
-			path = "Remote Notifications";
+			path = RemoteNotifications;
 			sourceTree = "<group>";
 		};
 		CA3DCF87260755D300414D0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CA6B56CE2621875F00BEE52E /* Colors.swift */,
 				CA3DCF88260755E800414D0E /* Log.swift */,
+				CAA5E4E326112168002557AD /* FatalError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -163,6 +172,22 @@
 				CA3DCFA92607A5C200414D0E /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		CA6B56B526217D0300BEE52E /* Containers */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */,
+			);
+			path = Containers;
+			sourceTree = "<group>";
+		};
+		CA9CE72D260D1F7600132DC0 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */,
+			);
+			path = NavigationController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,11 +308,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */,
+				CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */,
 				CA3DCF682606BE0100414D0E /* Thread+Main.swift in Sources */,
 				CA3DCF89260755E800414D0E /* Log.swift in Sources */,
 				CA3DCF9E2607A3E600414D0E /* BundleType.swift in Sources */,
 				CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */,
+				CAA5E4E426112168002557AD /* FatalError.swift in Sources */,
+				CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */,
 				CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */,
+				CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +324,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA3DCF532606BDC000414D0E /* CoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -434,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -457,7 +485,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,7 +512,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
