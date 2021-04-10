@@ -7,7 +7,13 @@
 
 import Foundation
 import Resolver
+import Core
 
 protocol EnrollmentRepository {
     
+}
+
+final class EnrollmentRepositoryImpl {
+    
+    @LazyInjected private var networking: EnrollmentNetworking
 }

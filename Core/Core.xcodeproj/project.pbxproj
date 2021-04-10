@@ -20,6 +20,15 @@
 		CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */; };
 		CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */; };
 		CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56CE2621875F00BEE52E /* Colors.swift */; };
+		CA6B57272621DC9C00BEE52E /* BaseNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57222621DC9C00BEE52E /* BaseNetworking.swift */; };
+		CA6B57282621DC9C00BEE52E /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57232621DC9C00BEE52E /* HttpClient.swift */; };
+		CA6B57292621DC9C00BEE52E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57242621DC9C00BEE52E /* APIConstants.swift */; };
+		CA6B572A2621DC9C00BEE52E /* HeaderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57252621DC9C00BEE52E /* HeaderFactory.swift */; };
+		CA6B572B2621DC9C00BEE52E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57262621DC9C00BEE52E /* HttpRequest.swift */; };
+		CA6B57322621DF7E00BEE52E /* Data+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */; };
+		CA6B57392621E16A00BEE52E /* EnrollmentNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57382621E16A00BEE52E /* EnrollmentNetworking.swift */; };
+		CA6B573F2621F9A800BEE52E /* UIView+Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B573E2621F9A800BEE52E /* UIView+Anchor.swift */; };
+		CA6B57432622102400BEE52E /* UIView+FillSuperview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57422622102400BEE52E /* UIView+FillSuperview.swift */; };
 		CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */; };
 		CAA5E4E426112168002557AD /* FatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4E326112168002557AD /* FatalError.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +73,15 @@
 		CA3DCFAE2607A80C00414D0E /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteNotifications+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56CE2621875F00BEE52E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		CA6B57222621DC9C00BEE52E /* BaseNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworking.swift; sourceTree = "<group>"; };
+		CA6B57232621DC9C00BEE52E /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		CA6B57242621DC9C00BEE52E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		CA6B57252621DC9C00BEE52E /* HeaderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderFactory.swift; sourceTree = "<group>"; };
+		CA6B57262621DC9C00BEE52E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
+		CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+StringValue.swift"; sourceTree = "<group>"; };
+		CA6B57382621E16A00BEE52E /* EnrollmentNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentNetworking.swift; sourceTree = "<group>"; };
+		CA6B573E2621F9A800BEE52E /* UIView+Anchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Anchor.swift"; sourceTree = "<group>"; };
+		CA6B57422622102400BEE52E /* UIView+FillSuperview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FillSuperview.swift"; sourceTree = "<group>"; };
 		CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CAA5E4E326112168002557AD /* FatalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,8 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				CA6B56B526217D0300BEE52E /* Containers */,
-				CA9CE72D260D1F7600132DC0 /* NavigationController */,
-				CA3DCF622606BDD300414D0E /* RemoteNotifications */,
+				CA6B57162621DC3700BEE52E /* Base */,
+				CA6B57172621DC4500BEE52E /* Services */,
 				CA3DCF612606BDCD00414D0E /* Extensions */,
 				CA3DCF87260755D300414D0E /* Utils */,
 			);
@@ -140,7 +158,8 @@
 		CA3DCF612606BDCD00414D0E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				CA3DCF672606BE0100414D0E /* Thread+Main.swift */,
+				CA6B573D2621F98F00BEE52E /* UIKit */,
+				CA6B573C2621F98900BEE52E /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -180,6 +199,78 @@
 				CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */,
 			);
 			path = Containers;
+			sourceTree = "<group>";
+		};
+		CA6B57162621DC3700BEE52E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B5745262210FD00BEE52E /* SharedUI */,
+				CA9CE72D260D1F7600132DC0 /* NavigationController */,
+				CA6B57212621DC7E00BEE52E /* Networking */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CA6B57172621DC4500BEE52E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DCF622606BDD300414D0E /* RemoteNotifications */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CA6B57212621DC7E00BEE52E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57342621E0E900BEE52E /* Base */,
+				CA6B57352621E0EF00BEE52E /* Enrollment */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		CA6B57342621E0E900BEE52E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57242621DC9C00BEE52E /* APIConstants.swift */,
+				CA6B57222621DC9C00BEE52E /* BaseNetworking.swift */,
+				CA6B57252621DC9C00BEE52E /* HeaderFactory.swift */,
+				CA6B57232621DC9C00BEE52E /* HttpClient.swift */,
+				CA6B57262621DC9C00BEE52E /* HttpRequest.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CA6B57352621E0EF00BEE52E /* Enrollment */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57382621E16A00BEE52E /* EnrollmentNetworking.swift */,
+			);
+			path = Enrollment;
+			sourceTree = "<group>";
+		};
+		CA6B573C2621F98900BEE52E /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				CA3DCF672606BE0100414D0E /* Thread+Main.swift */,
+				CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		CA6B573D2621F98F00BEE52E /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B573E2621F9A800BEE52E /* UIView+Anchor.swift */,
+				CA6B57422622102400BEE52E /* UIView+FillSuperview.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CA6B5745262210FD00BEE52E /* SharedUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SharedUI;
 			sourceTree = "<group>";
 		};
 		CA9CE72D260D1F7600132DC0 /* NavigationController */ = {
@@ -309,14 +400,23 @@
 			files = (
 				CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */,
 				CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */,
+				CA6B57292621DC9C00BEE52E /* APIConstants.swift in Sources */,
 				CA3DCF682606BE0100414D0E /* Thread+Main.swift in Sources */,
 				CA3DCF89260755E800414D0E /* Log.swift in Sources */,
 				CA3DCF9E2607A3E600414D0E /* BundleType.swift in Sources */,
 				CA3DCFAF2607A80C00414D0E /* LocalizedStrings.swift in Sources */,
+				CA6B57392621E16A00BEE52E /* EnrollmentNetworking.swift in Sources */,
+				CA6B572A2621DC9C00BEE52E /* HeaderFactory.swift in Sources */,
 				CAA5E4E426112168002557AD /* FatalError.swift in Sources */,
+				CA6B57272621DC9C00BEE52E /* BaseNetworking.swift in Sources */,
+				CA6B57322621DF7E00BEE52E /* Data+StringValue.swift in Sources */,
 				CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */,
+				CA6B57432622102400BEE52E /* UIView+FillSuperview.swift in Sources */,
+				CA6B572B2621DC9C00BEE52E /* HttpRequest.swift in Sources */,
 				CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */,
+				CA6B57282621DC9C00BEE52E /* HttpClient.swift in Sources */,
 				CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */,
+				CA6B573F2621F9A800BEE52E /* UIView+Anchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

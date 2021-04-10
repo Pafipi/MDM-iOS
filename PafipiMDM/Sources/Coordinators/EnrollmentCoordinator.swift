@@ -25,3 +25,9 @@ final class EnrollmentCoordinator: NSObject, StackCoordinable, TabCoordinatorAct
         rootNavigationController?.viewControllers.append(controller)
     }
 }
+
+// MARK: - EnrollmentViewControllerDelegate
+
+extension EnrollmentCoordinator: EnrollmentViewControllerDelegate {
+    
+}

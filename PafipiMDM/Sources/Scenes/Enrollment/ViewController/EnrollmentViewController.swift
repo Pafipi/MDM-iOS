@@ -12,7 +12,7 @@ protocol EnrollmentViewControllerDelegate: AnyObject {
     
 }
 
-final class EnrollmentViewController: UIViewController {
+public final class EnrollmentViewController: UIViewController {
     
     weak var delegate: EnrollmentViewControllerDelegate?
     
