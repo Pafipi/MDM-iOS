@@ -12,6 +12,11 @@
 "settings" = "Settings";
 "error" = "Error!";
 
+// MARK: - Validation Errors
+
+"field_cannot_be_empty" = "This field cannot be empty!";
+"invalid_url" = "Given address is invalid";
+
 // MARK: - Remote Notifications
 
 "remote_notifications_denied_alert_title" = "Remote notification authorization required!";
@@ -20,5 +25,6 @@
 "remote_notifications_error_alert_message" = "Application restart is required.";
 
 // MARK: - Enrollment
+
 "enroll_button_title" = "Enroll";
 "address_input_placeholder" = "Enter MDM Server address";

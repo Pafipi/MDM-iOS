@@ -13,6 +13,11 @@ public struct LocalizedStrings {
         public static let settings = "settings".localized()
     }
     
+    public struct ValidationError {
+        public static let emptyField = "field_cannot_be_empty".localized()
+        public static let invalidURL = "invalid_url".localized()
+    }
+    
     public struct RemoteNotifications {
         public static let permissionDeniedAlertTitle = "remote_notifications_denied_alert_title".localized()
         public static let permissionDeniedAlertMessage = "remote_notifications_denied_alert_message".localized()
