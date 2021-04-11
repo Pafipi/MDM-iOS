@@ -9,9 +9,9 @@ import UIKit
 
 typealias UserInfo = [AnyHashable: Any]?
 
-final class NotificationCenterHelper {
+public final class NotificationCenterWrapper {
     
-    static let shared = NotificationCenterHelper()
+    static let shared = NotificationCenterWrapper()
     
     private let notificationCenter: NotificationCenter
     

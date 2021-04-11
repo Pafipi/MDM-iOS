@@ -27,8 +27,10 @@ public class KeychainWrapper {
 private extension KeychainWrapper {
     
     static func store(value: String, for key: String) {
-        sharedKeychain[key] = value
-        log(.keychain, "Store value: \(value), for key: \(key)")
+        DispatchQueue.global().async {
+            sharedKeychain[key] = value
+            log(.keychain, "Store value for key: \(key)")
+        }
     }
     
     static func value(for key: String) -> String? {

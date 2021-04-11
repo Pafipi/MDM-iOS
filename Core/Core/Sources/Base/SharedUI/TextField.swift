@@ -7,14 +7,13 @@
 
 import UIKit
 
-public typealias TextFieldHandler = ((TextField) -> Void)
+public typealias TextFieldClosure = ((TextField) -> Void)
 
 public final class TextField: UITextField {
     
-    var shouldReturn: TextFieldHandler?
-    var didBeginEditing: TextFieldHandler?
-    var didChangeContent: TextFieldHandler?
-    var didEndEditing: TextFieldHandler?
+    var didBeginEditing: TextFieldClosure?
+    var didChangeContent: TextFieldClosure?
+    var didEndEditing: TextFieldClosure?
     
     public init(text: String? = "",
                 placeholder: String? = "",

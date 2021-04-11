@@ -18,15 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pafipi_logo" translatesAutoresizingMaskIntoConstraints="NO" id="o9A-Er-khH">
-                                <rect key="frame" x="32" y="120" width="350" height="300"/>
+                                <rect key="frame" x="40" y="116" width="334" height="334"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="o9A-Er-khH" secondAttribute="height" id="NQT-S4-Oco"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
-                            <constraint firstItem="o9A-Er-khH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="0dx-VP-M0L"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o9A-Er-khH" secondAttribute="trailing" constant="32" id="hrB-of-iTS"/>
-                            <constraint firstItem="o9A-Er-khH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="zhC-WY-WJA"/>
+                            <constraint firstItem="o9A-Er-khH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="0dx-VP-M0L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="o9A-Er-khH" secondAttribute="trailing" constant="40" id="hrB-of-iTS"/>
+                            <constraint firstItem="o9A-Er-khH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="zhC-WY-WJA"/>
                         </constraints>
                     </view>
                 </viewController>
