@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Data {
+public extension Data {
   
     var stringValue: String? {
         String(data: self, encoding: .utf8)

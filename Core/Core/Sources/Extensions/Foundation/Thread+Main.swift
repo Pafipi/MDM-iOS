@@ -12,14 +12,12 @@ public typealias MainThreadBlock = () -> Void
 public extension Thread {
 
     class func asyncOnMain(block: @escaping MainThreadBlock) {
-
         if !Thread.isMainThread {
             DispatchQueue.main.async {
                 block()
             }
         } else {
             block()
-
         }
     }
 }

@@ -40,6 +40,7 @@
 		CA6B5796262285EC00BEE52E /* Networking+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B5795262285EC00BEE52E /* Networking+Injection.swift */; };
 		CA9CE72F260D1F9F00132DC0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */; };
 		CAA5E4E426112168002557AD /* FatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA5E4E326112168002557AD /* FatalError.swift */; };
+		CAB16FDB2622FCA800B840FD /* String+ValidURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FDA2622FCA800B840FD /* String+ValidURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		CA6B5795262285EC00BEE52E /* Networking+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Networking+Injection.swift"; sourceTree = "<group>"; };
 		CA9CE72E260D1F9F00132DC0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		CAA5E4E326112168002557AD /* FatalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalError.swift; sourceTree = "<group>"; };
+		CAB16FDA2622FCA800B840FD /* String+ValidURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValidURL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +276,7 @@
 			children = (
 				CA3DCF672606BE0100414D0E /* Thread+Main.swift */,
 				CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */,
+				CAB16FDA2622FCA800B840FD /* String+ValidURL.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				CA6B57282621DC9C00BEE52E /* HttpClient.swift in Sources */,
 				CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */,
 				CA6B573F2621F9A800BEE52E /* UIView+Anchor.swift in Sources */,
+				CAB16FDB2622FCA800B840FD /* String+ValidURL.swift in Sources */,
 				CA6B5796262285EC00BEE52E /* Networking+Injection.swift in Sources */,
 				CA6B576226225D0B00BEE52E /* FormTextInput.swift in Sources */,
 			);
