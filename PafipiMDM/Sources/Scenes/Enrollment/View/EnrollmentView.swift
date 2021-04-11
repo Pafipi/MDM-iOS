@@ -21,6 +21,7 @@ final class EnrollmentView: UIView {
     private var appLogoImageView: UIImageView?
     private var serverAddressInput: FormTextInput?
     private var enrollButton: Button?
+    private var keyboardScrollHelper: KeyboardScrollHelper?
     
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
@@ -48,6 +49,7 @@ private extension EnrollmentView {
         setupAppLogoImageView()
         setupServerAddressInput()
         setupEnrollButton()
+        setupKeyboardScrollHelper()
     }
     
     func setupScrollView() {
@@ -89,7 +91,9 @@ private extension EnrollmentView {
             top: scrollContentView.topAnchor,
             padding: Constants.Padding.appLogoImageView
         )
-        appLogoImageView?.backgroundColor = .systemPink
+        imageView.heightAnchor
+            .constraint(equalTo: imageView.widthAnchor, multiplier: 1.0)
+            .isActive = true
         self.appLogoImageView = imageView
     }
     
@@ -132,6 +136,12 @@ private extension EnrollmentView {
             size: Constants.Size.enrollButton
         )
         self.enrollButton = enrollButton
+    }
+    
+    func setupKeyboardScrollHelper() {
+        guard let scrollView = scrollView,
+              let serverAddressInput = serverAddressInput else { return }
+        keyboardScrollHelper = KeyboardScrollHelper(scrollView: scrollView, viewToBeShown: serverAddressInput)
     }
     
     func createServerAddressInput() -> FormTextInput {
@@ -183,7 +193,7 @@ extension EnrollmentView: FormTextInputDelegate {
 private struct Constants {
     
     struct Padding {
-        static let appLogoImageView: UIEdgeInsets = .init(top: 80, left: 32, bottom: .zero, right: 32)
+        static let appLogoImageView: UIEdgeInsets = .init(top: 96, left: 40, bottom: .zero, right: 40)
         static let serverAddressInput: UIEdgeInsets = .init(top: 16, left: 8, bottom: .zero, right: 8)
         static let enrollButton: UIEdgeInsets = .init(top: 16, left: 24, bottom: 16, right: 24)
     }
