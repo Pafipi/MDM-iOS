@@ -18,6 +18,10 @@ public final class EnrollmentViewController: UIViewController {
     
     @LazyInjected private var viewModel: EnrollmentViewModel
         
+    private var mainView: EnrollmentView? {
+        return view as? EnrollmentView
+    }
+    
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,10 +36,24 @@ public final class EnrollmentViewController: UIViewController {
         vc.viewModel.output = vc
         return vc
     }
+    
+    override public func loadView() {
+        self.view = EnrollmentView(delegate: self)
+    }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
 
 // MARK: - EnrollmentViewModelOutput
 
 extension EnrollmentViewController: EnrollmentViewModelOutput {
+    
+}
+
+// MARK: - EnrollmentViewDelegate
+
+extension EnrollmentViewController: EnrollmentViewDelegate {
     
 }

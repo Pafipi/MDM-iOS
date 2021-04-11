@@ -13,7 +13,7 @@ protocol EnrollmentRepository {
     
 }
 
-final class EnrollmentRepositoryImpl {
+final class EnrollmentRepositoryImpl: EnrollmentRepository {
     
     @LazyInjected private var networking: EnrollmentNetworking
 }
