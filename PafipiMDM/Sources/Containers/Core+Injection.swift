@@ -14,5 +14,6 @@ internal extension Resolver {
     static func registerCoreServices() {
         registerRemoteNotificationsService()
         registerNetworking()
+        registerValidators()
     }
 }
