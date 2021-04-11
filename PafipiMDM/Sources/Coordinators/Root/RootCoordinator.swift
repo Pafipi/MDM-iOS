@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Resolver
 import Core
 
 final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
@@ -29,10 +30,22 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         homeCoordinator.start()
         tabBarViews.append(homeNavigationController)
         
-        let rootTabBarController = RootTabBarController(tabBarViews: tabBarViews)
-        rootTabBarController.controllerDelegate = self
-        rootViewController = rootTabBarController
+        if KeychainWrapper.deviceUUID == nil {
+            let enrollmentViewController = EnrollmentViewController()
+            enrollmentViewController.delegate = self
+            rootViewController = enrollmentViewController
+        } else {
+            let rootTabBarController = RootTabBarController(tabBarViews: tabBarViews)
+            rootTabBarController.controllerDelegate = self
+            rootViewController = rootTabBarController
+        }
     }
+}
+
+// MARK: - EnrollmentViewControllerDelegate
+
+extension RootCoordinator: EnrollmentViewControllerDelegate {
+    
 }
 
 // MARK: - RootTabBarControllerDelegate
