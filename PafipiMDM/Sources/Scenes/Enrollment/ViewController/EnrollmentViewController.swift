@@ -24,6 +24,7 @@ public final class EnrollmentViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        viewModel.output = self
     }
 
     @available(*, unavailable)
@@ -33,7 +34,6 @@ public final class EnrollmentViewController: UIViewController {
     
     public class func create() -> EnrollmentViewController {
         let vc = EnrollmentViewController()
-        vc.viewModel.output = vc
         return vc
     }
     
@@ -50,10 +50,27 @@ public final class EnrollmentViewController: UIViewController {
 
 extension EnrollmentViewController: EnrollmentViewModelOutput {
     
+    func onUrlValidationSuccess() {
+        mainView?.updateEnrollmentAddressInput(isValid: true)
+        mainView?.shouldEnableEnrollButton(true)
+    }
+    
+    func onUrlValidationError(with message: String) {
+        mainView?.updateEnrollmentAddressInput(isValid: false, message: message)
+        mainView?.shouldEnableEnrollButton(false)
+    }
 }
 
 // MARK: - EnrollmentViewDelegate
 
 extension EnrollmentViewController: EnrollmentViewDelegate {
     
+    func didChangeEnrollmentAddress(_ address: String) {
+        viewModel.setEnrollmentAddress(address)
+    }
+    
+    func didEndEditingEnrollmentAddress(_ address: String) {
+        viewModel.setEnrollmentAddress(address)
+        viewModel.validateEnrollmentAddress()
+    }
 }

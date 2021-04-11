@@ -10,6 +10,8 @@ import Core
 
 protocol EnrollmentViewDelegate: AnyObject {
     
+    func didChangeEnrollmentAddress(_ address: String)
+    func didEndEditingEnrollmentAddress(_ address: String)
 }
 
 final class EnrollmentView: UIView {
@@ -36,6 +38,14 @@ final class EnrollmentView: UIView {
     
     func shouldEnableEnrollButton(_ enabled: Bool) {
         enrollButton?.setUserInteractionEnabled(enabled)
+    }
+    
+    func updateEnrollmentAddressInput(isValid: Bool, message: String? = nil) {
+        if isValid {
+            serverAddressInput?.hideError()
+        } else {
+            serverAddressInput?.showError(with: message ?? "")
+        }
     }
 }
 
@@ -135,6 +145,7 @@ private extension EnrollmentView {
             padding: Constants.Padding.enrollButton,
             size: Constants.Size.enrollButton
         )
+        enrollButton.setUserInteractionEnabled(false)
         self.enrollButton = enrollButton
     }
     
@@ -150,7 +161,9 @@ private extension EnrollmentView {
             font: .regularMainStyleFont(ofSize: .medium),
             alignment: .left,
             returnButtonType: .done,
+            autocapitalizationType: .none,
             textColor: Colors.Common.black,
+            debounceContentChange: true,
             accessibilityIdentifier: Accessibility.Identifiers.enrollmentAddressTextField,
             accessibilityLabel: Accessibility.Labels.enrollmentAddressTextField
         )
@@ -176,15 +189,14 @@ private extension EnrollmentView {
 
 extension EnrollmentView: FormTextInputDelegate {
     
-    func didBeginEditing(_ textField: TextField) {
-        scrollView?.scrollRectToVisible(textField.bounds, animated: true)
-    }
+    func didBeginEditing(_ textField: TextField) { }
     
     func contentChanged(_ textField: TextField) {
-        
+        delegate?.didChangeEnrollmentAddress(textField.text ?? "")
     }
     
     func didEndEditing(_ textField: TextField) {
+        delegate?.didEndEditingEnrollmentAddress(textField.text ?? "")
     }
 }
 
