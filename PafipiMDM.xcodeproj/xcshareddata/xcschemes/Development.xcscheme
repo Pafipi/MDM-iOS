@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CACC36EF25F5261B00E51C29"
-               BuildableName = "PafipiMDM.app"
-               BlueprintName = "PafipiMDM"
-               ReferencedContainer = "container:PafipiMDM.xcodeproj">
+               BlueprintIdentifier = "CA3DCF432606BDBF00414D0E"
+               BuildableName = "Core.framework"
+               BlueprintName = "Core"
+               ReferencedContainer = "container:Core/Core.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA3DCF432606BDBF00414D0E"
-               BuildableName = "Core.framework"
-               BlueprintName = "Core"
-               ReferencedContainer = "container:Core/Core.xcodeproj">
+               BlueprintIdentifier = "CACC36EF25F5261B00E51C29"
+               BuildableName = "PafipiMDM.app"
+               BlueprintName = "PafipiMDM"
+               ReferencedContainer = "container:PafipiMDM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

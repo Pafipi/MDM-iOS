@@ -24,6 +24,12 @@
 		CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57002621D79E00BEE52E /* EnrollmentView.swift */; };
 		CA6B57052621D7A500BEE52E /* EnrollmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57042621D7A500BEE52E /* EnrollmentService.swift */; };
 		CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */; };
+		CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B574F2622365A00BEE52E /* Lato-Light.ttf */; };
+		CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57502622365A00BEE52E /* Lato-Black.ttf */; };
+		CA6B57562622365A00BEE52E /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57512622365A00BEE52E /* Lato-Thin.ttf */; };
+		CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57522622365A00BEE52E /* Lato-Regular.ttf */; };
+		CA6B57582622365A00BEE52E /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57532622365A00BEE52E /* Lato-Bold.ttf */; };
+		CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57912622855000BEE52E /* Enrollment+Injection.swift */; };
 		CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE723260D1E7800132DC0 /* Coordinable.swift */; };
 		CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */; };
 		CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE731260D203500132DC0 /* CoordinatorActions.swift */; };
@@ -90,6 +96,12 @@
 		CA6B57002621D79E00BEE52E /* EnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentView.swift; sourceTree = "<group>"; };
 		CA6B57042621D7A500BEE52E /* EnrollmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentService.swift; sourceTree = "<group>"; };
 		CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentRepository.swift; sourceTree = "<group>"; };
+		CA6B574F2622365A00BEE52E /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		CA6B57502622365A00BEE52E /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		CA6B57512622365A00BEE52E /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		CA6B57522622365A00BEE52E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		CA6B57532622365A00BEE52E /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		CA6B57912622855000BEE52E /* Enrollment+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enrollment+Injection.swift"; sourceTree = "<group>"; };
 		CA9CE723260D1E7800132DC0 /* Coordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinable.swift; sourceTree = "<group>"; };
 		CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinable.swift; sourceTree = "<group>"; };
 		CA9CE731260D203500132DC0 /* CoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorActions.swift; sourceTree = "<group>"; };
@@ -165,6 +177,7 @@
 				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
 				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
 				CA6B56CA262186E200BEE52E /* Colors.xcassets */,
+				CA6B574D2622357F00BEE52E /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 				CA6B56BD26217DC000BEE52E /* Core+Injection.swift */,
 				CA6B56C6262181D900BEE52E /* Root+Injection.swift */,
 				CA6B56E82621A71800BEE52E /* Home+Injection.swift */,
+				CA6B57912622855000BEE52E /* Enrollment+Injection.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -266,6 +280,50 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
+		CA6B574D2622357F00BEE52E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B574E2622358E00BEE52E /* Lato */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CA6B574E2622358E00BEE52E /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57502622365A00BEE52E /* Lato-Black.ttf */,
+				CA6B57532622365A00BEE52E /* Lato-Bold.ttf */,
+				CA6B574F2622365A00BEE52E /* Lato-Light.ttf */,
+				CA6B57522622365A00BEE52E /* Lato-Regular.ttf */,
+				CA6B57512622365A00BEE52E /* Lato-Thin.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		CA6B57732622810F00BEE52E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		CA6B57742622811300BEE52E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5E4D12610929E002557AD /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CA6B57752622811900BEE52E /* Enrollment */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56EC2621D6F300BEE52E /* EnrollmentCoordinator.swift */,
+			);
+			path = Enrollment;
+			sourceTree = "<group>";
+		};
 		CA9CE719260D1D8500132DC0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,9 +338,9 @@
 			isa = PBXGroup;
 			children = (
 				CA9CE722260D1E6E00132DC0 /* Protocol */,
-				CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */,
-				CAA5E4D12610929E002557AD /* HomeCoordinator.swift */,
-				CA6B56EC2621D6F300BEE52E /* EnrollmentCoordinator.swift */,
+				CA6B57732622810F00BEE52E /* Root */,
+				CA6B57752622811900BEE52E /* Enrollment */,
+				CA6B57742622811300BEE52E /* Home */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -469,6 +527,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = CACC36E725F5261B00E51C29;
 			packageReferences = (
@@ -490,12 +549,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6B57582622365A00BEE52E /* Lato-Bold.ttf in Resources */,
 				CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */,
+				CA6B57562622365A00BEE52E /* Lato-Thin.ttf in Resources */,
 				CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */,
 				CA2998F22604044400A2748C /* README.md in Resources */,
 				CA6B56CB262186E200BEE52E /* Colors.xcassets in Resources */,
+				CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */,
 				CA2998E72604024800A2748C /* .gitignore in Resources */,
+				CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
+				CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,6 +617,7 @@
 				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */,
+				CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */,
 				CA6B57052621D7A500BEE52E /* EnrollmentService.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
