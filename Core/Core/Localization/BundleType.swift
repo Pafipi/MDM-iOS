@@ -8,5 +8,5 @@
 import Foundation
 
 public enum BundleType: String {
-    case core = "com.pafipi.core"
+    case core = "com.pafipi.Core"
 }

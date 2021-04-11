@@ -19,4 +19,9 @@ public struct LocalizedStrings {
         public static let permissionErrorAlertTitle = "remote_notifications_error_alert_title".localized()
         public static let permissionErrorAlertMessage = "remote_notifications_error_alert_message".localized()
     }
+    
+    public struct Enrollment {
+        public static let enrollButtonTitle = "enroll_button_title".localized()
+        public static let addressInputPlaceholder = "address_input_placeholder".localized()
+    }
 }
