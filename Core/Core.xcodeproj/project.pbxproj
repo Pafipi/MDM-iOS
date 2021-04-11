@@ -43,6 +43,10 @@
 		CAB16FDB2622FCA800B840FD /* String+ValidURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FDA2622FCA800B840FD /* String+ValidURL.swift */; };
 		CAB16FE526233EF200B840FD /* UserDefaultsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FE426233EF200B840FD /* UserDefaultsWrapper.swift */; };
 		CAB16FEB2623820800B840FD /* KeyboardScrollHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FEA2623820800B840FD /* KeyboardScrollHelper.swift */; };
+		CAB16FEF2623989100B840FD /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FEE2623989100B840FD /* Debouncer.swift */; };
+		CAB16FF326239C3F00B840FD /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FF226239C3F00B840FD /* ValidationResult.swift */; };
+		CAB16FF726239D0C00B840FD /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FF626239D0C00B840FD /* URLValidator.swift */; };
+		CAB16FFA2623A16400B840FD /* Validators+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FF92623A16400B840FD /* Validators+Injection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +111,10 @@
 		CAB16FDA2622FCA800B840FD /* String+ValidURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValidURL.swift"; sourceTree = "<group>"; };
 		CAB16FE426233EF200B840FD /* UserDefaultsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsWrapper.swift; sourceTree = "<group>"; };
 		CAB16FEA2623820800B840FD /* KeyboardScrollHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollHelper.swift; sourceTree = "<group>"; };
+		CAB16FEE2623989100B840FD /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		CAB16FF226239C3F00B840FD /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
+		CAB16FF626239D0C00B840FD /* URLValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidator.swift; sourceTree = "<group>"; };
+		CAB16FF92623A16400B840FD /* Validators+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validators+Injection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +212,7 @@
 				CA6B56CE2621875F00BEE52E /* Colors.swift */,
 				CAA5E4E326112168002557AD /* FatalError.swift */,
 				CA3DCF88260755E800414D0E /* Log.swift */,
+				CAB16FEE2623989100B840FD /* Debouncer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -224,6 +233,7 @@
 			children = (
 				CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */,
 				CA6B5795262285EC00BEE52E /* Networking+Injection.swift */,
+				CAB16FF92623A16400B840FD /* Validators+Injection.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -236,6 +246,7 @@
 				CA6B5745262210FD00BEE52E /* SharedUI */,
 				CAB16FE326233ED100B840FD /* UserDefaults */,
 				CA6B578E262284F600BEE52E /* Keychain */,
+				CAB16FF126239C1A00B840FD /* Validators */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -338,6 +349,15 @@
 				CAB16FEA2623820800B840FD /* KeyboardScrollHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CAB16FF126239C1A00B840FD /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				CAB16FF226239C3F00B840FD /* ValidationResult.swift */,
+				CAB16FF626239D0C00B840FD /* URLValidator.swift */,
+			);
+			path = Validators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +496,7 @@
 				CA6B572A2621DC9C00BEE52E /* HeaderFactory.swift in Sources */,
 				CAA5E4E426112168002557AD /* FatalError.swift in Sources */,
 				CA6B57272621DC9C00BEE52E /* BaseNetworking.swift in Sources */,
+				CAB16FEF2623989100B840FD /* Debouncer.swift in Sources */,
 				CA6B5765262261F200BEE52E /* Label.swift in Sources */,
 				CA6B57692622786B00BEE52E /* Button.swift in Sources */,
 				CA6B57322621DF7E00BEE52E /* Data+StringValue.swift in Sources */,
@@ -485,10 +506,13 @@
 				CA3DCFA22607A41200414D0E /* String+Localized.swift in Sources */,
 				CA6B57282621DC9C00BEE52E /* HttpClient.swift in Sources */,
 				CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */,
+				CAB16FF326239C3F00B840FD /* ValidationResult.swift in Sources */,
 				CA6B573F2621F9A800BEE52E /* UIView+Anchor.swift in Sources */,
 				CAB16FDB2622FCA800B840FD /* String+ValidURL.swift in Sources */,
 				CA6B5796262285EC00BEE52E /* Networking+Injection.swift in Sources */,
 				CA6B576226225D0B00BEE52E /* FormTextInput.swift in Sources */,
+				CAB16FFA2623A16400B840FD /* Validators+Injection.swift in Sources */,
+				CAB16FF726239D0C00B840FD /* URLValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
