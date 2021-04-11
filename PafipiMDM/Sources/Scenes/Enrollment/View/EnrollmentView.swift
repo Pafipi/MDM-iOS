@@ -16,6 +16,8 @@ final class EnrollmentView: UIView {
     
     weak var delegate: EnrollmentViewDelegate?
     
+    private var scrollView: UIScrollView?
+    private var scrollContentView: UIView?
     private var appLogoImageView: UIImageView?
     private var serverAddressInput: FormTextInput?
     private var enrollButton: Button?
@@ -30,6 +32,10 @@ final class EnrollmentView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func shouldEnableEnrollButton(_ enabled: Bool) {
+        enrollButton?.setUserInteractionEnabled(enabled)
+    }
 }
 
 // MARK: - Private methods
@@ -38,22 +44,49 @@ private extension EnrollmentView {
     
     func setup() {
         backgroundColor = Colors.Common.background
+        setupScrollView()
         setupAppLogoImageView()
         setupServerAddressInput()
         setupEnrollButton()
     }
     
+    func setupScrollView() {
+        let scrollView = UIScrollView()
+        addSubview(scrollView)
+        scrollView.anchor(
+            leading: leadingAnchor,
+            trailing: trailingAnchor,
+            top: topAnchor,
+            bottom: bottomAnchor
+        )
+        self.scrollView = scrollView
+        
+        let scrollContentView = UIView()
+        scrollView.addSubview(scrollContentView)
+        scrollContentView.anchor(
+            leading: scrollView.leadingAnchor,
+            trailing: scrollView.trailingAnchor,
+            top: scrollView.topAnchor,
+            bottom: scrollView.bottomAnchor
+        )
+        scrollContentView.widthAnchor
+            .constraint(equalTo: scrollView.widthAnchor)
+            .isActive = true
+        self.scrollContentView = scrollContentView
+    }
+    
     func setupAppLogoImageView() {
+        guard let scrollContentView = scrollContentView else { return }
         let appLogo = UIImage(named: Constants.Image.appLogoName)
         let imageView = UIImageView(image: appLogo)
-        addSubview(imageView)
+        scrollContentView.addSubview(imageView)
         imageView.contentMode = .scaleAspectFit
         imageView.accessibilityIdentifier = Accessibility.Identifiers.appLogoImageView
         imageView.accessibilityLabel = Accessibility.Labels.appLogoImageView
         imageView.anchor(
-            leading: leadingAnchor,
-            trailing: trailingAnchor,
-            top: topAnchor,
+            leading: scrollContentView.leadingAnchor,
+            trailing: scrollContentView.trailingAnchor,
+            top: scrollContentView.topAnchor,
             padding: Constants.Padding.appLogoImageView
         )
         appLogoImageView?.backgroundColor = .systemPink
@@ -61,12 +94,13 @@ private extension EnrollmentView {
     }
     
     func setupServerAddressInput() {
-        guard let imageView = appLogoImageView else { return }
+        guard let scrollContentView = scrollContentView,
+              let imageView = appLogoImageView else { return }
         let serverAddressInput = createServerAddressInput()
-        addSubview(serverAddressInput)
+        scrollContentView.addSubview(serverAddressInput)
         serverAddressInput.anchor(
-            leading: leadingAnchor,
-            trailing: trailingAnchor,
+            leading: scrollContentView.leadingAnchor,
+            trailing: scrollContentView.trailingAnchor,
             top: imageView.bottomAnchor,
             padding: Constants.Padding.serverAddressInput
         )
@@ -75,7 +109,8 @@ private extension EnrollmentView {
     }
     
     func setupEnrollButton() {
-        guard let serverAddressInput = serverAddressInput else { return }
+        guard let scrollContentView = scrollContentView,
+              let serverAddressInput = serverAddressInput else { return }
         let enrollButton = Button(
             title: LocalizedStrings.Enrollment.enrollButtonTitle,
             font: .boldMainStyleFont(ofSize: .mediumLarge),
@@ -87,11 +122,12 @@ private extension EnrollmentView {
             accessibilityIdentifier: Accessibility.Identifiers.enrollButton,
             accessibilityLabel: LocalizedStrings.Enrollment.enrollButtonTitle
         )
-        addSubview(enrollButton)
+        scrollContentView.addSubview(enrollButton)
         enrollButton.anchor(
-            leading: leadingAnchor,
-            trailing: trailingAnchor,
+            leading: scrollContentView.leadingAnchor,
+            trailing: scrollContentView.trailingAnchor,
             top: serverAddressInput.bottomAnchor,
+            bottom: scrollContentView.bottomAnchor,
             padding: Constants.Padding.enrollButton,
             size: Constants.Size.enrollButton
         )
@@ -130,11 +166,16 @@ private extension EnrollmentView {
 
 extension EnrollmentView: FormTextInputDelegate {
     
-    func didBeginEditing(_ textField: TextField) { }
+    func didBeginEditing(_ textField: TextField) {
+        scrollView?.scrollRectToVisible(textField.bounds, animated: true)
+    }
     
-    func contentChanged(_ textField: TextField) { }
+    func contentChanged(_ textField: TextField) {
+        
+    }
     
-    func didEndEditing(_ textField: TextField) { }
+    func didEndEditing(_ textField: TextField) {
+    }
 }
 
 // MARK: - Constants
@@ -142,9 +183,9 @@ extension EnrollmentView: FormTextInputDelegate {
 private struct Constants {
     
     struct Padding {
-        static let appLogoImageView: UIEdgeInsets = .init(top: 120, left: 32, bottom: .zero, right: 32)
-        static let serverAddressInput: UIEdgeInsets = .init(top: 24, left: 8, bottom: .zero, right: 8)
-        static let enrollButton: UIEdgeInsets = .init(top: 16, left: 24, bottom: .zero, right: 24)
+        static let appLogoImageView: UIEdgeInsets = .init(top: 80, left: 32, bottom: .zero, right: 32)
+        static let serverAddressInput: UIEdgeInsets = .init(top: 16, left: 8, bottom: .zero, right: 8)
+        static let enrollButton: UIEdgeInsets = .init(top: 16, left: 24, bottom: 16, right: 24)
     }
     
     struct Size {
