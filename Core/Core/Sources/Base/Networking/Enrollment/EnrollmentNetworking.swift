@@ -13,5 +13,4 @@ public protocol EnrollmentNetworking {
 
 final class EnrollmentNetworkingImpl: BaseNetworking, EnrollmentNetworking {
 
-    
 }
