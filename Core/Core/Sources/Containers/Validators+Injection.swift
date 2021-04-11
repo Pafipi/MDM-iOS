@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import Resolver
+
+public extension Resolver {
+    
+    static func registerValidators() {
+        register { URLValidatorImpl() as URLValidator }
+    }
+}
