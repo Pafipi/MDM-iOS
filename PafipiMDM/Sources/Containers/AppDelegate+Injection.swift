@@ -14,5 +14,6 @@ extension Resolver: ResolverRegistering {
         registerCoreServices()
         registerRootServices()
         registerHomeServices()
+        registerEnrollmentServices()
     }
 }
