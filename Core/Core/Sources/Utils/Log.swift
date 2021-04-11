@@ -11,6 +11,7 @@ public enum LogIcon: String {
     case save = "[💾]"
     case push = "[📲]"
     case network = "[🌐]"
+    case keychain = "[🔑]"
     case event = "[🔔]"
     case debug = "[⚙️]"
     case info = "[ℹ️]"
