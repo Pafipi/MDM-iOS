@@ -40,19 +40,19 @@ public final class FormTextInput: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func showError(with message: String) {
+    public func showError(with message: String) {
         errorLabel.text = message
         showErrorLabel()
         textField.setBorderColor(Colors.Common.error)
     }
     
-    func hideError() {
+    public func hideError() {
         errorLabel.text = ""
         hideErrorLabel()
         textField.setBorderColor(Colors.Common.tint)
     }
     
-    func showSuccess() {
+    public func showSuccess() {
         textField.setBorderColor(Colors.Common.success)
     }
 }
@@ -112,6 +112,7 @@ private extension FormTextInput {
         UIView.animate(withDuration: Constants.TimeIntervals.showErrorLabel) { [weak self] in
             self?.errorLabel.alpha = 1
             self?.errorLabel.isHidden = false
+            self?.layoutIfNeeded()
         }
     }
     
@@ -119,6 +120,7 @@ private extension FormTextInput {
         UIView.animate(withDuration: Constants.TimeIntervals.hideErrorLabel) { [weak self] in
             self?.errorLabel.alpha = 0
             self?.errorLabel.isHidden = true
+            self?.layoutIfNeeded()
         }
     }
 }
@@ -129,7 +131,7 @@ private struct Constants {
     
     struct Padding {
         static let textField: UIEdgeInsets = .init(top: 8, left: 16, bottom: .zero, right: 16)
-        static let errorLabel: UIEdgeInsets = .init(top: 4, left: 16, bottom: 8, right: 16)
+        static let errorLabel: UIEdgeInsets = .init(top: 8, left: 16, bottom: 8, right: 16)
     }
     
     struct Size {

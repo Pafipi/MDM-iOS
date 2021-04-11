@@ -11,17 +11,22 @@ public typealias TextFieldClosure = ((TextField) -> Void)
 
 public final class TextField: UITextField {
     
-    var didBeginEditing: TextFieldClosure?
-    var didChangeContent: TextFieldClosure?
-    var didEndEditing: TextFieldClosure?
+    public var didBeginEditing: TextFieldClosure?
+    public var didChangeContent: TextFieldClosure?
+    public var didEndEditing: TextFieldClosure?
+    
+    private var contentChangeDebouncer: Debouncer?
     
     public init(text: String? = "",
                 placeholder: String? = "",
                 font: UIFont? = .regularMainStyleFont(ofSize: .medium),
                 alignment: NSTextAlignment = .left,
                 returnButtonType: UIReturnKeyType = .done,
+                autocapitalizationType: UITextAutocapitalizationType = .sentences,
+                autocorrectionType: UITextAutocorrectionType = .no,
                 textColor: UIColor? = .black,
                 placeholderColor: UIColor? = .darkGray,
+                debounceContentChange: Bool = false,
                 accessibilityIdentifier: String? = "",
                 accessibilityLabel: String? = "") {
         super.init(frame: .zero)
@@ -31,6 +36,8 @@ public final class TextField: UITextField {
         self.font = font
         self.textAlignment = alignment
         self.returnKeyType = returnButtonType
+        self.autocapitalizationType = autocapitalizationType
+        self.autocorrectionType = autocorrectionType
         self.textColor = textColor
         self.accessibilityIdentifier = accessibilityIdentifier
         self.accessibilityLabel = accessibilityLabel
@@ -40,6 +47,15 @@ public final class TextField: UITextField {
         layer.cornerRadius = Constants.cornerRadius
         layer.masksToBounds = true
         delegate = self
+        
+        if debounceContentChange {
+            contentChangeDebouncer = Debouncer(
+                delay: Constants.TimeIntervals.contentChangeDebounceDelay
+            ) { [weak self] in
+                guard let self = self else { return }
+                self.didChangeContent?(self)
+            }
+        }
     }
     
     @available(*, unavailable)
@@ -99,7 +115,11 @@ extension TextField: UITextFieldDelegate {
     }
     
     public func textFieldDidChangeContent(_ textField: UITextField) {
-        didChangeContent?(self)
+        if let debouncer = contentChangeDebouncer {
+            debouncer.call()
+        } else {
+            didChangeContent?(self)
+        }
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
@@ -126,6 +146,7 @@ private struct Constants {
     struct TimeIntervals {
         static let borderWidthChange: TimeInterval = 0.2
         static let borderColorChange: TimeInterval = 0.2
+        static let contentChangeDebounceDelay: TimeInterval = 1.0
     }
     
     static let cornerRadius: CGFloat = 8.0
