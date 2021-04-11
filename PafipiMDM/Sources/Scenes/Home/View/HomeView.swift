@@ -12,7 +12,7 @@ final class HomeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupLayout()
+        setup()
     }
 
     @available(*, unavailable)
@@ -25,7 +25,7 @@ final class HomeView: UIView {
 
 private extension HomeView {
     
-    func setupLayout() {
+    func setup() {
         
     }
 }
