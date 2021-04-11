@@ -25,6 +25,7 @@ public final class HomeViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        viewModel.output = self
     }
 
     @available(*, unavailable)
@@ -34,7 +35,6 @@ public final class HomeViewController: UIViewController {
     
     public class func create() -> HomeViewController {
         let vc = HomeViewController()
-        vc.viewModel.output = vc
         return vc
     }
     
