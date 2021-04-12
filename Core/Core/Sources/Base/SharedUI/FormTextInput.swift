@@ -112,7 +112,6 @@ private extension FormTextInput {
         UIView.animate(withDuration: Constants.TimeIntervals.showErrorLabel) { [weak self] in
             self?.errorLabel.alpha = 1
             self?.errorLabel.isHidden = false
-            self?.layoutIfNeeded()
         }
     }
     
@@ -120,7 +119,6 @@ private extension FormTextInput {
         UIView.animate(withDuration: Constants.TimeIntervals.hideErrorLabel) { [weak self] in
             self?.errorLabel.alpha = 0
             self?.errorLabel.isHidden = true
-            self?.layoutIfNeeded()
         }
     }
 }

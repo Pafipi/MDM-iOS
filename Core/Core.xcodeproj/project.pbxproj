@@ -207,12 +207,12 @@
 		CA3DCF87260755D300414D0E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CAB16FE826233F7100B840FD /* Helpers */,
 				CA6B575D2622515C00BEE52E /* Accessibility.swift */,
 				CA6B56CE2621875F00BEE52E /* Colors.swift */,
+				CAB16FEE2623989100B840FD /* Debouncer.swift */,
 				CAA5E4E326112168002557AD /* FatalError.swift */,
 				CA3DCF88260755E800414D0E /* Log.swift */,
-				CAB16FEE2623989100B840FD /* Debouncer.swift */,
+				CAB16FE826233F7100B840FD /* Helpers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
