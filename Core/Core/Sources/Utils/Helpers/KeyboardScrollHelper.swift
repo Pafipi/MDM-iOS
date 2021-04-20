@@ -13,7 +13,7 @@ public final class KeyboardScrollHelper {
     private let viewToBeShown: UIView
     
     private var isKeyboardVisible: Bool = false
-    private var keyboardHeight: CGFloat = 0.0
+    private var keyboardRect: CGRect = .zero
     
     public init(scrollView: UIScrollView,
                 viewToBeShown: UIView) {
@@ -27,13 +27,11 @@ public final class KeyboardScrollHelper {
     }
     
     func scrollToView(_ viewToBeShown: UIView) {
-        if isKeyboardVisible {
-            let contentOffsetY = viewToBeShown.frame.origin.y + viewToBeShown.frame.size.height + keyboardHeight
-            scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: contentOffsetY), animated: true)
-        } else {
-            let contentOffsetY = viewToBeShown.frame.origin.y + viewToBeShown.frame.size.height
-            scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: contentOffsetY), animated: true)
+        guard isKeyboardVisible else {
+            resetScrollContentOffset()
+            return
         }
+        setupScrollContentOffset(with: keyboardRect)
     }
 }
 
@@ -66,7 +64,20 @@ private extension KeyboardScrollHelper {
             return
         }
         let keyboardRectangle = keyboardFrame.cgRectValue
-        keyboardHeight = keyboardRectangle.height
+        setupScrollContentOffset(with: keyboardRectangle)
+    }
+    
+    @objc func onKeyboardWillHide() {
+        isKeyboardVisible = false
+        resetScrollContentOffset()
+    }
+}
+
+// MARK: - Private Methods
+
+private extension KeyboardScrollHelper {
+    
+    func setupScrollContentOffset(with keyboardRectangle: CGRect) {
         guard keyboardRectangle.origin.y < (viewToBeShown.frame.origin.y + viewToBeShown.frame.size.height) else {
             return
         }
@@ -76,14 +87,12 @@ private extension KeyboardScrollHelper {
         scrollView.setContentOffset(CGPoint(x: scrollView.contentOffset.x, y: contentOffsetY), animated: true)
     }
     
-    @objc func onKeyboardWillHide() {
-        isKeyboardVisible = false
-        keyboardHeight = 0.0
+    func resetScrollContentOffset() {
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
 }
 
-// MARK: - Constants  {
+// MARK: - Constants
 
 private struct Constants {
     
