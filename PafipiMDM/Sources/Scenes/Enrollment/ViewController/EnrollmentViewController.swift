@@ -43,6 +43,7 @@ public final class EnrollmentViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
     }
 }
 

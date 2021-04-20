@@ -189,7 +189,9 @@ private extension EnrollmentView {
 
 extension EnrollmentView: FormTextInputDelegate {
     
-    func didBeginEditing(_ textField: TextField) { }
+    func didBeginEditing(_ textField: TextField) {
+        textField.text = "https://"
+    }
     
     func contentChanged(_ textField: TextField) {
         delegate?.didChangeEnrollmentAddress(textField.text ?? "")

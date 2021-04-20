@@ -19,7 +19,6 @@ private extension Resolver {
 
     static func registerEnrollmentScene() {
         register { EnrollmentRepositoryImpl() as EnrollmentRepository }
-        register { EnrollmentServiceImpl() as EnrollmentService }
         register { EnrollmentViewModelImpl() as EnrollmentViewModel }
     }
 }

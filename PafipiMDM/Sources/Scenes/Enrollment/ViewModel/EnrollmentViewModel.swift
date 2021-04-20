@@ -12,6 +12,7 @@ import Core
 protocol EnrollmentViewModel {
     var output: EnrollmentViewModelOutput? { get set }
     
+    func viewDidLoad()
     func setEnrollmentAddress(_ address: String)
     func validateEnrollmentAddress()
 }
@@ -26,10 +27,14 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
  
     weak var output: EnrollmentViewModelOutput?
     
-    @LazyInjected private var service: EnrollmentService
+    @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = ""
+    private var enrollmentAddress: String = "https://"
+    
+    func viewDidLoad() {
+        repository.fetchUsers()
+    }
     
     func setEnrollmentAddress(_ address: String) {
         enrollmentAddress = address
