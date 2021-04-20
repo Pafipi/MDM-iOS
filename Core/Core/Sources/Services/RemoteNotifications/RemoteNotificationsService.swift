@@ -96,7 +96,6 @@ extension RemoteNotificationsServiceImpl: UNUserNotificationCenterDelegate {
         
     }
 
-    @available(iOS 12.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) {
         
     }

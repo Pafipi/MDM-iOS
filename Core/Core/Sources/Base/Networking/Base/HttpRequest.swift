@@ -11,29 +11,30 @@ enum HttpMethod: String {
     case put
 }
 
-typealias Parameters = [String: Any]
-typealias Headers = [String: String]
-typealias NetworkingCompletion<T: Codable> = (Result<T, Error>) -> Void
-
 final class HttpRequest<T: Codable> {
     
-    let url: String
+    let url: URL
     let method: HttpMethod
-    let parameters: Parameters
-    let headers: HeaderFactory
-    let completion: NetworkingCompletion<T>?
+    let config: HttpRequestConfig
     
-    init(url: String,
+    var parameters: Parameters {
+        config.parameters
+    }
+    
+    var headers: Headers {
+        config.headers
+    }
+    
+    var timeout: TimeInterval {
+        config.timeout
+    }
+    
+    init(url: URL,
          method: HttpMethod,
-         parameters: Parameters = [:],
-         headers: HeaderFactory = .apiDefault,
-         completion: NetworkingCompletion<T>?) {
-        
+         requestConfig: HttpRequestConfig) {
         self.url = url
         self.method = method
-        self.parameters = parameters
-        self.headers = headers
-        self.completion = completion
+        self.config = requestConfig
     }
     
     var string: String {

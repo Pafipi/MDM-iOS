@@ -1,107 +1,96 @@
 //
 //  HttpClient.swift
-//  PafipiMDM
+//  IteoTemplate
 //
-//  Created by Piotr Fraccaro on 10/04/2021.
+//  Created by Piotr Fraccaro on 19/04/2021.
 //
 
 import Foundation
+import Combine
 
-struct InvalidURL: Error {}
-struct InvalidURLParameters: Error {}
-struct NotHttpResponse: Error {}
-struct APIError: Error {
-    let code: Int
-    let data: Data?
+public typealias NetworkingResult<T: Codable> = AnyPublisher<T, Error>
+
+public struct EmptyResponse: Codable { }
+
+protocol HttpClient: AnyObject {
+    
+    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResult<T>
 }
 
-typealias Completion<T> = (T) -> Void
-
-final class HttpClient {
+final class HttpClientImpl: HttpClient {
     
-    static let shared = HttpClient()
+    private let session: URLSession
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) {
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+    }
+    
+    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResult<T> {
+        log(.networkRequest, "\(request.string)")
         
-        log(.network, "↑ \(request.string)")
-        
-        guard var components = URLComponents(string: request.url) else {
-            callCompletion(request: request, data: nil, result: .failure(InvalidURL()))
-            return
+        guard var components = URLComponents(url: request.url, resolvingAgainstBaseURL: true) else {
+            return Fail(error: NetworkingError.invalidURL).eraseToAnyPublisher()
         }
         
         if request.method == .get {
             components.queryItems = components.queryItems != nil ? components.queryItems : [URLQueryItem]()
-            components.queryItems?.append(contentsOf: request.parameters.map { URLQueryItem(name: $0.key, value: "\($0.value)") })
+            components.queryItems?.append(contentsOf: request.parameters.asQueryItems())
         }
         
         guard let url = components.url else {
-            callCompletion(request: request, data: nil, result: .failure(InvalidURLParameters()))
-            return
+            return Fail(error: NetworkingError.invalidURLParameters).eraseToAnyPublisher()
         }
         
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: url, timeoutInterval: request.timeout)
         urlRequest.httpMethod = request.method.rawValue
-        urlRequest.allHTTPHeaderFields = request.headers.dictionary
+        urlRequest.allHTTPHeaderFields = request.headers
         
-        if request.method != .get {
-            let data = try? JSONSerialization.data(withJSONObject: request.parameters, options: [])
+        request.headers.forEach { key, value in
+            urlRequest.setValue(value, forHTTPHeaderField: key)
+        }
+        
+        if request.method != .get && !request.parameters.isEmpty {
+            guard let data = try? JSONSerialization.data(withJSONObject: request.parameters, options: [])
+            else {
+                return Fail(error: NetworkingError.invalidJSONParameters).eraseToAnyPublisher()
+            }
             urlRequest.httpBody = data
         }
         
-        URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            self.serializeResponse(request: request, data: data, response: response, error: error)
-        }
-        .resume()
-        
+        return session.dataTaskPublisher(for: urlRequest)
+            .networkingResultPublisher(for: request)
     }
-    
 }
 
-private extension HttpClient {
+private extension URLSession.DataTaskPublisher {
     
-    private func callCompletion<T: Codable>(request: HttpRequest<T>, data: Data?, result: Result<T, Error>) {
-        if case .failure(let error) = result {
-            log(.error, """
-                ↓ \(request.string)
-                Error: \(error.localizedDescription)
-                Response: \(data?.prettyStringValue ?? "")
+    func networkingResultPublisher<T: Codable>(for request: HttpRequest<T>) -> NetworkingResult<T> {
+        tryMap { data, response in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                throw NetworkingError.notHttpResponse
+            }
+
+            guard 200..<300 ~= httpResponse.statusCode else {
+                throw NetworkingError.apiError(code: httpResponse.statusCode, data: data)
+            }
+
+            log(.networkResponse,
+                """
+                🟢 Request: \(request.string)
+                Response: \(data.prettyStringValue ?? "")
                 """)
+            
+            return data
         }
-        log(.success, """
-            ↓ \(request.string)
-            Response: \(data?.prettyStringValue ?? "")
-            """)
-        
-        request.completion?(result)
-    }
-    
-    private func serializeResponse<T: Codable>(request: HttpRequest<T>, data: Data?, response: URLResponse?, error: Error?) {
-        if let error = error {
-            callCompletion(request: request, data: data, result: .failure(error))
-            return
+        .decode(type: T.self, decoder: JSONDecoder())
+        .mapError { error -> Error in
+            log(.networkResponse,
+                """
+                🔴 Request: \(request.string)
+                Error: \(error.localizedDescription)
+                """)
+            return error
         }
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            callCompletion(request: request, data: data, result: .failure(NotHttpResponse()))
-            return
-        }
-        
-        guard httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else {
-            callCompletion(request: request, data: data, result: .failure(APIError(code: httpResponse.statusCode, data: data)))
-            return
-        }
-        
-        if let dataAsCodable = data as? T {
-            callCompletion(request: request, data: data, result: .success(dataAsCodable))
-            return
-        }
-        
-        do {
-            let object = try JSONDecoder().decode(T.self, from: data ?? Data())
-            callCompletion(request: request, data: data, result: .success(object))
-        } catch let error {
-            callCompletion(request: request, data: data, result: .failure(error))
-        }
+        .eraseToAnyPublisher()
     }
 }

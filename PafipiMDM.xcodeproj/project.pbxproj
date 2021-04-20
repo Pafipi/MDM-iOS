@@ -22,7 +22,6 @@
 		CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56F62621D78E00BEE52E /* EnrollmentViewController.swift */; };
 		CA6B56FD2621D79800BEE52E /* EnrollmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */; };
 		CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57002621D79E00BEE52E /* EnrollmentView.swift */; };
-		CA6B57052621D7A500BEE52E /* EnrollmentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57042621D7A500BEE52E /* EnrollmentService.swift */; };
 		CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */; };
 		CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B574F2622365A00BEE52E /* Lato-Light.ttf */; };
 		CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57502622365A00BEE52E /* Lato-Black.ttf */; };
@@ -45,6 +44,7 @@
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
+		CAF901C6262E26200057CF5B /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF901C5262E26200057CF5B /* swiftgen.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 		CA6B56F62621D78E00BEE52E /* EnrollmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentViewController.swift; sourceTree = "<group>"; };
 		CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentViewModel.swift; sourceTree = "<group>"; };
 		CA6B57002621D79E00BEE52E /* EnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentView.swift; sourceTree = "<group>"; };
-		CA6B57042621D7A500BEE52E /* EnrollmentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentService.swift; sourceTree = "<group>"; };
 		CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentRepository.swift; sourceTree = "<group>"; };
 		CA6B574F2622365A00BEE52E /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		CA6B57502622365A00BEE52E /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		CACC370C25F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF901C5262E26200057CF5B /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftgen.yml; path = PafipiMDM/swiftgen.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,10 +152,11 @@
 		CA2998D42603FC8400A2748C /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				CA2998F12604044400A2748C /* README.md */,
-				CA2998EC2604037300A2748C /* .swiftlint.yml */,
 				CA2998E62604024800A2748C /* .gitignore */,
+				CA2998EC2604037300A2748C /* .swiftlint.yml */,
 				CACC370125F5261C00E51C29 /* Info.plist */,
+				CA2998F12604044400A2748C /* README.md */,
+				CAF901C5262E26200057CF5B /* swiftgen.yml */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -231,11 +232,10 @@
 		CA6B56F02621D72300BEE52E /* Enrollment */ = {
 			isa = PBXGroup;
 			children = (
-				CA6B56F52621D74900BEE52E /* Repository */,
-				CA6B56F42621D74500BEE52E /* Service */,
 				CA6B56F22621D73200BEE52E /* View */,
 				CA6B56F12621D72D00BEE52E /* ViewController */,
 				CA6B56F32621D73600BEE52E /* ViewModel */,
+				CA6B56F52621D74900BEE52E /* Repository */,
 			);
 			path = Enrollment;
 			sourceTree = "<group>";
@@ -262,14 +262,6 @@
 				CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CA6B56F42621D74500BEE52E /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				CA6B57042621D7A500BEE52E /* EnrollmentService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		CA6B56F52621D74900BEE52E /* Repository */ = {
@@ -417,6 +409,7 @@
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D62603FD2B00A2748C /* Resources */,
+				CAF901D0262E27FD0057CF5B /* Generated */,
 			);
 			path = PafipiMDM;
 			sourceTree = "<group>";
@@ -437,6 +430,13 @@
 			path = PafipiMDMUITests;
 			sourceTree = "<group>";
 		};
+		CAF901D0262E27FD0057CF5B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,7 +444,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CACC371A25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDM" */;
 			buildPhases = (
-				CA2998EB260402E300A2748C /* ShellScript */,
+				CA2998EB260402E300A2748C /* SwiftLint */,
+				CAF901C9262E26580057CF5B /* SwiftGen */,
 				CACC36EC25F5261B00E51C29 /* Sources */,
 				CACC36ED25F5261B00E51C29 /* Frameworks */,
 				CACC36EE25F5261B00E51C29 /* Resources */,
@@ -560,6 +561,7 @@
 				CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
 				CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */,
+				CAF901C6262E26200057CF5B /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +582,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CA2998EB260402E300A2748C /* ShellScript */ = {
+		CA2998EB260402E300A2748C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -589,6 +591,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -596,6 +599,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		CAF901C9262E26580057CF5B /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which swiftgen >/dev/null; then\n#  swiftgen\n#else\n#  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -618,7 +639,6 @@
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */,
 				CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */,
-				CA6B57052621D7A500BEE52E /* EnrollmentService.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,

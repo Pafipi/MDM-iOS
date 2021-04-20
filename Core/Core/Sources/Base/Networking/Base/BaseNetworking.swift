@@ -1,19 +1,19 @@
 //
 //  BaseNetworking.swift
-//  PafipiMDM
+//  Core
 //
-//  Created by Piotr Fraccaro on 10/04/2021.
+//  Created by Piotr Fraccaro on 19/04/2021.
 //
 
 class BaseNetworking {
 
-    private let manager: HttpClient
+    private let client: HttpClient
     
-    init(manager: HttpClient = HttpClient.shared) {
-        self.manager = manager
+    init(client: HttpClient = HttpClientImpl()) {
+        self.client = client
     }
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) {
-        manager.perform(request)
+    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResult<T> {
+        return client.perform(request)
     }
 }
