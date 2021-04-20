@@ -45,7 +45,6 @@
 		CAB16FF326239C3F00B840FD /* ValidationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FF226239C3F00B840FD /* ValidationResult.swift */; };
 		CAB16FF726239D0C00B840FD /* URLValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FF626239D0C00B840FD /* URLValidator.swift */; };
 		CAB16FFA2623A16400B840FD /* Validators+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB16FF92623A16400B840FD /* Validators+Injection.swift */; };
-		CABDBDA826241EF900A11FF3 /* Codable+CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDBDA726241EF900A11FF3 /* Codable+CustomStringConvertible.swift */; };
 		CABDBDAB262421FD00A11FF3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDBDAA262421FD00A11FF3 /* Endpoint.swift */; };
 		CABDBDAF262423B500A11FF3 /* HttpRequestConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDBDAE262423B500A11FF3 /* HttpRequestConfig.swift */; };
 		CABDBDB426242B1400A11FF3 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABDBDB326242B1400A11FF3 /* HttpClient.swift */; };
@@ -116,7 +115,6 @@
 		CAB16FF226239C3F00B840FD /* ValidationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationResult.swift; sourceTree = "<group>"; };
 		CAB16FF626239D0C00B840FD /* URLValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValidator.swift; sourceTree = "<group>"; };
 		CAB16FF92623A16400B840FD /* Validators+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validators+Injection.swift"; sourceTree = "<group>"; };
-		CABDBDA726241EF900A11FF3 /* Codable+CustomStringConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+CustomStringConvertible.swift"; sourceTree = "<group>"; };
 		CABDBDAA262421FD00A11FF3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		CABDBDAE262423B500A11FF3 /* HttpRequestConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestConfig.swift; sourceTree = "<group>"; };
 		CABDBDB326242B1400A11FF3 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 				CA3DCF672606BE0100414D0E /* Thread+Main.swift */,
 				CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */,
 				CAB16FDA2622FCA800B840FD /* String+ValidURL.swift */,
-				CABDBDA726241EF900A11FF3 /* Codable+CustomStringConvertible.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 			files = (
 				CA6B574B2622350400BEE52E /* UIFont+Sizes.swift in Sources */,
 				CABDBDAF262423B500A11FF3 /* HttpRequestConfig.swift in Sources */,
-				CABDBDA826241EF900A11FF3 /* Codable+CustomStringConvertible.swift in Sources */,
 				CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */,
 				CA6B56CF2621875F00BEE52E /* Colors.swift in Sources */,
 				CAB16FE526233EF200B840FD /* UserDefaultsWrapper.swift in Sources */,

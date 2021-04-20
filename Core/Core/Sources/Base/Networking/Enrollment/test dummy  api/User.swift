@@ -7,11 +7,11 @@
 
 import Foundation
 
-public struct Users: Codable, CustomStringConvertible {
+public struct Users: Codable {
     let data: [User]?
 }
 
-public struct User: Codable, CustomStringConvertible {
+public struct User: Codable {
     let id: String?
     let title: String?
     let firstName: String?
