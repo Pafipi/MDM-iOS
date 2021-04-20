@@ -10,7 +10,8 @@ import Foundation
 public enum LogIcon: String {
     case save = "[💾]"
     case push = "[📲]"
-    case network = "[🌐]"
+    case networkRequest = "[🌐] [↑]"
+    case networkResponse = "[🌐] [↓]"
     case keychain = "[🔑]"
     case event = "[🔔]"
     case debug = "[⚙️]"
