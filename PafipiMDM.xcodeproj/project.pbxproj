@@ -41,9 +41,11 @@
 		CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */; };
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB76562262F8FCE00953696 /* EnrollmentError.swift */; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
+		CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */; };
 		CAF901C6262E26200057CF5B /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF901C5262E26200057CF5B /* swiftgen.yml */; };
 /* End PBXBuildFile section */
 
@@ -85,7 +87,7 @@
 		CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56BD26217DC000BEE52E /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56C6262181D900BEE52E /* Root+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Injection.swift"; sourceTree = "<group>"; };
-		CA6B56CA262186E200BEE52E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../Core/Core/Resources/Colors.xcassets; sourceTree = "<group>"; };
+		CA6B56CA262186E200BEE52E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CA6B56D826218BA500BEE52E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CA6B56E026218BB000BEE52E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CA6B56E426218E7900BEE52E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		CAA5E4D526111BE5002557AD /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CAA5E4DF26111E7D002557AD /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
+		CAB76562262F8FCE00953696 /* EnrollmentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentError.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +123,9 @@
 		CACC370C25F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF2CD162630B2C4003DF959 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		CAF901C5262E26200057CF5B /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftgen.yml; path = PafipiMDM/swiftgen.yml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -179,6 +185,7 @@
 				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
 				CA6B56CA262186E200BEE52E /* Colors.xcassets */,
 				CA6B574D2622357F00BEE52E /* Fonts */,
+				CAF2CD192630B2C4003DF959 /* Localizations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 				CA6B56F12621D72D00BEE52E /* ViewController */,
 				CA6B56F32621D73600BEE52E /* ViewModel */,
 				CA6B56F52621D74900BEE52E /* Repository */,
+				CAB76566262F8FD200953696 /* Model */,
 			);
 			path = Enrollment;
 			sourceTree = "<group>";
@@ -382,6 +390,14 @@
 			path = Bootloader;
 			sourceTree = "<group>";
 		};
+		CAB76566262F8FD200953696 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAB76562262F8FCE00953696 /* EnrollmentError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CACC36E725F5261B00E51C29 = {
 			isa = PBXGroup;
 			children = (
@@ -430,9 +446,18 @@
 			path = PafipiMDMUITests;
 			sourceTree = "<group>";
 		};
+		CAF2CD192630B2C4003DF959 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				CAF2CD182630B2C4003DF959 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
 		CAF901D0262E27FD0057CF5B /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -616,7 +641,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#if which swiftgen >/dev/null; then\n#  swiftgen\n#else\n#  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\n#fi\n";
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -638,6 +663,7 @@
 				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */,
+				CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */,
 				CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
@@ -648,6 +674,7 @@
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 				CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */,
 				CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */,
+				CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */,
 				CA6B56FD2621D79800BEE52E /* EnrollmentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -688,6 +715,15 @@
 				CACC36FF25F5261C00E51C29 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CAF2CD182630B2C4003DF959 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAF2CD162630B2C4003DF959 /* en */,
+				CAF2CD172630B2C4003DF959 /* pl */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
