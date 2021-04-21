@@ -24,6 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+//        self.enableRemoteNotificationFeatures()
+//        self.forwardTokenToServer(token: deviceToken)
+    }
+     
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Remote notification support is unavailable due to error: \(error.localizedDescription)")
+//        self.disableRemoteNotificationFeatures()
+    }
 }
 
 // MARK: - ApplicationBootloaderDelegate
@@ -63,13 +75,13 @@ private extension AppDelegate {
     
     func getRemoteNotificationsDeniedAlert() -> UIAlertController {
         let alert = UIAlertController(
-            title: LocalizedStrings.RemoteNotifications.permissionDeniedAlertTitle,
-            message: LocalizedStrings.RemoteNotifications.permissionDeniedAlertMessage,
+            title: L10n.remoteNotificationsDeniedAlertTitle,
+            message: L10n.remoteNotificationsDeniedAlertMessage,
             preferredStyle: .alert
         )
         
         let settingsAction = UIAlertAction(
-            title: LocalizedStrings.Common.settings,
+            title: L10n.settings,
             style: .default) { _ in
                 self.openSystemSettings()
         }
@@ -81,8 +93,8 @@ private extension AppDelegate {
     
     func getRemoteNotificationsErrorAlert() -> UIAlertController {
         let alert = UIAlertController(
-            title: LocalizedStrings.RemoteNotifications.permissionErrorAlertTitle,
-            message: LocalizedStrings.RemoteNotifications.permissionErrorAlertMessage,
+            title: L10n.remoteNotificationsErrorAlertTitle,
+            message: L10n.remoteNotificationsErrorAlertMessage,
             preferredStyle: .alert
         )
         

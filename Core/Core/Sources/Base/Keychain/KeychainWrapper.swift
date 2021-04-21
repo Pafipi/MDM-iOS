@@ -9,6 +9,7 @@ import Foundation
 import KeychainAccess
 
 public class KeychainWrapper {
+    
     private static let sharedKeychain = Keychain()
     
     public static var deviceUUID: UUID? {

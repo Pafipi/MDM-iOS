@@ -54,7 +54,7 @@ final class EnrollmentView: UIView {
 private extension EnrollmentView {
     
     func setup() {
-        backgroundColor = Colors.Common.background
+        backgroundColor = Asset.Colors.Common.background.color
         setupScrollView()
         setupAppLogoImageView()
         setupServerAddressInput()
@@ -89,7 +89,7 @@ private extension EnrollmentView {
     
     func setupAppLogoImageView() {
         guard let scrollContentView = scrollContentView else { return }
-        let appLogo = UIImage(named: Constants.Image.appLogoName)
+        let appLogo = Asset.Assets.pafipiLogo.image
         let imageView = UIImageView(image: appLogo)
         scrollContentView.addSubview(imageView)
         imageView.contentMode = .scaleAspectFit
@@ -126,15 +126,16 @@ private extension EnrollmentView {
         guard let scrollContentView = scrollContentView,
               let serverAddressInput = serverAddressInput else { return }
         let enrollButton = Button(
-            title: LocalizedStrings.Enrollment.enrollButtonTitle,
+            title: L10n.enrollButtonTitle,
             font: .boldMainStyleFont(ofSize: .mediumLarge),
-            tintColor: Colors.Common.justWhite,
-            textColor: Colors.Common.justWhite,
-            backgroundColor: Colors.Common.tint,
+            tintColor: Asset.Colors.Common.justWhite.color,
+            textColor: Asset.Colors.Common.justWhite.color,
+            backgroundColor: Asset.Colors.Common.tint.color,
+            disabledColor: Asset.Colors.Common.disabledButtonColor.color,
             cornerRadius: Constants.CornerRadius.enrollButton,
             textAlignment: .center,
             accessibilityIdentifier: Accessibility.Identifiers.enrollButton,
-            accessibilityLabel: LocalizedStrings.Enrollment.enrollButtonTitle
+            accessibilityLabel: L10n.enrollButtonTitle
         )
         scrollContentView.addSubview(enrollButton)
         enrollButton.anchor(
@@ -157,12 +158,17 @@ private extension EnrollmentView {
     
     func createServerAddressInput() -> FormTextInput {
         let textField = TextField(
-            placeholder: LocalizedStrings.Enrollment.addressInputPlaceholder,
+            placeholder: L10n.addressInputPlaceholder,
             font: .regularMainStyleFont(ofSize: .medium),
+            cornerRadius: Constants.CornerRadius.serverAddressTextField,
             alignment: .left,
             returnButtonType: .done,
             autocapitalizationType: .none,
-            textColor: Colors.Common.black,
+            textColor: Asset.Colors.Common.black.color,
+            placeholderColor: Asset.Colors.Form.placeholder.color,
+            backgroundColor: Asset.Colors.Form.inputBackground.color,
+            borderWidth: Constants.Border.serverAddressTextFieldWidth,
+            borderColor: Asset.Colors.Common.tint.color,
             debounceContentChange: true,
             accessibilityIdentifier: Accessibility.Identifiers.enrollmentAddressTextField,
             accessibilityLabel: Accessibility.Labels.enrollmentAddressTextField
@@ -171,13 +177,15 @@ private extension EnrollmentView {
             text: "",
             font: .boldMainStyleFont(ofSize: .smallest),
             alignment: .left,
-            color: Colors.Common.error,
+            color: Asset.Colors.Common.error.color,
             accessibilityLabel: Accessibility.Identifiers.enrollmentAddressErrorLabel,
             accessibilityIdentifier: Accessibility.Labels.enrollmentAddressErrorLabel
         )
         let formInput = FormTextInput(
             textField: textField,
+            borderColor: Asset.Colors.Common.tint.color,
             errorLabel: errorLabel,
+            errorColor: Asset.Colors.Common.error.color,
             accessibilityIdentifier: Accessibility.Identifiers.enrollmentAddressInput,
             accessibilityLabel: Accessibility.Labels.enrollmentAddressInput
         )
@@ -190,7 +198,7 @@ private extension EnrollmentView {
 extension EnrollmentView: FormTextInputDelegate {
     
     func didBeginEditing(_ textField: TextField) {
-        textField.text = "https://"
+        textField.text = delegate?.getEnrollmentAddress()
     }
     
     func contentChanged(_ textField: TextField) {
@@ -218,9 +226,10 @@ private struct Constants {
     
     struct CornerRadius {
         static let enrollButton: CGFloat = 12.0
+        static let serverAddressTextField: CGFloat = 10.0
     }
     
-    struct Image {
-        static let appLogoName = "pafipi_logo"
+    struct Border {
+        static let serverAddressTextFieldWidth: CGFloat = 1.0
     }
 }

@@ -16,16 +16,21 @@ public final class TextField: UITextField {
     public var didEndEditing: TextFieldClosure?
     
     private var contentChangeDebouncer: Debouncer?
+    private var placeholderColor: UIColor = .darkGray
     
-    public init(text: String? = "",
-                placeholder: String? = "",
-                font: UIFont? = .regularMainStyleFont(ofSize: .medium),
+    public init(text: String = "",
+                placeholder: String = "",
+                font: UIFont = .regularMainStyleFont(ofSize: .medium),
+                cornerRadius: CGFloat = 0.0,
                 alignment: NSTextAlignment = .left,
                 returnButtonType: UIReturnKeyType = .done,
                 autocapitalizationType: UITextAutocapitalizationType = .sentences,
                 autocorrectionType: UITextAutocorrectionType = .no,
-                textColor: UIColor? = .black,
-                placeholderColor: UIColor? = .darkGray,
+                textColor: UIColor = .black,
+                placeholderColor: UIColor = .darkGray,
+                backgroundColor: UIColor = .white,
+                borderWidth: CGFloat = 0.0,
+                borderColor: UIColor = .black,
                 debounceContentChange: Bool = false,
                 accessibilityIdentifier: String? = "",
                 accessibilityLabel: String? = "") {
@@ -41,10 +46,11 @@ public final class TextField: UITextField {
         self.textColor = textColor
         self.accessibilityIdentifier = accessibilityIdentifier
         self.accessibilityLabel = accessibilityLabel
-        backgroundColor = Colors.Form.inputBackground
-        layer.borderWidth = Constants.Border.deselectedWidth
-        layer.borderColor = Constants.Border.color
-        layer.cornerRadius = Constants.cornerRadius
+        self.backgroundColor = backgroundColor
+        self.placeholderColor = placeholderColor
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.cgColor
+        layer.cornerRadius = cornerRadius
         layer.masksToBounds = true
         delegate = self
         
@@ -82,7 +88,7 @@ public final class TextField: UITextField {
     
     func setPlaceholder(placeholder: String?) {
         guard let placeholder = placeholder else { return }
-        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: Colors.Common.placeholder,
+        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: placeholderColor,
                                                          .font: UIFont.extraLightMainStyleFont(ofSize: .medium)]
         self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
     }
@@ -93,9 +99,9 @@ public final class TextField: UITextField {
         }
     }
     
-    func setBorderColor(_ color: UIColor?) {
+    func setBorderColor(_ color: UIColor) {
         UIView.animate(withDuration: Constants.TimeIntervals.borderColorChange) { [weak self] in
-            self?.layer.borderColor = (color ?? Colors.Common.tint).cgColor
+            self?.layer.borderColor = color.cgColor
         }
     }
 }
@@ -110,7 +116,6 @@ extension TextField: UITextFieldDelegate {
     }
     
     public func textFieldDidBeginEditing(_ textField: UITextField) {
-        setBorderWidth(Constants.Border.selectedWidth)
         didBeginEditing?(self)
     }
     
@@ -123,7 +128,6 @@ extension TextField: UITextFieldDelegate {
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        setBorderWidth(Constants.Border.deselectedWidth)
         guard reason == .committed else { return }
         didEndEditing?(self)
     }
@@ -137,17 +141,9 @@ private struct Constants {
         static let textField: UIEdgeInsets = .init(top: .zero, left: 8, bottom: .zero, right: 8)
     }
     
-    struct Border {
-        static let deselectedWidth: CGFloat = 1.0
-        static let selectedWidth: CGFloat = 2.0
-        static let color: CGColor = Colors.Common.tint.cgColor
-    }
-    
     struct TimeIntervals {
         static let borderWidthChange: TimeInterval = 0.2
         static let borderColorChange: TimeInterval = 0.2
         static let contentChangeDebounceDelay: TimeInterval = 1.0
     }
-    
-    static let cornerRadius: CGFloat = 8.0
 }

@@ -22,11 +22,10 @@ final class HomeCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     func start() {
         let controller = HomeViewController.create()
         controller.delegate = self
-        guard let homeIcon = UIImage(named: Constants.String.homeIconName) else { return }
         controller.tabBarItem = self.createTabBarItem(
-            title: Constants.String.homeTabTitle,
-            image: homeIcon,
-            selectedImage: homeIcon,
+            title: L10n.homeTabTitle,
+            image: Asset.Assets.Home.homeOutline.image,
+            selectedImage: Asset.Assets.Home.homeOutline.image,
             accessbilityIdentifier: Accessibility.Identifiers.homeTab,
             accessibilityLabel: Accessibility.Labels.homeTab
         )
@@ -38,17 +37,4 @@ final class HomeCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
 
 extension HomeCoordinator: HomeViewControllerDelegate {
     
-}
-
-// MARK: - Constants
-
-private extension HomeCoordinator {
-    
-    struct Constants {
-        
-        struct String {
-            static let homeTabTitle = "Home".localized()
-            static let homeIconName = "home_outline"
-        }
-    }
 }

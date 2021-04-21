@@ -14,7 +14,6 @@
 		CA3DCF752606BE7500414D0E /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCF742606BE7500414D0E /* Resolver-Dynamic */; };
 		CA3DCF762606BE7500414D0E /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCF742606BE7500414D0E /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CA3DCF89260755E800414D0E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF88260755E800414D0E /* Log.swift */; };
-		CA3DCFA72607A5C200414D0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA3DCFA92607A5C200414D0E /* Localizable.strings */; };
 		CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */; };
 		CA6B572B2621DC9C00BEE52E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57262621DC9C00BEE52E /* HttpRequest.swift */; };
 		CA6B57322621DF7E00BEE52E /* Data+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */; };
@@ -456,7 +455,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA3DCFA72607A5C200414D0E /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,15 +18,23 @@ public final class FormTextInput: UIView {
     public weak var delegate: FormTextInputDelegate?
     
     private let textField: TextField
+    private let textFieldBorderColor: UIColor
     private let errorLabel: Label
+    private let errorColor: UIColor
+    private let successColor: UIColor
     
     public init(textField: TextField,
+                borderColor: UIColor = .black,
                 errorLabel: Label,
+                errorColor: UIColor = .red,
+                successColor: UIColor = .green,
                 accessibilityIdentifier: String? = "",
                 accessibilityLabel: String? = "") {
         self.textField = textField
+        self.textFieldBorderColor = borderColor
         self.errorLabel = errorLabel
-        
+        self.errorColor = errorColor
+        self.successColor = successColor
         super.init(frame: .zero)
         self.accessibilityIdentifier = accessibilityIdentifier
         self.accessibilityLabel = accessibilityLabel
@@ -43,17 +51,17 @@ public final class FormTextInput: UIView {
     public func showError(with message: String) {
         errorLabel.text = message
         showErrorLabel()
-        textField.setBorderColor(Colors.Common.error)
+        textField.setBorderColor(errorColor)
     }
     
     public func hideError() {
         errorLabel.text = ""
         hideErrorLabel()
-        textField.setBorderColor(Colors.Common.tint)
+        textField.setBorderColor(textFieldBorderColor)
     }
     
     public func showSuccess() {
-        textField.setBorderColor(Colors.Common.success)
+        textField.setBorderColor(successColor)
     }
 }
 

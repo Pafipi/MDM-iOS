@@ -23,19 +23,19 @@ public class Button: UIView {
     }
     
     private var buttonBackgroundColor: UIColor?
+    private var buttonDisabledBackgroundColor: UIColor?
     private var buttonHandler: ButtonHandler?
     
     public init(title: String,
                 font: UIFont,
-                tintColor: UIColor? = nil,
-                textColor: UIColor? = nil,
-                backgroundColor: UIColor? = nil,
-                cornerRadius: CGFloat? = 3,
+                tintColor: UIColor = .blue,
+                textColor: UIColor = .white,
+                backgroundColor: UIColor = .blue,
+                disabledColor: UIColor = .lightGray,
+                cornerRadius: CGFloat = 0,
                 contentInsets: UIEdgeInsets = .zero,
                 textAlignment: NSTextAlignment = .natural,
                 image: UIImage? = nil,
-                width: CGFloat? = nil,
-                height: CGFloat? = nil,
                 borderWidth: CGFloat = .zero,
                 borderColor: CGColor? = nil,
                 accessibilityIdentifier: String,
@@ -52,7 +52,8 @@ public class Button: UIView {
         base.titleLabel?.font = font
         base.tintColor = tintColor
         base.backgroundColor = backgroundColor
-        base.layer.cornerRadius = cornerRadius ?? 0
+        
+        base.layer.cornerRadius = cornerRadius
         base.layer.masksToBounds = true
         base.contentEdgeInsets = contentInsets
         base.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -64,16 +65,9 @@ public class Button: UIView {
         base.titleLabel?.textColor = textColor
         
         buttonBackgroundColor = backgroundColor
+        buttonDisabledBackgroundColor = disabledColor
         addSubview(base)
         base.fillSuperview()
-        
-        if let width = width {
-            widthAnchor.constraint(equalToConstant: width).isActive = true
-        }
-        
-        if let height = height {
-            heightAnchor.constraint(equalToConstant: height).isActive = true
-        }
     }
     
     required init?(coder: NSCoder) {
@@ -103,7 +97,7 @@ public class Button: UIView {
     
     public func setUserInteractionEnabled(_ enabled: Bool) {
         base.isUserInteractionEnabled = enabled
-        base.backgroundColor = enabled ? buttonBackgroundColor : Colors.Common.disabledButtonColor
+        base.backgroundColor = enabled ? buttonBackgroundColor : buttonDisabledBackgroundColor
     }
 
     public func setTitleColor(_ color: UIColor?, for state: UIControl.State) {

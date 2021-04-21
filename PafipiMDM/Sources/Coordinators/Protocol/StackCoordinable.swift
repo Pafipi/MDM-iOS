@@ -15,7 +15,7 @@ protocol StackCoordinable: NSObject, UINavigationControllerDelegate, Coordinable
 
 // MARK: StackCoordinable Extension
 
-extension StackCoordinable where Self: Coordinable {
+extension StackCoordinable {
     
     func didFinish(_ child: StackCoordinable?) {
         guard let child = child else { return }

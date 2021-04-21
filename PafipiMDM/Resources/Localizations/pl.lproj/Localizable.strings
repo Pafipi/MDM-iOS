@@ -12,6 +12,10 @@
 "settings" = "Ustawienia";
 "error" = "Błąd!";
 
+// MARK: - Home
+
+"home_tab_title" = "Główna";
+
 // MARK: - Validation Errors
 
 "field_cannot_be_empty" = "To pole nie może być puste!";

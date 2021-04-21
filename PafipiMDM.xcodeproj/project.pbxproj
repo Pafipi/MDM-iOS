@@ -46,7 +46,9 @@
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
 		CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */; };
-		CAF901C6262E26200057CF5B /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF901C5262E26200057CF5B /* swiftgen.yml */; };
+		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
+		CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */; };
+		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +85,7 @@
 /* Begin PBXFileReference section */
 		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = PafipiMDM/README.md; sourceTree = SOURCE_ROOT; };
 		CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56BD26217DC000BEE52E /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56C6262181D900BEE52E /* Root+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Injection.swift"; sourceTree = "<group>"; };
@@ -126,7 +128,8 @@
 		CAF2CD162630B2C4003DF959 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
-		CAF901C5262E26200057CF5B /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = swiftgen.yml; path = PafipiMDM/swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,11 +161,10 @@
 		CA2998D42603FC8400A2748C /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				CACC370125F5261C00E51C29 /* Info.plist */,
 				CA2998E62604024800A2748C /* .gitignore */,
 				CA2998EC2604037300A2748C /* .swiftlint.yml */,
-				CACC370125F5261C00E51C29 /* Info.plist */,
-				CA2998F12604044400A2748C /* README.md */,
-				CAF901C5262E26200057CF5B /* swiftgen.yml */,
+				CAF2CD392630C59E003DF959 /* swiftgen.yml */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -421,6 +423,7 @@
 		CACC36F225F5261C00E51C29 /* PafipiMDM */ = {
 			isa = PBXGroup;
 			children = (
+				CA2998F12604044400A2748C /* README.md */,
 				CACC36F325F5261C00E51C29 /* AppDelegate.swift */,
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CA2998D52603FD0700A2748C /* Sources */,
@@ -458,6 +461,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */,
+				CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -584,9 +588,10 @@
 				CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */,
 				CA2998E72604024800A2748C /* .gitignore in Resources */,
 				CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */,
+				CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
 				CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */,
-				CAF901C6262E26200057CF5B /* swiftgen.yml in Resources */,
+				CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,6 +675,7 @@
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
 				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
 				CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */,
+				CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */,
 				CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */,
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 				CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */,

@@ -50,20 +50,50 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
             output?.onUrlValidationSuccess()
         }
     }
+    
+    func startEnrollment() {
+        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
+            return
+            
+        }
+        KeychainWrapper.mdmServerAddress = enrollmentAddress
+        repository.fetchDeviceUUID(with: deviceId)
+    }
+}
+
+// MARK: - EnrollmentRepositoryDelegate
+
+extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
+
+    func onGetDeviceUUIDSuccess(with uuid: String) {
+//        repository.putDeviceToken(forDeviceWith: <#T##String#>, deviceToken: <#T##String#>)
+    }
+    
+    func onGetDeviceUUIDFailure(with error: Error) {
+        
+    }
+    
+    func onPutDeviceTokenSuccess() {
+        
+    }
+    
+    func onPutDeviceTokenFailure(with error: Error) {
+        
+    }
 }
 
 // MARK: - Private methods
 
-private  extension EnrollmentViewModelImpl {
+private extension EnrollmentViewModelImpl {
     
     func getErrorMessage(for error: ValidationError) -> String {
         switch error {
         case .urlValidationError(let reason):
             switch reason {
             case .isEmpty:
-                return LocalizedStrings.ValidationError.emptyField
+                return L10n.fieldCannotBeEmpty
             case .isNotURL:
-                return LocalizedStrings.ValidationError.invalidURL
+                return L10n.invalidUrl
             }
         }
     }
