@@ -18,7 +18,17 @@ public class KeychainWrapper {
             return UUID(uuidString: value)
         }
         set {
-            sharedKeychain["deviceUUID"] = newValue?.uuidString
+            store(value: newValue?.uuidString, for: "deviceUUID")
+        }
+    }
+    
+    public static var mdmServerAddress: String? {
+        get {
+            guard let value = value(for: "mdmServerAddress") else { return "" }
+            return value
+        }
+        set {
+           store(value: newValue, for: "mdmServerAddress")
         }
     }
 }
@@ -27,8 +37,8 @@ public class KeychainWrapper {
 
 private extension KeychainWrapper {
     
-    static func store(value: String, for key: String) {
-        DispatchQueue.global().async {
+    static func store(value: String?, for key: String) {
+        DispatchQueue.global(qos: .background).async {
             sharedKeychain[key] = value
             log(.keychain, "Store value for key: \(key)")
         }

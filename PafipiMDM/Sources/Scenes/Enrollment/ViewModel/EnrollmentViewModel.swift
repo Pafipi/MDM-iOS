@@ -5,16 +5,17 @@
 //  Created by Piotr Fraccaro on 10/04/2021.
 //
 
-import Foundation
+import UIKit
 import Resolver
 import Core
 
 protocol EnrollmentViewModel {
     var output: EnrollmentViewModelOutput? { get set }
     
-    func viewDidLoad()
+    func getEnrollmentAddress() -> String
     func setEnrollmentAddress(_ address: String)
     func validateEnrollmentAddress()
+    func startEnrollment()
 }
 
 protocol EnrollmentViewModelOutput: AnyObject {
@@ -32,14 +33,18 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     
     private var enrollmentAddress: String = "https://"
     
-    func viewDidLoad() {
-        repository.fetchUsers()
+    init() {
+        repository.delegate = self
+    }
+    
+    func getEnrollmentAddress() -> String {
+        enrollmentAddress
     }
     
     func setEnrollmentAddress(_ address: String) {
         enrollmentAddress = address
     }
-    
+
     func validateEnrollmentAddress() {
         switch urlValidator.validate(enrollmentAddress) {
         case .invalid(let error):

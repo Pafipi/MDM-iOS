@@ -10,8 +10,10 @@ import Core
 
 protocol EnrollmentViewDelegate: AnyObject {
     
+    func getEnrollmentAddress() -> String
     func didChangeEnrollmentAddress(_ address: String)
     func didEndEditingEnrollmentAddress(_ address: String)
+    func didTapEnrollButton()
 }
 
 final class EnrollmentView: UIView {

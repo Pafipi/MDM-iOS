@@ -59,11 +59,19 @@ extension EnrollmentViewController: EnrollmentViewModelOutput {
         mainView?.updateEnrollmentAddressInput(isValid: false, message: message)
         mainView?.shouldEnableEnrollButton(false)
     }
+    
+    func onEnrollmentError(with message: String) {
+        
+    }
 }
 
 // MARK: - EnrollmentViewDelegate
 
 extension EnrollmentViewController: EnrollmentViewDelegate {
+    
+    func getEnrollmentAddress() -> String {
+        viewModel.getEnrollmentAddress()
+    }
     
     func didChangeEnrollmentAddress(_ address: String) {
         viewModel.setEnrollmentAddress(address)
@@ -72,5 +80,9 @@ extension EnrollmentViewController: EnrollmentViewDelegate {
     func didEndEditingEnrollmentAddress(_ address: String) {
         viewModel.setEnrollmentAddress(address)
         viewModel.validateEnrollmentAddress()
+    }
+
+    func didTapEnrollButton() {
+        viewModel.startEnrollment()
     }
 }
