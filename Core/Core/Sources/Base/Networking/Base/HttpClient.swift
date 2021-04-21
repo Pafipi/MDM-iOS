@@ -8,24 +8,28 @@
 import Foundation
 import Combine
 
-public typealias NetworkingResult<T: Codable> = AnyPublisher<T, Error>
+public typealias NetworkingResultPublisher<T: Codable> = AnyPublisher<T, Error>
 
 public struct EmptyResponse: Codable { }
 
 protocol HttpClient: AnyObject {
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResult<T>
+    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T>
 }
 
-final class HttpClientImpl: HttpClient {
+final class HttpClientImpl: NSObject, HttpClient {
     
     private let session: URLSession
     
-    init(session: URLSession = URLSession.shared) {
-        self.session = session
+    init(sessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
+         sessionDelegate: URLSessionDelegate) {
+        self.session = URLSession(configuration: sessionConfiguration,
+                                  delegate: sessionDelegate,
+                                  delegateQueue: OperationQueue())
+        super.init()
     }
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResult<T> {
+    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
         log(.networkRequest, "\(request.string)")
         
         guard var components = URLComponents(url: request.url, resolvingAgainstBaseURL: true) else {
@@ -64,7 +68,7 @@ final class HttpClientImpl: HttpClient {
 
 private extension URLSession.DataTaskPublisher {
     
-    func networkingResultPublisher<T: Codable>(for request: HttpRequest<T>) -> NetworkingResult<T> {
+    func networkingResultPublisher<T: Codable>(for request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
         tryMap { data, response in
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkingError.notHttpResponse
@@ -77,7 +81,7 @@ private extension URLSession.DataTaskPublisher {
             log(.networkResponse,
                 """
                 🟢 Request: \(request.string)
-                Response: \(data.prettyStringValue ?? "")
+                Response: \(data.stringValue ?? "")
                 """)
             
             return data

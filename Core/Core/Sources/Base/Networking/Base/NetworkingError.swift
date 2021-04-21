@@ -12,7 +12,6 @@ public enum NetworkingError: Error {
     case invalidURLParameters
     case invalidJSONParameters
     case notHttpResponse
-    case invalidEmptyResponse
     case apiError(code: Int, data: Data?)
 }
 
@@ -27,8 +26,6 @@ extension NetworkingError: LocalizedError {
         case .invalidJSONParameters:
             return "todo"
         case .notHttpResponse:
-            return "todo"
-        case .invalidEmptyResponse:
             return "todo"
         case .apiError(let code, let data):
             return "todo"
