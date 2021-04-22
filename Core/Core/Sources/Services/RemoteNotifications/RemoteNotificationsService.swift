@@ -24,7 +24,7 @@ public protocol RemoteNotificationsService {
     
     /// Requests authorization statuts and returns it as callback parameter
     /// - parameter completion: block of code invoked after getting authorizatiton status
-    func getAuthorizationStatus(completion: PushAuthStatusResponse)
+    func getAuthorizationStatus(completion: @escaping PushAuthStatusResponse)
     
     /// Requests user authorization for remote notifications with alerts, sounds and badges
     /// - parameter completion: escaping block of code invoked after getting user response for authorization request or api error
@@ -45,13 +45,15 @@ final class RemoteNotificationsServiceImpl: NSObject, RemoteNotificationsService
         notificationCenter.delegate = self
     }
     
-    func getAuthorizationStatus(completion: PushAuthStatusResponse) {
+    func getAuthorizationStatus(completion: @escaping PushAuthStatusResponse) {
         notificationCenter.getNotificationSettings { settings in
             let authStatus = settings.authorizationStatus
-            self.authorizationStatus = AuthorizationStatus(
+            let authorizationStatus = AuthorizationStatus(
                 rawValue: authStatus.rawValue
             ) ?? .notDetermined
-            log(.debug, "Current remote notification auth status: \(authStatus).")
+            self.authorizationStatus = authorizationStatus
+            log(.push, "Current remote notification authorization status: \(authorizationStatus).")
+            completion(authorizationStatus)
         }
     }
     
@@ -59,16 +61,16 @@ final class RemoteNotificationsServiceImpl: NSObject, RemoteNotificationsService
         guard authorizationStatus != .granted else { return }
         let options: UNAuthorizationOptions = [.alert, .sound, .badge]
         notificationCenter.requestAuthorization(options: options) { granted, error in
-            completion(granted, error)
             if granted {
                 self.authorizationStatus = .granted
-                log(.success, "User has authorized for remote notifications.")
+                log(.push, "User has authorized for remote notifications.")
             } else {
                 self.authorizationStatus = .denied
                 log(.warning, "User denied remote notifications authorization.")
             }
+            completion(granted, error)
         }
-        log(.debug, "User has been requested for remote notifications authorization.")
+        log(.push, "User has been requested for remote notifications authorization.")
     }
     
     func registerForRemoteNotifications() {
@@ -76,7 +78,7 @@ final class RemoteNotificationsServiceImpl: NSObject, RemoteNotificationsService
         Thread.asyncOnMain {
             UIApplication.shared.registerForRemoteNotifications()
         }
-        log(.debug, "App has requested for registration in remote notification service.")
+        log(.push, "App has requested for registration in remote notification service.")
     }
 }
 
