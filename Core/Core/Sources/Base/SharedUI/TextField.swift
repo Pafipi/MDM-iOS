@@ -35,9 +35,6 @@ public final class TextField: UITextField {
                 accessibilityIdentifier: String? = "",
                 accessibilityLabel: String? = "") {
         super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false
-        setPlaceholder(placeholder: placeholder)
-        setText(text: text)
         self.font = font
         self.textAlignment = alignment
         self.returnKeyType = returnButtonType
@@ -48,6 +45,8 @@ public final class TextField: UITextField {
         self.accessibilityLabel = accessibilityLabel
         self.backgroundColor = backgroundColor
         self.placeholderColor = placeholderColor
+        setPlaceholder(placeholder: placeholder)
+        setText(text: text)
         layer.borderWidth = borderWidth
         layer.borderColor = borderColor.cgColor
         layer.cornerRadius = cornerRadius
@@ -89,7 +88,7 @@ public final class TextField: UITextField {
     func setPlaceholder(placeholder: String?) {
         guard let placeholder = placeholder else { return }
         let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: placeholderColor,
-                                                         .font: UIFont.extraLightMainStyleFont(ofSize: .medium)]
+                                                         .font: UIFont.lightMainStyleFont(ofSize: .medium)]
         self.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: attributes)
     }
     
