@@ -50,11 +50,11 @@ private extension ApplicationBootloaderImpl {
         remoteNotificationsService.getAuthorizationStatus { status in
             switch status {
             case .granted:
-                remoteNotificationsService.registerForRemoteNotifications()
+                self.remoteNotificationsService.registerForRemoteNotifications()
             case .denied, .provisional, .ephemeral:
-                delegate?.didUserDeniedRemoteNotifications()
+                self.delegate?.didUserDeniedRemoteNotifications()
             default:
-                requestUserAuthForRemoteNotifications()
+                self.requestUserAuthForRemoteNotifications()
             }
         }
     }

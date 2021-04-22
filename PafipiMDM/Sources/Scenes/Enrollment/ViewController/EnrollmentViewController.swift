@@ -12,6 +12,11 @@ protocol EnrollmentViewControllerDelegate: AnyObject {
     
 }
 
+protocol EnrollmentViewControllerInput: AnyObject {
+    
+    func didRegisterForRemoteNotifications(with deviceToken: Data)
+}
+
 public final class EnrollmentViewController: UIViewController {
     
     weak var delegate: EnrollmentViewControllerDelegate?
@@ -32,8 +37,9 @@ public final class EnrollmentViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public class func create() -> EnrollmentViewController {
+    public class func create(with deviceToken: Data? = nil) -> EnrollmentViewController {
         let vc = EnrollmentViewController()
+        vc.viewModel.setDeviceToken(deviceToken)
         return vc
     }
     
@@ -84,5 +90,14 @@ extension EnrollmentViewController: EnrollmentViewDelegate {
 
     func didTapEnrollButton() {
         viewModel.startEnrollment()
+    }
+}
+
+// MARK: - EnrollmentViewControllerInput
+
+extension EnrollmentViewController: EnrollmentViewControllerInput {
+    
+    func didRegisterForRemoteNotifications(with deviceToken: Data) {
+        viewModel.setDeviceToken(deviceToken)
     }
 }

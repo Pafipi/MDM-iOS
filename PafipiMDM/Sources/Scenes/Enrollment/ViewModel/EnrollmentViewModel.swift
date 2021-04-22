@@ -14,6 +14,7 @@ protocol EnrollmentViewModel {
     
     func getEnrollmentAddress() -> String
     func setEnrollmentAddress(_ address: String)
+    func setDeviceToken(_ token: Data?)
     func validateEnrollmentAddress()
     func startEnrollment()
 }
@@ -22,6 +23,7 @@ protocol EnrollmentViewModelOutput: AnyObject {
     
     func onUrlValidationSuccess()
     func onUrlValidationError(with message: String)
+    func onEnrollmentError(with message: String)
 }
 
 final class EnrollmentViewModelImpl: EnrollmentViewModel {
@@ -32,6 +34,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var urlValidator: URLValidator
     
     private var enrollmentAddress: String = "https://"
+    private var deviceToken: Data?
     
     init() {
         repository.delegate = self
@@ -43,6 +46,11 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     
     func setEnrollmentAddress(_ address: String) {
         enrollmentAddress = address
+    }
+    
+    func setDeviceToken(_ token: Data?) {
+        print(token ?? "")
+        deviceToken = token
     }
 
     func validateEnrollmentAddress() {
@@ -59,7 +67,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     func startEnrollment() {
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
             return
-            
+
         }
         KeychainWrapper.mdmServerAddress = enrollmentAddress
         repository.fetchDeviceUUID(with: deviceId)
@@ -71,7 +79,10 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
 extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
 
     func onGetDeviceUUIDSuccess(with uuid: String) {
-//        repository.putDeviceToken(forDeviceWith: <#T##String#>, deviceToken: <#T##String#>)
+        guard let deviceToken = deviceToken else {
+            return
+        }
+//        repository.putDeviceToken(<#T##String#>, forDeviceWith: <#T##String#>)
     }
     
     func onGetDeviceUUIDFailure(with error: Error) {
