@@ -49,6 +49,8 @@
 		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
 		CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */; };
 		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
+		CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; };
+		CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */,
+				CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +117,7 @@
 		CAA5E4D12610929E002557AD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		CAA5E4D526111BE5002557AD /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CAA5E4DF26111E7D002557AD /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
+		CAAA686626319E8C00DFFF06 /* PafipiMDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PafipiMDM.entitlements; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CAB76562262F8FCE00953696 /* EnrollmentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentError.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +134,7 @@
 		CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		CAF2CD4D26319AFD003DF959 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */,
+				CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +413,7 @@
 				CACC370925F5261C00E51C29 /* PafipiMDMTests */,
 				CACC371425F5261C00E51C29 /* PafipiMDMUITests */,
 				CACC36F125F5261C00E51C29 /* Products */,
+				CAF2CD4C26319AFD003DF959 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -423,6 +430,7 @@
 		CACC36F225F5261C00E51C29 /* PafipiMDM */ = {
 			isa = PBXGroup;
 			children = (
+				CAAA686626319E8C00DFFF06 /* PafipiMDM.entitlements */,
 				CA2998F12604044400A2748C /* README.md */,
 				CACC36F325F5261C00E51C29 /* AppDelegate.swift */,
 				CA2998D42603FC8400A2748C /* Configuration */,
@@ -455,6 +463,14 @@
 				CAF2CD182630B2C4003DF959 /* Localizable.strings */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		CAF2CD4C26319AFD003DF959 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAF2CD4D26319AFD003DF959 /* Core.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CAF901D0262E27FD0057CF5B /* Generated */ = {
@@ -856,8 +872,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PafipiMDM/PafipiMDM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CK2H346J6A;
+				DEVELOPMENT_TEAM = 7RUQF55K7J;
 				INFOPLIST_FILE = PafipiMDM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -877,8 +894,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PafipiMDM/PafipiMDM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CK2H346J6A;
+				DEVELOPMENT_TEAM = 7RUQF55K7J;
 				INFOPLIST_FILE = PafipiMDM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

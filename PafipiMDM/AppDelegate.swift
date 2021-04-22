@@ -12,6 +12,7 @@ import Core
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let applicationBootloader = ApplicationBootloaderImpl()
+    private let rootCoordinator = RootCoordinator()
     
     var window: UIWindow?
 
@@ -20,21 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         configureWindow()
         applicationBootloader.delegate = self
-//        applicationBootloader?.boot()
+        applicationBootloader.boot()
         
         return true
     }
     
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-//        self.enableRemoteNotificationFeatures()
-//        self.forwardTokenToServer(token: deviceToken)
+        rootCoordinator.didRegisterForRemoteNotifications(with: deviceToken)
     }
      
     func application(_ application: UIApplication,
                      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Remote notification support is unavailable due to error: \(error.localizedDescription)")
-//        self.disableRemoteNotificationFeatures()
+        showRemoteNotificationsErrorAlert()
     }
 }
 
@@ -57,7 +56,6 @@ private extension AppDelegate {
     
     func configureWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootCoordinator = RootCoordinator()
         rootCoordinator.start()
         window?.rootViewController = rootCoordinator.rootViewController
         window?.makeKeyAndVisible()
