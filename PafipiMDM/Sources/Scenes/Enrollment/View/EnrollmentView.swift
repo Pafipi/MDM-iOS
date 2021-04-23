@@ -31,7 +31,7 @@ final class EnrollmentView: UIView {
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
         self.delegate = delegate
-        setup()
+        setupLayout()
     }
     
     @available(*, unavailable)
@@ -44,11 +44,7 @@ final class EnrollmentView: UIView {
     }
     
     func updateEnrollmentAddressInput(isValid: Bool, message: String? = nil) {
-        if isValid {
-            serverAddressInput.hideError()
-        } else {
-            serverAddressInput.showError(with: message ?? "")
-        }
+        isValid ? serverAddressInput.hideError() : serverAddressInput.showError(with: message ?? "")
     }
 }
 
@@ -56,15 +52,15 @@ final class EnrollmentView: UIView {
 
 private extension EnrollmentView {
     
-    func setup() {
+    func setupLayout() {
         backgroundColor = Asset.Colors.Common.background.color
-        setupScrollView()
-        setupAppLogoImageView()
-        setupServerAddressInput()
-        setupEnrollButton()
+        setupScrollViewLayout()
+        setupAppLogoImageViewLayout()
+        setupServerAddressInputLayout()
+        setupEnrollButtonLayout()
     }
     
-    func setupScrollView() {
+    func setupScrollViewLayout() {
         addSubview(scrollView)
         scrollView.anchor(
             leading: leadingAnchor,
@@ -84,7 +80,7 @@ private extension EnrollmentView {
             .isActive = true
     }
     
-    func setupAppLogoImageView() {
+    func setupAppLogoImageViewLayout() {
         scrollContentView.addSubview(appLogoImageView)
         appLogoImageView.anchor(
             leading: scrollContentView.leadingAnchor,
@@ -95,7 +91,7 @@ private extension EnrollmentView {
         appLogoImageView.aspectRatio(Constants.Size.appLogoAspectRatio)
     }
     
-    func setupServerAddressInput() {
+    func setupServerAddressInputLayout() {
         scrollContentView.addSubview(serverAddressInput)
         serverAddressInput.anchor(
             leading: scrollContentView.leadingAnchor,
@@ -106,7 +102,7 @@ private extension EnrollmentView {
         serverAddressInput.delegate = self
     }
     
-    func setupEnrollButton() {
+    func setupEnrollButtonLayout() {
         scrollContentView.addSubview(enrollButton)
         enrollButton.anchor(
             leading: scrollContentView.leadingAnchor,
