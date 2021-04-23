@@ -88,7 +88,7 @@
 /* Begin PBXFileReference section */
 		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
-		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = PafipiMDM/README.md; sourceTree = SOURCE_ROOT; };
+		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56BD26217DC000BEE52E /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56C6262181D900BEE52E /* Root+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Injection.swift"; sourceTree = "<group>"; };
