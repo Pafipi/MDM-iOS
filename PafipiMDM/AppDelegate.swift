@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
     func application(_ application: UIApplication,
                      didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        showRemoteNotificationsErrorAlert()
+        rootCoordinator.showRemoteNotificationsErrorAlert()
     }
 }
 
@@ -42,11 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: ApplicationBootloaderDelegate {
     
     func didUserDeniedRemoteNotifications() {
-        showRemoteNotificationsDeniedAlert()
+        rootCoordinator.showRemoteNotificationsDeniedAlert()
     }
     
     func didFailToRegisterForRemoteNotifications(error: Error?) {
-        showRemoteNotificationsErrorAlert()
+        rootCoordinator.showRemoteNotificationsErrorAlert()
     }
 }
 
@@ -59,50 +59,5 @@ private extension AppDelegate {
         rootCoordinator.start()
         window?.rootViewController = rootCoordinator.rootViewController
         window?.makeKeyAndVisible()
-    }
-    
-    func showRemoteNotificationsDeniedAlert() {
-        let alert = getRemoteNotificationsDeniedAlert()
-        window?.rootViewController?.present(alert, animated: true)
-    }
-    
-    func showRemoteNotificationsErrorAlert() {
-        let alert = getRemoteNotificationsErrorAlert()
-        window?.rootViewController?.present(alert, animated: true)
-    }
-    
-    func getRemoteNotificationsDeniedAlert() -> UIAlertController {
-        let alert = UIAlertController(
-            title: L10n.remoteNotificationsDeniedAlertTitle,
-            message: L10n.remoteNotificationsDeniedAlertMessage,
-            preferredStyle: .alert
-        )
-        
-        let settingsAction = UIAlertAction(
-            title: L10n.settings,
-            style: .default) { _ in
-                self.openSystemSettings()
-        }
-        
-        alert.addAction(settingsAction)
-        
-        return alert
-    }
-    
-    func getRemoteNotificationsErrorAlert() -> UIAlertController {
-        let alert = UIAlertController(
-            title: L10n.remoteNotificationsErrorAlertTitle,
-            message: L10n.remoteNotificationsErrorAlertMessage,
-            preferredStyle: .alert
-        )
-        
-        return alert
-    }
-    
-    func openSystemSettings() {
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-              UIApplication.shared.canOpenURL(settingsUrl) else { return }
-        
-        UIApplication.shared.open(settingsUrl)
     }
 }

@@ -21,21 +21,16 @@ protocol ApplicationBootloader {
 }
 
 protocol ApplicationBootloaderDelegate: AnyObject {
+    
     func didUserDeniedRemoteNotifications()
     func didFailToRegisterForRemoteNotifications(error: Error?)
 }
 
-final class ApplicationBootloaderImpl {
+final class ApplicationBootloaderImpl: ApplicationBootloader {
     
     weak var delegate: ApplicationBootloaderDelegate?
     
     @LazyInjected private var remoteNotificationsService: RemoteNotificationsService
-    
-}
-
-// MARK: - ApplicationBootloader
-
-extension ApplicationBootloaderImpl: ApplicationBootloader {
     
     func boot() {
         registerForRemoteNotifications()

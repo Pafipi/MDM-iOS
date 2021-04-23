@@ -51,6 +51,51 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         self.deviceToken = deviceToken
         enrollmentCoordinatorInput?.didRegisterForRemoteNotifications(with: deviceToken)
     }
+    
+    func showRemoteNotificationsDeniedAlert() {
+        let alert = getRemoteNotificationsDeniedAlert()
+        rootViewController?.present(alert, animated: true)
+    }
+    
+    func showRemoteNotificationsErrorAlert() {
+        let alert = getRemoteNotificationsErrorAlert()
+        rootViewController?.present(alert, animated: true)
+    }
+    
+    func getRemoteNotificationsDeniedAlert() -> UIAlertController {
+        let alert = UIAlertController(
+            title: L10n.remoteNotificationsDeniedAlertTitle,
+            message: L10n.remoteNotificationsDeniedAlertMessage,
+            preferredStyle: .alert
+        )
+        
+        let settingsAction = UIAlertAction(
+            title: L10n.settings,
+            style: .default) { _ in
+                self.openSystemSettings()
+        }
+        
+        alert.addAction(settingsAction)
+        
+        return alert
+    }
+    
+    func getRemoteNotificationsErrorAlert() -> UIAlertController {
+        let alert = UIAlertController(
+            title: L10n.remoteNotificationsErrorAlertTitle,
+            message: L10n.remoteNotificationsErrorAlertMessage,
+            preferredStyle: .alert
+        )
+        
+        return alert
+    }
+    
+    func openSystemSettings() {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+              UIApplication.shared.canOpenURL(settingsUrl) else { return }
+        
+        UIApplication.shared.open(settingsUrl)
+    }
 }
 
 // MARK: - EnrollmentViewControllerDelegate
