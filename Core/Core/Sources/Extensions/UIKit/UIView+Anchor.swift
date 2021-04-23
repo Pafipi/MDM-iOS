@@ -42,6 +42,12 @@ public extension UIView {
         let mappedConstraints = constraints.compactMap { $0 }
         NSLayoutConstraint.activate(mappedConstraints)
     }
+    
+    func aspectRatio(_ ratio: CGFloat) {
+        widthAnchor
+            .constraint(equalTo: heightAnchor, multiplier: ratio)
+            .isActive = true
+    }
 }
 
 private extension UIView {

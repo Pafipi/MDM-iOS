@@ -9,7 +9,7 @@ import UIKit
 
 public final class Label: UILabel {
 
-    public init(text: String,
+    public init(text: String = "",
                 textStyle: UIFont.TextStyle = .body,
                 alignment: NSTextAlignment = .center,
                 color: UIColor? = nil,
@@ -31,8 +31,8 @@ public final class Label: UILabel {
         
     }
 
-    public init(text: String,
-                font: UIFont,
+    public init(text: String = "",
+                font: UIFont = .systemFont(ofSize: 17),
                 alignment: NSTextAlignment = .center,
                 color: UIColor? = nil,
                 backgroundColor: UIColor? = .clear,

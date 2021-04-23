@@ -20,12 +20,13 @@ final class EnrollmentView: UIView {
     
     weak var delegate: EnrollmentViewDelegate?
     
-    private var scrollView: UIScrollView?
-    private var scrollContentView: UIView?
-    private var appLogoImageView: UIImageView?
-    private var serverAddressInput: FormTextInput?
-    private var enrollButton: Button?
-    private var keyboardScrollHelper: KeyboardScrollHelper?
+    private lazy var scrollView = UIScrollView()
+    private lazy var scrollContentView = UIView()
+    private lazy var appLogoImageView = createAppLogoImageView()
+    private lazy var serverAddressInput = createServerAddressInput()
+    private lazy var enrollButton = createEnrollButton()
+    private lazy var keyboardScrollHelper = KeyboardScrollHelper(scrollView: scrollView,
+                                                                 viewToBeShown: serverAddressInput)
     
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
@@ -39,14 +40,14 @@ final class EnrollmentView: UIView {
     }
     
     func shouldEnableEnrollButton(_ enabled: Bool) {
-        enrollButton?.setUserInteractionEnabled(enabled)
+        enrollButton.setUserInteractionEnabled(enabled)
     }
     
     func updateEnrollmentAddressInput(isValid: Bool, message: String? = nil) {
         if isValid {
-            serverAddressInput?.hideError()
+            serverAddressInput.hideError()
         } else {
-            serverAddressInput?.showError(with: message ?? "")
+            serverAddressInput.showError(with: message ?? "")
         }
     }
 }
@@ -61,11 +62,9 @@ private extension EnrollmentView {
         setupAppLogoImageView()
         setupServerAddressInput()
         setupEnrollButton()
-        setupKeyboardScrollHelper()
     }
     
     func setupScrollView() {
-        let scrollView = UIScrollView()
         addSubview(scrollView)
         scrollView.anchor(
             leading: leadingAnchor,
@@ -73,9 +72,6 @@ private extension EnrollmentView {
             top: topAnchor,
             bottom: bottomAnchor
         )
-        self.scrollView = scrollView
-        
-        let scrollContentView = UIView()
         scrollView.addSubview(scrollContentView)
         scrollContentView.anchor(
             leading: scrollView.leadingAnchor,
@@ -86,48 +82,54 @@ private extension EnrollmentView {
         scrollContentView.widthAnchor
             .constraint(equalTo: scrollView.widthAnchor)
             .isActive = true
-        self.scrollContentView = scrollContentView
     }
     
     func setupAppLogoImageView() {
-        guard let scrollContentView = scrollContentView else { return }
-        let appLogo = Asset.Assets.pafipiLogo.image
-        let imageView = UIImageView(image: appLogo)
-        scrollContentView.addSubview(imageView)
-        imageView.contentMode = .scaleAspectFit
-        imageView.accessibilityIdentifier = Accessibility.Identifiers.appLogoImageView
-        imageView.accessibilityLabel = Accessibility.Labels.appLogoImageView
-        imageView.anchor(
+        scrollContentView.addSubview(appLogoImageView)
+        appLogoImageView.anchor(
             leading: scrollContentView.leadingAnchor,
             trailing: scrollContentView.trailingAnchor,
             top: scrollContentView.topAnchor,
             padding: Constants.Padding.appLogoImageView
         )
-        imageView.heightAnchor
-            .constraint(equalTo: imageView.widthAnchor, multiplier: 1.0)
-            .isActive = true
-        self.appLogoImageView = imageView
+        appLogoImageView.aspectRatio(Constants.Size.appLogoAspectRatio)
     }
     
     func setupServerAddressInput() {
-        guard let scrollContentView = scrollContentView,
-              let imageView = appLogoImageView else { return }
-        let serverAddressInput = createServerAddressInput()
         scrollContentView.addSubview(serverAddressInput)
         serverAddressInput.anchor(
             leading: scrollContentView.leadingAnchor,
             trailing: scrollContentView.trailingAnchor,
-            top: imageView.bottomAnchor,
+            top: appLogoImageView.bottomAnchor,
             padding: Constants.Padding.serverAddressInput
         )
         serverAddressInput.delegate = self
-        self.serverAddressInput = serverAddressInput
     }
     
     func setupEnrollButton() {
-        guard let scrollContentView = scrollContentView,
-              let serverAddressInput = serverAddressInput else { return }
-        let enrollButton = Button(
+        scrollContentView.addSubview(enrollButton)
+        enrollButton.anchor(
+            leading: scrollContentView.leadingAnchor,
+            trailing: scrollContentView.trailingAnchor,
+            top: serverAddressInput.bottomAnchor,
+            bottom: scrollContentView.bottomAnchor,
+            padding: Constants.Padding.enrollButton,
+            size: Constants.Size.enrollButton
+        )
+        enrollButton.setUserInteractionEnabled(false)
+    }
+    
+    func createAppLogoImageView() -> UIImageView {
+        let appLogo = Asset.Assets.pafipiLogo.image
+        let imageView = UIImageView(image: appLogo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.accessibilityIdentifier = Accessibility.Identifiers.appLogoImageView
+        imageView.accessibilityLabel = Accessibility.Labels.appLogoImageView
+        return imageView
+    }
+    
+    func createEnrollButton() -> Button {
+        Button(
             title: L10n.enrollButtonTitle,
             font: .boldMainStyleFont(ofSize: .mediumLarge),
             tintColor: Asset.Colors.Common.justWhite.color,
@@ -139,23 +141,6 @@ private extension EnrollmentView {
             accessibilityIdentifier: Accessibility.Identifiers.enrollButton,
             accessibilityLabel: L10n.enrollButtonTitle
         )
-        scrollContentView.addSubview(enrollButton)
-        enrollButton.anchor(
-            leading: scrollContentView.leadingAnchor,
-            trailing: scrollContentView.trailingAnchor,
-            top: serverAddressInput.bottomAnchor,
-            bottom: scrollContentView.bottomAnchor,
-            padding: Constants.Padding.enrollButton,
-            size: Constants.Size.enrollButton
-        )
-        enrollButton.setUserInteractionEnabled(false)
-        self.enrollButton = enrollButton
-    }
-    
-    func setupKeyboardScrollHelper() {
-        guard let scrollView = scrollView,
-              let serverAddressInput = serverAddressInput else { return }
-        keyboardScrollHelper = KeyboardScrollHelper(scrollView: scrollView, viewToBeShown: serverAddressInput)
     }
     
     func createServerAddressInput() -> FormTextInput {
@@ -176,7 +161,6 @@ private extension EnrollmentView {
             accessibilityLabel: Accessibility.Labels.enrollmentAddressTextField
         )
         let errorLabel = Label(
-            text: "",
             font: .boldMainStyleFont(ofSize: .smallest),
             alignment: .left,
             color: Asset.Colors.Common.error.color,
@@ -224,6 +208,7 @@ private struct Constants {
     
     struct Size {
         static let enrollButton: CGSize = .init(width: .zero, height: 50)
+        static let appLogoAspectRatio: CGFloat = 1.0
     }
     
     struct CornerRadius {
