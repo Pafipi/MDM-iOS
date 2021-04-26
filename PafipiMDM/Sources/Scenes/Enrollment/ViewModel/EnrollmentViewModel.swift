@@ -69,7 +69,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
             return
 
         }
-        KeychainWrapper.mdmServerAddress = enrollmentAddress
+        UserDefaults.mdmServerAddress = enrollmentAddress
         repository.fetchDeviceUUID(with: deviceId)
     }
 }
@@ -82,7 +82,7 @@ extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
         guard let deviceToken = deviceToken else {
             return
         }
-//        repository.putDeviceToken(<#T##String#>, forDeviceWith: <#T##String#>)
+        repository.putDeviceToken(deviceToken, forDeviceWith: uuid)
     }
     
     func onGetDeviceUUIDFailure(with error: Error) {

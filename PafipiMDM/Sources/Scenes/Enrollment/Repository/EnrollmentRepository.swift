@@ -14,7 +14,7 @@ protocol EnrollmentRepository {
     var delegate: EnrollmentRepositoryDelegate? { get set }
     
     func fetchDeviceUUID(with deviceId: String)
-    func putDeviceToken(_ deviceToken: String, forDeviceWith deviceUUID: String)
+    func putDeviceToken(_ deviceToken: Data, forDeviceWith deviceUUID: String)
 }
 
 protocol EnrollmentRepositoryDelegate: AnyObject {
@@ -52,7 +52,7 @@ final class EnrollmentRepositoryImpl: EnrollmentRepository {
             .store(in: &disposeBag)
     }
     
-    func putDeviceToken(_ deviceToken: String, forDeviceWith deviceUUID: String) {
+    func putDeviceToken(_ deviceToken: Data, forDeviceWith deviceUUID: String) {
         networking.putDeviceToken(deviceToken, forDeviceWith: deviceUUID)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)

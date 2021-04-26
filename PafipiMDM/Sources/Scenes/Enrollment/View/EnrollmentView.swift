@@ -25,12 +25,12 @@ final class EnrollmentView: UIView {
     private lazy var appLogoImageView = createAppLogoImageView()
     private lazy var serverAddressInput = createServerAddressInput()
     private lazy var enrollButton = createEnrollButton()
-    private lazy var keyboardScrollHelper = KeyboardScrollHelper(scrollView: scrollView,
-                                                                 viewToBeShown: serverAddressInput)
+    private var keyboardScrollHelper: KeyboardScrollHelper?
     
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
         self.delegate = delegate
+        keyboardScrollHelper = createKeyboardScrollHelper()
         setupLayout()
     }
     
@@ -172,6 +172,10 @@ private extension EnrollmentView {
             accessibilityLabel: Accessibility.Labels.enrollmentAddressInput
         )
         return formInput
+    }
+    
+    func createKeyboardScrollHelper() -> KeyboardScrollHelper {
+        KeyboardScrollHelper(scrollView: scrollView, viewToBeShown: serverAddressInput)
     }
 }
 

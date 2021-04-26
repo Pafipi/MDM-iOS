@@ -53,13 +53,19 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     }
     
     func showRemoteNotificationsDeniedAlert() {
-        let alert = getRemoteNotificationsDeniedAlert()
-        rootViewController?.present(alert, animated: true)
+        Thread.asyncOnMain { [weak self] in
+            guard let self = self else { return }
+            let alert = self.getRemoteNotificationsDeniedAlert()
+            self.rootViewController?.present(alert, animated: true)
+        }
     }
     
     func showRemoteNotificationsErrorAlert() {
-        let alert = getRemoteNotificationsErrorAlert()
-        rootViewController?.present(alert, animated: true)
+        Thread.asyncOnMain { [weak self] in
+            guard let self = self else { return }
+            let alert = self.getRemoteNotificationsErrorAlert()
+            self.rootViewController?.present(alert, animated: true)
+        }
     }
     
     func getRemoteNotificationsDeniedAlert() -> UIAlertController {
