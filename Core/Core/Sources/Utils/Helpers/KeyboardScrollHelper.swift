@@ -40,17 +40,17 @@ public final class KeyboardScrollHelper {
 private extension KeyboardScrollHelper {
     
     func addObservers() {
-        NotificationCenterWrapper.shared.addObserver(observer: self,
-                                                     selector: #selector(onKeyboardWillShow(_:)),
-                                                     name: .keyboardWillShow)
-        NotificationCenterWrapper.shared.addObserver(observer: self,
-                                                     selector: #selector(onKeyboardWillHide),
-                                                     name: .keyboardWillHide)
+        NotificationCenterHelper.shared.addObserver(observer: self,
+                                                    selector: #selector(onKeyboardWillShow(_:)),
+                                                    name: .keyboardWillShow)
+        NotificationCenterHelper.shared.addObserver(observer: self,
+                                                    selector: #selector(onKeyboardWillHide),
+                                                    name: .keyboardWillHide)
     }
     
     func removeObservers() {
-        NotificationCenterWrapper.shared.removeObserver(observer: self, name: .keyboardWillShow)
-        NotificationCenterWrapper.shared.removeObserver(observer: self, name: .keyboardWillHide)
+        NotificationCenterHelper.shared.removeObserver(observer: self, name: .keyboardWillShow)
+        NotificationCenterHelper.shared.removeObserver(observer: self, name: .keyboardWillHide)
     }
 }
 
