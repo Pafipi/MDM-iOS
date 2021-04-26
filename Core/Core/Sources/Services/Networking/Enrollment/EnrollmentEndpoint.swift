@@ -37,10 +37,10 @@ struct EnrollmentEndpoint {
 extension EnrollmentEndpoint {
     
     static var getDeviceUUID: Self {
-        return EnrollmentEndpoint(host: KeychainWrapper.mdmServerAddress ?? "", path: "/device")
+        return EnrollmentEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device")
     }
     
     static var putDeviceToken: Self {
-        return EnrollmentEndpoint(host: KeychainWrapper.mdmServerAddress ?? "", path: "/device/token")
+        return EnrollmentEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/token")
     }
 }

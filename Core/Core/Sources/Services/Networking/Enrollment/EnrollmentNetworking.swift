@@ -14,7 +14,7 @@ public typealias DeviceUUIDPublisher = NetworkingResultPublisher<String>
 public protocol EnrollmentNetworking {
     
     func fetchDeviceUUID(with deviceId: String) -> DeviceUUIDPublisher
-    func putDeviceToken(_ deviceToken: String,
+    func putDeviceToken(_ deviceToken: Data,
                         forDeviceWith deviceUUID: String) -> NetworkingResultPublisher<Bool>
 }
 
@@ -33,7 +33,7 @@ final class EnrollmentNetworkingImpl: BaseNetworking, EnrollmentNetworking {
         return perform(request)
     }
     
-    func putDeviceToken(_ deviceToken: String,
+    func putDeviceToken(_ deviceToken: Data,
                         forDeviceWith deviceUUID: String) -> NetworkingResultPublisher<Bool> {
         let endpoint = EnrollmentEndpoint.putDeviceToken
         let config = HttpRequestConfig(parameters: ["deviceUUID": deviceUUID,
