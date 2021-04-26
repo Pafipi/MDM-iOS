@@ -42,12 +42,11 @@
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB76562262F8FCE00953696 /* EnrollmentError.swift */; };
+		CAC9F0772636CD0400976CF8 /* ConfigurationProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC9F0762636CD0400976CF8 /* ConfigurationProfileViewController.swift */; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
-		CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */; };
 		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
-		CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */; };
 		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
 		CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; };
 		CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -121,6 +120,7 @@
 		CAAA686626319E8C00DFFF06 /* PafipiMDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PafipiMDM.entitlements; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CAB76562262F8FCE00953696 /* EnrollmentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentError.swift; sourceTree = "<group>"; };
+		CAC9F0762636CD0400976CF8 /* ConfigurationProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationProfileViewController.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,9 +131,7 @@
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
-		CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CAF2CD4D26319AFD003DF959 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -338,6 +336,7 @@
 				CAA5E4D926111C33002557AD /* Root */,
 				CA6B56D426218B4B00BEE52E /* Home */,
 				CA6B56F02621D72300BEE52E /* Enrollment */,
+				CAC9F0712636CBDC00976CF8 /* ConfigurationProfile */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -406,6 +405,38 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CAC9F0712636CBDC00976CF8 /* ConfigurationProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CAC9F0722636CC2800976CF8 /* View */,
+				CAC9F0732636CC5700976CF8 /* ViewController */,
+				CAC9F0742636CC6400976CF8 /* ViewModel */,
+			);
+			path = ConfigurationProfile;
+			sourceTree = "<group>";
+		};
+		CAC9F0722636CC2800976CF8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CAC9F0732636CC5700976CF8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CAC9F0762636CD0400976CF8 /* ConfigurationProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CAC9F0742636CC6400976CF8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		CACC36E725F5261B00E51C29 = {
 			isa = PBXGroup;
 			children = (
@@ -436,7 +467,6 @@
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D62603FD2B00A2748C /* Resources */,
-				CAF901D0262E27FD0057CF5B /* Generated */,
 			);
 			path = PafipiMDM;
 			sourceTree = "<group>";
@@ -471,15 +501,6 @@
 				CAF2CD4D26319AFD003DF959 /* Core.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CAF901D0262E27FD0057CF5B /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */,
-				CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,6 +697,7 @@
 				CA6B56ED2621D6F300BEE52E /* EnrollmentCoordinator.swift in Sources */,
 				CAA5E4D626111BE5002557AD /* RootTabBarController.swift in Sources */,
 				CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */,
+				CAC9F0772636CD0400976CF8 /* ConfigurationProfileViewController.swift in Sources */,
 				CAA5E4D22610929E002557AD /* HomeCoordinator.swift in Sources */,
 				CA6B56E526218E7900BEE52E /* HomeView.swift in Sources */,
 				CA6B56C7262181D900BEE52E /* Root+Injection.swift in Sources */,
@@ -684,14 +706,12 @@
 				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */,
-				CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */,
 				CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
 				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
 				CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */,
-				CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */,
 				CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */,
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 				CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */,

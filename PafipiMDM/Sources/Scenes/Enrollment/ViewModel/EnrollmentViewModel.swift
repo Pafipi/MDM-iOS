@@ -107,9 +107,9 @@ private extension EnrollmentViewModelImpl {
         case .urlValidationError(let reason):
             switch reason {
             case .isEmpty:
-                return L10n.fieldCannotBeEmpty
+                return Localizations.fieldCannotBeEmpty
             case .isNotURL:
-                return L10n.invalidUrl
+                return Localizations.invalidUrl
             }
         }
     }

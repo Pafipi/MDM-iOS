@@ -126,7 +126,7 @@ private extension EnrollmentView {
     
     func createEnrollButton() -> Button {
         Button(
-            title: L10n.enrollButtonTitle,
+            title: Localizations.enrollButtonTitle,
             font: .boldMainStyleFont(ofSize: .mediumLarge),
             tintColor: Asset.Colors.Common.justWhite.color,
             textColor: Asset.Colors.Common.justWhite.color,
@@ -135,13 +135,13 @@ private extension EnrollmentView {
             cornerRadius: Constants.CornerRadius.enrollButton,
             textAlignment: .center,
             accessibilityIdentifier: Accessibility.Identifiers.enrollButton,
-            accessibilityLabel: L10n.enrollButtonTitle
+            accessibilityLabel: Localizations.enrollButtonTitle
         )
     }
     
     func createServerAddressInput() -> FormTextInput {
         let textField = TextField(
-            placeholder: L10n.addressInputPlaceholder,
+            placeholder: Localizations.addressInputPlaceholder,
             font: .regularMainStyleFont(ofSize: .medium),
             cornerRadius: Constants.CornerRadius.serverAddressTextField,
             alignment: .left,

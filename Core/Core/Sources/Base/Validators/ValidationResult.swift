@@ -21,3 +21,11 @@ public enum ValidationError: Error {
     
     case urlValidationError(_ reason: URLValidationErrorReason)
 }
+
+//extension ValidationError: LocalizedError {
+//
+//    public var errorDescription: String? {
+//        //switch self {
+//        
+//    }
+//}
