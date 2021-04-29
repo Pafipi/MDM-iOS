@@ -1,5 +1,5 @@
- input_dir: PafipiMDM/
- output_dir: PafipiMDM/Generated
+ input_dir: Core/
+ output_dir: Core/Generated
 
  strings:
    inputs:
@@ -7,15 +7,17 @@
    outputs:
      - templateName: structured-swift5
        params:
-         enumName: Localizations
+         publicAccess: 1
+         enumName: CoreLocalizations
        output: Strings+Generated.swift
 
  xcassets:
     inputs:
-     - Resources/Assets.xcassets
+     - Resources/Colors.xcassets
     outputs:
      - templateName: swift5
        params:
          forceProvidesNamespaces: true
          publicAccess: 1
-       output: XCAssets+Generated.swift
+         enumName: Colors
+       output: Colors+Generated.swift

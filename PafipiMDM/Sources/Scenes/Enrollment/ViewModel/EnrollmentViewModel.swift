@@ -57,7 +57,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
         switch urlValidator.validate(enrollmentAddress) {
         case .invalid(let error):
             if let error = error as? ValidationError {
-                output?.onUrlValidationError(with: getErrorMessage(for: error))
+                output?.onUrlValidationError(with: error.localizedDescription)
             }
         case .valid:
             output?.onUrlValidationSuccess()
@@ -95,22 +95,5 @@ extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
     
     func onPutDeviceTokenFailure(with error: Error) {
         
-    }
-}
-
-// MARK: - Private methods
-
-private extension EnrollmentViewModelImpl {
-    
-    func getErrorMessage(for error: ValidationError) -> String {
-        switch error {
-        case .urlValidationError(let reason):
-            switch reason {
-            case .isEmpty:
-                return Localizations.fieldCannotBeEmpty
-            case .isNotURL:
-                return Localizations.invalidUrl
-            }
-        }
     }
 }

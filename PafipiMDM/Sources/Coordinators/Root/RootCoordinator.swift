@@ -76,7 +76,7 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         )
         
         let settingsAction = UIAlertAction(
-            title: Localizations.settings,
+            title: CoreLocalizations.settings,
             style: .default) { _ in
                 self.openSystemSettings()
         }
