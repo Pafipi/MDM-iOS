@@ -16,6 +16,7 @@
 		CA3DCF752606BE7500414D0E /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCF742606BE7500414D0E /* Resolver-Dynamic */; };
 		CA3DCF762606BE7500414D0E /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CA3DCF742606BE7500414D0E /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CA3DCF89260755E800414D0E /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3DCF88260755E800414D0E /* Log.swift */; };
+		CA5027C3264FFA83000DF0F6 /* PutDeviceTokenRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5027C2264FFA83000DF0F6 /* PutDeviceTokenRequestBody.swift */; };
 		CA6B56C426217DDD00BEE52E /* RemoteNotifications+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */; };
 		CA6B572B2621DC9C00BEE52E /* HttpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57262621DC9C00BEE52E /* HttpRequest.swift */; };
 		CA6B57322621DF7E00BEE52E /* Data+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */; };
@@ -88,6 +89,7 @@
 		CA3DCF672606BE0100414D0E /* Thread+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Thread+Main.swift"; sourceTree = "<group>"; };
 		CA3DCF6F2606BE1E00414D0E /* RemoteNotificationsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteNotificationsService.swift; sourceTree = "<group>"; };
 		CA3DCF88260755E800414D0E /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		CA5027C2264FFA83000DF0F6 /* PutDeviceTokenRequestBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PutDeviceTokenRequestBody.swift; sourceTree = "<group>"; };
 		CA6B56C326217DDD00BEE52E /* RemoteNotifications+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RemoteNotifications+Injection.swift"; sourceTree = "<group>"; };
 		CA6B57262621DC9C00BEE52E /* HttpRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequest.swift; sourceTree = "<group>"; };
 		CA6B57312621DF7E00BEE52E /* Data+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+StringValue.swift"; sourceTree = "<group>"; };
@@ -235,6 +237,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		CA5027C426501FF1000DF0F6 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				CA5027C2264FFA83000DF0F6 /* PutDeviceTokenRequestBody.swift */,
+			);
+			path = Codable;
+			sourceTree = "<group>";
+		};
 		CA6B56B526217D0300BEE52E /* Containers */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +301,7 @@
 		CA6B57352621E0EF00BEE52E /* Enrollment */ = {
 			isa = PBXGroup;
 			children = (
+				CA5027C426501FF1000DF0F6 /* Codable */,
 				CAD4D745262F1375001A9EB3 /* EnrollmentEndpoint.swift */,
 				CA6B57382621E16A00BEE52E /* EnrollmentNetworking.swift */,
 			);
@@ -468,6 +479,7 @@
 			knownRegions = (
 				en,
 				pl,
+				Base,
 			);
 			mainGroup = CA3DCF3A2606BDBF00414D0E;
 			packageReferences = (
@@ -532,6 +544,7 @@
 			files = (
 				CA6B574B2622350400BEE52E /* UIFont+Sizes.swift in Sources */,
 				CA1355F82635714B00CC454D /* NotificationCenterHelper.swift in Sources */,
+				CA5027C3264FFA83000DF0F6 /* PutDeviceTokenRequestBody.swift in Sources */,
 				CAFA70AB263A9D5B00C1F4A5 /* Strings+Generated.swift in Sources */,
 				CABDBDAF262423B500A11FF3 /* HttpRequestConfig.swift in Sources */,
 				CA3DCF702606BE1E00414D0E /* RemoteNotificationsService.swift in Sources */,

@@ -34,7 +34,7 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         homeCoordinator.start()
         tabBarViews.append(homeNavigationController)
         
-        if KeychainWrapper.deviceUUID == nil {
+        if UserDefaults.deviceUUID == nil {
             let enrollmentCoordinator = EnrollmentCoordinator()
             enrollmentCoordinator.start(with: deviceToken)
             rootViewController = enrollmentCoordinator.rootViewController

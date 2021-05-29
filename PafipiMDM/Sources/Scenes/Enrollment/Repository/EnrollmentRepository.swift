@@ -14,7 +14,7 @@ protocol EnrollmentRepository {
     var delegate: EnrollmentRepositoryDelegate? { get set }
     
     func fetchDeviceUUID(with deviceId: String)
-    func putDeviceToken(_ deviceToken: Data, forDeviceWith deviceUUID: String)
+    func putDeviceToken(_ deviceToken: Data, forDeviceWith deviceID: String)
 }
 
 protocol EnrollmentRepositoryDelegate: AnyObject {

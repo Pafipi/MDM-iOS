@@ -9,25 +9,25 @@ import UIKit
 
 public extension UIFont {
     enum Sizes {
-        ///11
+        /// 11
         case theSmallest
-        ///12
+        /// 12
         case smallest
-        ///13
+        /// 13
         case smaller
-        ///14
+        /// 14
         case small
-        ///15
+        /// 15
         case mediumSmall
-        ///16
+        /// 16
         case medium
-        ///17
+        /// 17
         case mediumLarge
-        ///18
+        /// 18
         case large
-        ///20
+        /// 20
         case larger
-        ///22
+        /// 22
         case largest
         case custom(size: CGFloat)
     }

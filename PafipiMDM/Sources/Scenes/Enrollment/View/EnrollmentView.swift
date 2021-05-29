@@ -112,7 +112,7 @@ private extension EnrollmentView {
             padding: Constants.Padding.enrollButton,
             size: Constants.Size.enrollButton
         )
-        enrollButton.setUserInteractionEnabled(false)
+        enrollButton.setUserInteractionEnabled(true)
     }
     
     func createAppLogoImageView() -> UIImageView {
@@ -125,7 +125,7 @@ private extension EnrollmentView {
     }
     
     func createEnrollButton() -> Button {
-        Button(
+        let enrollButton = Button(
             title: Localizations.enrollButtonTitle,
             font: .boldMainStyleFont(ofSize: .mediumLarge),
             tintColor: Colors.Common.justWhite.color,
@@ -137,6 +137,9 @@ private extension EnrollmentView {
             accessibilityIdentifier: Accessibility.Identifiers.enrollButton,
             accessibilityLabel: Localizations.enrollButtonTitle
         )
+        enrollButton.addTarget(self, action: #selector(didTapEnrollButton), for: .touchUpInside)
+        
+        return enrollButton
     }
     
     func createServerAddressInput() -> FormTextInput {
@@ -176,6 +179,15 @@ private extension EnrollmentView {
     
     func createKeyboardScrollHelper() -> KeyboardScrollHelper {
         KeyboardScrollHelper(scrollView: scrollView, viewToBeShown: serverAddressInput)
+    }
+}
+
+// MARK: - Selectors
+
+private extension EnrollmentView {
+    
+    @objc func didTapEnrollButton() {
+        delegate?.didTapEnrollButton()
     }
 }
 

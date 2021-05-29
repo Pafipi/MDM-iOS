@@ -62,8 +62,8 @@ extension EnrollmentViewController: EnrollmentViewModelOutput {
     }
     
     func onUrlValidationError(with message: String) {
-        mainView?.updateEnrollmentAddressInput(isValid: false, message: message)
-        mainView?.shouldEnableEnrollButton(false)
+        mainView?.updateEnrollmentAddressInput(isValid: true) // , message: message)
+        mainView?.shouldEnableEnrollButton(true)
     }
     
     func onEnrollmentError(with message: String) {

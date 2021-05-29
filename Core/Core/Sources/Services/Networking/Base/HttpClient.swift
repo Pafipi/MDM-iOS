@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-public typealias NetworkingResultPublisher<T: Codable> = AnyPublisher<T, Error>
+public typealias NetworkingResultPublisher<R: Codable> = AnyPublisher<R, Error>
 
 public struct EmptyResponse: Codable { }
 
 protocol HttpClient: AnyObject {
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T>
+    func perform<T: Codable, R: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<R>
 }
 
 final class HttpClientImpl: NSObject, HttpClient {
@@ -29,7 +29,7 @@ final class HttpClientImpl: NSObject, HttpClient {
         super.init()
     }
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
+    func perform<T: Codable, R: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<R> {
         log(.networkRequest, "\(request.string)")
         
         guard var components = URLComponents(url: request.url, resolvingAgainstBaseURL: true) else {
@@ -53,8 +53,9 @@ final class HttpClientImpl: NSObject, HttpClient {
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
         
-        if request.method != .get && !request.parameters.isEmpty {
-            guard let data = try? JSONSerialization.data(withJSONObject: request.parameters, options: [])
+        if request.method != .get && request.body != nil {
+            guard
+                let data = try? JSONEncoder().encode(request.body)
             else {
                 return Fail(error: NetworkingError.invalidJSONParameters).eraseToAnyPublisher()
             }
@@ -68,8 +69,8 @@ final class HttpClientImpl: NSObject, HttpClient {
 
 private extension URLSession.DataTaskPublisher {
     
-    func networkingResultPublisher<T: Codable>(for request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
-        tryMap { data, response in
+    func networkingResultPublisher<T: Codable, R: Codable>(for request: HttpRequest<T>) -> NetworkingResultPublisher<R> {
+        tryMap { data, response -> Data in
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkingError.notHttpResponse
             }
@@ -86,7 +87,15 @@ private extension URLSession.DataTaskPublisher {
             
             return data
         }
-        .decode(type: T.self, decoder: JSONDecoder())
+        .compactMap { data -> R? in
+            if R.self == EmptyResponse.self,
+               let empty = EmptyResponse() as? R {
+                return empty
+            }
+            
+            let decoder = JSONDecoder()
+            return try? decoder.decode(R.self, from: data)
+        }
         .mapError { error -> Error in
             log(.networkResponse,
                 """

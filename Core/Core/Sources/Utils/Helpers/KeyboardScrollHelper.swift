@@ -12,7 +12,7 @@ public final class KeyboardScrollHelper {
     private let scrollView: UIScrollView
     private let viewToBeShown: UIView
     
-    private var isKeyboardVisible: Bool = false
+    private var isKeyboardVisible = false
     private var keyboardRect: CGRect = .zero
     
     public init(scrollView: UIScrollView,

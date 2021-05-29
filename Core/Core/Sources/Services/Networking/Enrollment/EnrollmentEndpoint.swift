@@ -16,6 +16,7 @@ struct EnrollmentEndpoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host
+        components.port = 443
         components.path = "/api" + path
         
         guard let url = components.url else {
@@ -27,7 +28,8 @@ struct EnrollmentEndpoint {
     
     var headers: Headers {
         return [
-            "x-apikey": "795ad45e4dc222bc0e5bd1c163bb885e3635e"
+            "x-apikey": "795ad45e4dc222bc0e5bd1c163bb885e3635e",
+            "content-type": "application/json"
         ]
     }
 }
@@ -41,6 +43,6 @@ extension EnrollmentEndpoint {
     }
     
     static var putDeviceToken: Self {
-        return EnrollmentEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/token")
+        return EnrollmentEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/update")
     }
 }

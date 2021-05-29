@@ -33,8 +33,11 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = "https://"
+    private var enrollmentAddress: String = "192.168.1.66"
     private var deviceToken: Data?
+    private var deviceID: String? {
+        return UIDevice.current.identifierForVendor?.uuidString
+    }
     
     init() {
         repository.delegate = self
@@ -49,7 +52,6 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     }
     
     func setDeviceToken(_ token: Data?) {
-        print(token ?? "")
         deviceToken = token
     }
 
@@ -67,7 +69,6 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     func startEnrollment() {
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
             return
-
         }
         UserDefaults.mdmServerAddress = enrollmentAddress
         repository.fetchDeviceUUID(with: deviceId)
@@ -82,7 +83,12 @@ extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
         guard let deviceToken = deviceToken else {
             return
         }
-        repository.putDeviceToken(deviceToken, forDeviceWith: uuid)
+//        UserDefaults.deviceUUID = uuid
+        
+        guard let deviceId = deviceID else {
+            return
+        }
+        repository.putDeviceToken(deviceToken, forDeviceWith: deviceId)
     }
     
     func onGetDeviceUUIDFailure(with error: Error) {
