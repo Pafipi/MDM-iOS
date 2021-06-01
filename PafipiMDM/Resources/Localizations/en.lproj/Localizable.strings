@@ -6,6 +6,14 @@
   
 */
 
+// MARK: - Common
+
+"ok" = "Ok";
+
+// MARK: - Error
+
+"unknown_error_alert_title" = "Unknown error!";
+"unknown_error_alert_message" = "An unknown error occured! Contact with MDM Service provider to get more informations";
 
 // MARK: - Home
 
@@ -15,6 +23,7 @@
 
 "enroll_button_title" = "Enroll";
 "address_input_placeholder" = "Enter MDM Server address";
+"enroll_error_alert_title" = "Enrollment error!";
 
 // MARK: - Remote Notifications
 

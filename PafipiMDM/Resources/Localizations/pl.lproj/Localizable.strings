@@ -6,13 +6,24 @@
   
 */
 
+// MARK: - Common
+
+"ok" = "Ok";
+
+// MARK: - Error
+
+"unknown_error_alert_title" = "Nieznany błąd";
+"unknown_error_alert_message" = "Wystąpił nieznany błąd! W celu uzyskania dodatkowych informacji skontaktuj się z dostawcą usługi MDM";
+
 // MARK: - Home
 
 "home_tab_title" = "Główna";
 
 // MARK: - Enrollment
+
 "enroll_button_title" = "Zarejestruj";
 "address_input_placeholder" = "Wprowadź adres serwera MDM";
+"enroll_error_alert_title" = "Błąd rejestracji!";
 
 // MARK: - Remote Notifications
 
