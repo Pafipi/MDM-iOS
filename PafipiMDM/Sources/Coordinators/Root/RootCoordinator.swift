@@ -108,6 +108,7 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
 
 extension RootCoordinator: EnrollmentViewControllerDelegate {
     
+    func onEnrollmentFinish() { }
 }
 
 // MARK: - RootTabBarControllerDelegate

@@ -23,6 +23,7 @@ protocol EnrollmentViewModelOutput: AnyObject {
     
     func onUrlValidationSuccess()
     func onUrlValidationError(with message: String)
+    func onEnrollmentFinished()
     func onEnrollmentError(with message: String)
     func onUnknownError()
 }
@@ -109,7 +110,9 @@ extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
         output?.onEnrollmentError(with: error.localizedDescription)
     }
     
-    func onRequestEnrollmentPushSuccess() { }
+    func onRequestEnrollmentPushSuccess() {
+        output?.onEnrollmentFinished()
+    }
     
     func onRequestEnrollmentPushFailure(with error: Error) {
         guard let error = error as? NetworkingError else {

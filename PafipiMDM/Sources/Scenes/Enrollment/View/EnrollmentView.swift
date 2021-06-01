@@ -28,7 +28,6 @@ final class EnrollmentView: UIView {
     private lazy var serverAddressInput = createServerAddressInput()
     private lazy var enrollButton = createEnrollButton()
     
-    
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
         self.delegate = delegate

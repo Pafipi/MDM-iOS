@@ -10,6 +10,7 @@ import Resolver
 
 protocol EnrollmentViewControllerDelegate: AnyObject {
     
+    func onEnrollmentFinish()
 }
 
 protocol EnrollmentViewControllerInput: AnyObject {
@@ -55,7 +56,7 @@ public final class EnrollmentViewController: UIViewController {
 // MARK: - EnrollmentViewModelOutput
 
 extension EnrollmentViewController: EnrollmentViewModelOutput {
-    
+
     func onUrlValidationSuccess() {
         mainView?.updateEnrollmentAddressInput(isValid: true)
         mainView?.shouldEnableEnrollButton(true)
@@ -95,6 +96,8 @@ extension EnrollmentViewController: EnrollmentViewModelOutput {
         alert.addAction(okAction)
         present(alert, animated: true)
     }
+    
+    func onEnrollmentFinished() { }
 }
 
 // MARK: - EnrollmentViewDelegate
