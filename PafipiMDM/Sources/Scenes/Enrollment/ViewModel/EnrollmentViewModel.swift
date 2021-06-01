@@ -24,6 +24,7 @@ protocol EnrollmentViewModelOutput: AnyObject {
     func onUrlValidationSuccess()
     func onUrlValidationError(with message: String)
     func onEnrollmentError(with message: String)
+    func onUnknownError()
 }
 
 final class EnrollmentViewModelImpl: EnrollmentViewModel {
@@ -33,9 +34,9 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = "192.168.1.66"
-    private var deviceToken: Data?
-    private var deviceID: String? {
+    private var enrollmentAddress: String = ""
+    private var deviceToken: String?
+    private var deviceId: String? {
         return UIDevice.current.identifierForVendor?.uuidString
     }
     
@@ -52,7 +53,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     }
     
     func setDeviceToken(_ token: Data?) {
-        deviceToken = token
+        deviceToken = token?.hexString
     }
 
     func validateEnrollmentAddress() {
@@ -60,6 +61,8 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
         case .invalid(let error):
             if let error = error as? ValidationError {
                 output?.onUrlValidationError(with: error.localizedDescription)
+            } else {
+                output?.onUnknownError()
             }
         case .valid:
             output?.onUrlValidationSuccess()
@@ -67,9 +70,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     }
     
     func startEnrollment() {
-        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            return
-        }
+        guard let deviceId = deviceId else { return }
         UserDefaults.mdmServerAddress = enrollmentAddress
         repository.fetchDeviceUUID(with: deviceId)
     }
@@ -80,26 +81,41 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
 extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
 
     func onGetDeviceUUIDSuccess(with uuid: String) {
-        guard let deviceToken = deviceToken else {
-            return
-        }
-//        UserDefaults.deviceUUID = uuid
+        guard let deviceToken = deviceToken,
+              let deviceId = deviceId else { return }
         
-        guard let deviceId = deviceID else {
-            return
-        }
+        UserDefaults.deviceUUID = uuid
         repository.putDeviceToken(deviceToken, forDeviceWith: deviceId)
     }
     
     func onGetDeviceUUIDFailure(with error: Error) {
-        
+        guard let error = error as? NetworkingError else {
+            output?.onUnknownError()
+            return
+        }
+        output?.onEnrollmentError(with: error.localizedDescription)
     }
     
     func onPutDeviceTokenSuccess() {
-        
+        guard let deviceId = deviceId else { return }
+        repository.requestEnrollmentPush(forDeviceWith: deviceId)
     }
     
     func onPutDeviceTokenFailure(with error: Error) {
-        
+        guard let error = error as? NetworkingError else {
+            output?.onUnknownError()
+            return
+        }
+        output?.onEnrollmentError(with: error.localizedDescription)
+    }
+    
+    func onRequestEnrollmentPushSuccess() { }
+    
+    func onRequestEnrollmentPushFailure(with error: Error) {
+        guard let error = error as? NetworkingError else {
+            output?.onUnknownError()
+            return
+        }
+        output?.onEnrollmentError(with: error.localizedDescription)
     }
 }

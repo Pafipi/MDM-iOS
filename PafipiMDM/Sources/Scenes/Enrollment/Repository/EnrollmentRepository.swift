@@ -14,7 +14,8 @@ protocol EnrollmentRepository {
     var delegate: EnrollmentRepositoryDelegate? { get set }
     
     func fetchDeviceUUID(with deviceId: String)
-    func putDeviceToken(_ deviceToken: Data, forDeviceWith deviceID: String)
+    func putDeviceToken(_ deviceToken: String, forDeviceWith deviceId: String)
+    func requestEnrollmentPush(forDeviceWith deviceId: String)
 }
 
 protocol EnrollmentRepositoryDelegate: AnyObject {
@@ -23,18 +24,21 @@ protocol EnrollmentRepositoryDelegate: AnyObject {
     func onGetDeviceUUIDFailure(with error: Error)
     func onPutDeviceTokenSuccess()
     func onPutDeviceTokenFailure(with error: Error)
+    func onRequestEnrollmentPushSuccess()
+    func onRequestEnrollmentPushFailure(with error: Error)
 }
 
 final class EnrollmentRepositoryImpl: EnrollmentRepository {
     
     weak var delegate: EnrollmentRepositoryDelegate?
     
-    @LazyInjected private var networking: EnrollmentNetworking
+    @LazyInjected private var deviceNetworking: DeviceNetworking
+    @LazyInjected private var enrollmentNetworking: EnrollmentNetworking
     
     private var disposeBag = Set<AnyCancellable>()
     
     func fetchDeviceUUID(with deviceId: String) {
-        networking.fetchDeviceUUID(with: deviceId)
+        deviceNetworking.fetchDeviceUUID(with: deviceId)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
@@ -52,8 +56,8 @@ final class EnrollmentRepositoryImpl: EnrollmentRepository {
             .store(in: &disposeBag)
     }
     
-    func putDeviceToken(_ deviceToken: Data, forDeviceWith deviceUUID: String) {
-        networking.putDeviceToken(deviceToken, forDeviceWith: deviceUUID)
+    func putDeviceToken(_ deviceToken: String, forDeviceWith deviceId: String) {
+        deviceNetworking.putDeviceToken(deviceToken, forDeviceWith: deviceId)
             .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
@@ -63,6 +67,21 @@ final class EnrollmentRepositoryImpl: EnrollmentRepository {
                     self.delegate?.onPutDeviceTokenFailure(with: error)
                 case .finished:
                     self.delegate?.onPutDeviceTokenSuccess()
+                }
+            }, receiveValue: { _ in })
+            .store(in: &disposeBag)
+    }
+    
+    func requestEnrollmentPush(forDeviceWith deviceId: String) {
+        enrollmentNetworking.requestEnrollmentPush(for: deviceId)
+            .subscribe(on: DispatchQueue.global(qos: .background))
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.delegate?.onRequestEnrollmentPushFailure(with: error)
+                case .finished:
+                    self?.delegate?.onRequestEnrollmentPushSuccess()
                 }
             }, receiveValue: { _ in })
             .store(in: &disposeBag)
