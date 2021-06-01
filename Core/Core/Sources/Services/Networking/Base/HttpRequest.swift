@@ -1,17 +1,22 @@
 //
 //  HttpRequest.swift
-//  PafipiMDM
+//  Core
 //
 //  Created by Piotr Fraccaro on 10/04/2021.
 //
+
+import Foundation
+
+public struct EmptyBody: Codable { }
 
 enum HttpMethod: String {
     case get
     case post
     case put
+    case delete
 }
 
-final class HttpRequest<T> {
+final class HttpRequest<T: Codable> {
     
     let url: URL
     let method: HttpMethod

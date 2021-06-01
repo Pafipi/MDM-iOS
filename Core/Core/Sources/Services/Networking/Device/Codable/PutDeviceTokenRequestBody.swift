@@ -10,10 +10,10 @@ import Foundation
 struct PutDeviceTokenRequestBody: Codable {
 
     let deviceID: String
-    let deviceToken: Data
+    let deviceToken: String
     
     init(deviceID: String,
-         deviceToken: Data) {
+         deviceToken: String) {
         self.deviceID = deviceID
         self.deviceToken = deviceToken
     }

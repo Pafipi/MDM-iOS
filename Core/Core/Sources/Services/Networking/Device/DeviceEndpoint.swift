@@ -1,13 +1,13 @@
 //
-//  EnrollmentEndpoint.swift
+//  DeviceEndpoint.swift
 //  Core
 //
-//  Created by Piotr Fraccaro on 30/05/2021.
+//  Created by Piotr Fraccaro on 20/04/2021.
 //
 
 import Foundation
 
-struct EnrollmentEndpoint: Endpoint {
+struct DeviceEndpoint: Endpoint {
     
     var host: String
     var path: String
@@ -36,11 +36,15 @@ struct EnrollmentEndpoint: Endpoint {
     var queryItems: [URLQueryItem] = []
 }
 
-// MARK: - Enrollment API
+// MARK: - Device API
 
-extension EnrollmentEndpoint {
+extension DeviceEndpoint {
     
-    static var requestEnrollmentPush: Self {
-        return EnrollmentEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/enroll")
+    static var getDeviceUUID: Self {
+        return DeviceEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device")
+    }
+    
+    static var putDeviceToken: Self {
+        return DeviceEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/update")
     }
 }
