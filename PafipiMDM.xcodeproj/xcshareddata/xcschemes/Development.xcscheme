@@ -3,23 +3,9 @@
    LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "YES"
+      parallelizeBuildables = "NO"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CACC36EF25F5261B00E51C29"
-               BuildableName = "PafipiMDM.app"
-               BlueprintName = "PafipiMDM"
-               ReferencedContainer = "container:PafipiMDM.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -32,6 +18,20 @@
                BuildableName = "Core.framework"
                BlueprintName = "Core"
                ReferencedContainer = "container:Core/Core.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CACC36EF25F5261B00E51C29"
+               BuildableName = "PafipiMDM.app"
+               BlueprintName = "PafipiMDM"
+               ReferencedContainer = "container:PafipiMDM.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

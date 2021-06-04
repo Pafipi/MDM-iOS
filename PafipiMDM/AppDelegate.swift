@@ -12,6 +12,7 @@ import Core
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let applicationBootloader = ApplicationBootloaderImpl()
+    private let rootCoordinator = RootCoordinator()
     
     var window: UIWindow?
 
@@ -20,9 +21,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         configureWindow()
         applicationBootloader.delegate = self
-//        applicationBootloader?.boot()
+        applicationBootloader.boot()
         
         return true
+    }
+    
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        rootCoordinator.didRegisterForRemoteNotifications(with: deviceToken)
+    }
+     
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        rootCoordinator.showRemoteNotificationsErrorAlert()
     }
 }
 
@@ -31,11 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: ApplicationBootloaderDelegate {
     
     func didUserDeniedRemoteNotifications() {
-        showRemoteNotificationsDeniedAlert()
+        rootCoordinator.showRemoteNotificationsDeniedAlert()
     }
     
     func didFailToRegisterForRemoteNotifications(error: Error?) {
-        showRemoteNotificationsErrorAlert()
+        rootCoordinator.showRemoteNotificationsErrorAlert()
     }
 }
 
@@ -45,54 +56,8 @@ private extension AppDelegate {
     
     func configureWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootCoordinator = RootCoordinator()
         rootCoordinator.start()
         window?.rootViewController = rootCoordinator.rootViewController
         window?.makeKeyAndVisible()
-    }
-    
-    func showRemoteNotificationsDeniedAlert() {
-        let alert = getRemoteNotificationsDeniedAlert()
-        window?.rootViewController?.present(alert, animated: true)
-    }
-    
-    func showRemoteNotificationsErrorAlert() {
-        let alert = getRemoteNotificationsErrorAlert()
-        window?.rootViewController?.present(alert, animated: true)
-    }
-    
-    func getRemoteNotificationsDeniedAlert() -> UIAlertController {
-        let alert = UIAlertController(
-            title: LocalizedStrings.RemoteNotifications.permissionDeniedAlertTitle,
-            message: LocalizedStrings.RemoteNotifications.permissionDeniedAlertMessage,
-            preferredStyle: .alert
-        )
-        
-        let settingsAction = UIAlertAction(
-            title: LocalizedStrings.Common.settings,
-            style: .default) { _ in
-                self.openSystemSettings()
-        }
-        
-        alert.addAction(settingsAction)
-        
-        return alert
-    }
-    
-    func getRemoteNotificationsErrorAlert() -> UIAlertController {
-        let alert = UIAlertController(
-            title: LocalizedStrings.RemoteNotifications.permissionErrorAlertTitle,
-            message: LocalizedStrings.RemoteNotifications.permissionErrorAlertMessage,
-            preferredStyle: .alert
-        )
-        
-        return alert
-    }
-    
-    func openSystemSettings() {
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-              UIApplication.shared.canOpenURL(settingsUrl) else { return }
-        
-        UIApplication.shared.open(settingsUrl)
     }
 }

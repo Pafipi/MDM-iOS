@@ -18,6 +18,17 @@
 		CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E026218BB000BEE52E /* HomeViewController.swift */; };
 		CA6B56E526218E7900BEE52E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E426218E7900BEE52E /* HomeView.swift */; };
 		CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E82621A71800BEE52E /* Home+Injection.swift */; };
+		CA6B56ED2621D6F300BEE52E /* EnrollmentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56EC2621D6F300BEE52E /* EnrollmentCoordinator.swift */; };
+		CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56F62621D78E00BEE52E /* EnrollmentViewController.swift */; };
+		CA6B56FD2621D79800BEE52E /* EnrollmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */; };
+		CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57002621D79E00BEE52E /* EnrollmentView.swift */; };
+		CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */; };
+		CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B574F2622365A00BEE52E /* Lato-Light.ttf */; };
+		CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57502622365A00BEE52E /* Lato-Black.ttf */; };
+		CA6B57562622365A00BEE52E /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57512622365A00BEE52E /* Lato-Thin.ttf */; };
+		CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57522622365A00BEE52E /* Lato-Regular.ttf */; };
+		CA6B57582622365A00BEE52E /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57532622365A00BEE52E /* Lato-Bold.ttf */; };
+		CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57912622855000BEE52E /* Enrollment+Injection.swift */; };
 		CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE723260D1E7800132DC0 /* Coordinable.swift */; };
 		CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */; };
 		CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE731260D203500132DC0 /* CoordinatorActions.swift */; };
@@ -30,9 +41,16 @@
 		CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */; };
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB76562262F8FCE00953696 /* EnrollmentError.swift */; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
+		CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */; };
+		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
+		CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */; };
+		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
+		CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; };
+		CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +78,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */,
+				CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,17 +86,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CA24E32F26357F560022F05F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CA2998E62604024800A2748C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		CA2998EC2604037300A2748C /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		CA2998F12604044400A2748C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56BD26217DC000BEE52E /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56C6262181D900BEE52E /* Root+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Injection.swift"; sourceTree = "<group>"; };
-		CA6B56CA262186E200BEE52E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = ../../Core/Core/Resources/Colors.xcassets; sourceTree = "<group>"; };
+		CA6B56CA262186E200BEE52E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CA6B56D826218BA500BEE52E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CA6B56E026218BB000BEE52E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CA6B56E426218E7900BEE52E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CA6B56E82621A71800BEE52E /* Home+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+Injection.swift"; sourceTree = "<group>"; };
+		CA6B56EC2621D6F300BEE52E /* EnrollmentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentCoordinator.swift; sourceTree = "<group>"; };
+		CA6B56F62621D78E00BEE52E /* EnrollmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentViewController.swift; sourceTree = "<group>"; };
+		CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentViewModel.swift; sourceTree = "<group>"; };
+		CA6B57002621D79E00BEE52E /* EnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentView.swift; sourceTree = "<group>"; };
+		CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentRepository.swift; sourceTree = "<group>"; };
+		CA6B574F2622365A00BEE52E /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		CA6B57502622365A00BEE52E /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		CA6B57512622365A00BEE52E /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		CA6B57522622365A00BEE52E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		CA6B57532622365A00BEE52E /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		CA6B57912622855000BEE52E /* Enrollment+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enrollment+Injection.swift"; sourceTree = "<group>"; };
 		CA9CE723260D1E7800132DC0 /* Coordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinable.swift; sourceTree = "<group>"; };
 		CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinable.swift; sourceTree = "<group>"; };
 		CA9CE731260D203500132DC0 /* CoordinatorActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorActions.swift; sourceTree = "<group>"; };
@@ -87,7 +118,9 @@
 		CAA5E4D12610929E002557AD /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		CAA5E4D526111BE5002557AD /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		CAA5E4DF26111E7D002557AD /* RootTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarViewModel.swift; sourceTree = "<group>"; };
+		CAAA686626319E8C00DFFF06 /* PafipiMDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PafipiMDM.entitlements; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
+		CAB76562262F8FCE00953696 /* EnrollmentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentError.swift; sourceTree = "<group>"; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +130,11 @@
 		CACC370C25F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		CAF2CD4D26319AFD003DF959 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */,
+				CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,10 +167,10 @@
 		CA2998D42603FC8400A2748C /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				CA2998F12604044400A2748C /* README.md */,
-				CA2998EC2604037300A2748C /* .swiftlint.yml */,
-				CA2998E62604024800A2748C /* .gitignore */,
 				CACC370125F5261C00E51C29 /* Info.plist */,
+				CA2998E62604024800A2748C /* .gitignore */,
+				CA2998EC2604037300A2748C /* .swiftlint.yml */,
+				CAF2CD392630C59E003DF959 /* swiftgen.yml */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -153,6 +192,8 @@
 				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
 				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
 				CA6B56CA262186E200BEE52E /* Colors.xcassets */,
+				CA6B574D2622357F00BEE52E /* Fonts */,
+				CAF2CD192630B2C4003DF959 /* Localizations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -164,6 +205,7 @@
 				CA6B56BD26217DC000BEE52E /* Core+Injection.swift */,
 				CA6B56C6262181D900BEE52E /* Root+Injection.swift */,
 				CA6B56E82621A71800BEE52E /* Home+Injection.swift */,
+				CA6B57912622855000BEE52E /* Enrollment+Injection.swift */,
 			);
 			path = Containers;
 			sourceTree = "<group>";
@@ -202,11 +244,100 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CA6B56F02621D72300BEE52E /* Enrollment */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56F22621D73200BEE52E /* View */,
+				CA6B56F12621D72D00BEE52E /* ViewController */,
+				CA6B56F32621D73600BEE52E /* ViewModel */,
+				CA6B56F52621D74900BEE52E /* Repository */,
+				CAB76566262F8FD200953696 /* Model */,
+			);
+			path = Enrollment;
+			sourceTree = "<group>";
+		};
+		CA6B56F12621D72D00BEE52E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56F62621D78E00BEE52E /* EnrollmentViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA6B56F22621D73200BEE52E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57002621D79E00BEE52E /* EnrollmentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CA6B56F32621D73600BEE52E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CA6B56F52621D74900BEE52E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		CA6B574D2622357F00BEE52E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B574E2622358E00BEE52E /* Lato */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CA6B574E2622358E00BEE52E /* Lato */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B57502622365A00BEE52E /* Lato-Black.ttf */,
+				CA6B57532622365A00BEE52E /* Lato-Bold.ttf */,
+				CA6B574F2622365A00BEE52E /* Lato-Light.ttf */,
+				CA6B57522622365A00BEE52E /* Lato-Regular.ttf */,
+				CA6B57512622365A00BEE52E /* Lato-Thin.ttf */,
+			);
+			path = Lato;
+			sourceTree = "<group>";
+		};
+		CA6B57732622810F00BEE52E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		CA6B57742622811300BEE52E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CAA5E4D12610929E002557AD /* HomeCoordinator.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CA6B57752622811900BEE52E /* Enrollment */ = {
+			isa = PBXGroup;
+			children = (
+				CA6B56EC2621D6F300BEE52E /* EnrollmentCoordinator.swift */,
+			);
+			path = Enrollment;
+			sourceTree = "<group>";
+		};
 		CA9CE719260D1D8500132DC0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				CAA5E4D926111C33002557AD /* Root */,
 				CA6B56D426218B4B00BEE52E /* Home */,
+				CA6B56F02621D72300BEE52E /* Enrollment */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -215,8 +346,9 @@
 			isa = PBXGroup;
 			children = (
 				CA9CE722260D1E6E00132DC0 /* Protocol */,
-				CA9CE73E260D268C00132DC0 /* RootCoordinator.swift */,
-				CAA5E4D12610929E002557AD /* HomeCoordinator.swift */,
+				CA6B57732622810F00BEE52E /* Root */,
+				CA6B57752622811900BEE52E /* Enrollment */,
+				CA6B57742622811300BEE52E /* Home */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -266,6 +398,14 @@
 			path = Bootloader;
 			sourceTree = "<group>";
 		};
+		CAB76566262F8FD200953696 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CAB76562262F8FCE00953696 /* EnrollmentError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CACC36E725F5261B00E51C29 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +413,7 @@
 				CACC370925F5261C00E51C29 /* PafipiMDMTests */,
 				CACC371425F5261C00E51C29 /* PafipiMDMUITests */,
 				CACC36F125F5261C00E51C29 /* Products */,
+				CAF2CD4C26319AFD003DF959 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,10 +430,13 @@
 		CACC36F225F5261C00E51C29 /* PafipiMDM */ = {
 			isa = PBXGroup;
 			children = (
+				CAAA686626319E8C00DFFF06 /* PafipiMDM.entitlements */,
+				CA2998F12604044400A2748C /* README.md */,
 				CACC36F325F5261C00E51C29 /* AppDelegate.swift */,
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D62603FD2B00A2748C /* Resources */,
+				CAF901D0262E27FD0057CF5B /* Generated */,
 			);
 			path = PafipiMDM;
 			sourceTree = "<group>";
@@ -313,6 +457,31 @@
 			path = PafipiMDMUITests;
 			sourceTree = "<group>";
 		};
+		CAF2CD192630B2C4003DF959 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				CAF2CD182630B2C4003DF959 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		CAF2CD4C26319AFD003DF959 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAF2CD4D26319AFD003DF959 /* Core.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CAF901D0262E27FD0057CF5B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */,
+				CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -320,7 +489,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CACC371A25F5261D00E51C29 /* Build configuration list for PBXNativeTarget "PafipiMDM" */;
 			buildPhases = (
-				CA2998EB260402E300A2748C /* ShellScript */,
+				CA2998EB260402E300A2748C /* SwiftLint */,
+				CAF901C9262E26580057CF5B /* SwiftGen */,
 				CACC36EC25F5261B00E51C29 /* Sources */,
 				CACC36ED25F5261B00E51C29 /* Frameworks */,
 				CACC36EE25F5261B00E51C29 /* Resources */,
@@ -403,6 +573,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = CACC36E725F5261B00E51C29;
 			packageReferences = (
@@ -424,12 +595,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA6B57582622365A00BEE52E /* Lato-Bold.ttf in Resources */,
 				CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */,
+				CA6B57562622365A00BEE52E /* Lato-Thin.ttf in Resources */,
 				CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */,
 				CA2998F22604044400A2748C /* README.md in Resources */,
 				CA6B56CB262186E200BEE52E /* Colors.xcassets in Resources */,
+				CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */,
 				CA2998E72604024800A2748C /* .gitignore in Resources */,
+				CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */,
+				CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
+				CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */,
+				CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +628,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CA2998EB260402E300A2748C /* ShellScript */ = {
+		CA2998EB260402E300A2748C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -459,6 +637,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -466,6 +645,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		CAF901C9262E26580057CF5B /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -476,6 +673,7 @@
 			files = (
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
 				CAA5E4E026111E7D002557AD /* RootTabBarViewModel.swift in Sources */,
+				CA6B56ED2621D6F300BEE52E /* EnrollmentCoordinator.swift in Sources */,
 				CAA5E4D626111BE5002557AD /* RootTabBarController.swift in Sources */,
 				CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */,
 				CAA5E4D22610929E002557AD /* HomeCoordinator.swift in Sources */,
@@ -485,13 +683,21 @@
 				CA6B56BE26217DC000BEE52E /* Core+Injection.swift in Sources */,
 				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
+				CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */,
+				CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */,
+				CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
 				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
 				CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */,
+				CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */,
 				CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */,
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
+				CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */,
+				CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */,
+				CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */,
+				CA6B56FD2621D79800BEE52E /* EnrollmentViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +737,15 @@
 				CACC36FF25F5261C00E51C29 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CAF2CD182630B2C4003DF959 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAF2CD172630B2C4003DF959 /* pl */,
+				CA24E32F26357F560022F05F /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -657,8 +872,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PafipiMDM/PafipiMDM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CK2H346J6A;
+				DEVELOPMENT_TEAM = 7RUQF55K7J;
 				INFOPLIST_FILE = PafipiMDM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -678,8 +894,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PafipiMDM/PafipiMDM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CK2H346J6A;
+				DEVELOPMENT_TEAM = 7RUQF55K7J;
 				INFOPLIST_FILE = PafipiMDM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

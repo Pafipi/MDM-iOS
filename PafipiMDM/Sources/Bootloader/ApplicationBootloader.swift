@@ -21,21 +21,16 @@ protocol ApplicationBootloader {
 }
 
 protocol ApplicationBootloaderDelegate: AnyObject {
+    
     func didUserDeniedRemoteNotifications()
     func didFailToRegisterForRemoteNotifications(error: Error?)
 }
 
-final class ApplicationBootloaderImpl {
+final class ApplicationBootloaderImpl: ApplicationBootloader {
     
     weak var delegate: ApplicationBootloaderDelegate?
     
     @LazyInjected private var remoteNotificationsService: RemoteNotificationsService
-    
-}
-
-// MARK: - ApplicationBootloader
-
-extension ApplicationBootloaderImpl: ApplicationBootloader {
     
     func boot() {
         registerForRemoteNotifications()
@@ -50,11 +45,11 @@ private extension ApplicationBootloaderImpl {
         remoteNotificationsService.getAuthorizationStatus { status in
             switch status {
             case .granted:
-                remoteNotificationsService.registerForRemoteNotifications()
+                self.remoteNotificationsService.registerForRemoteNotifications()
             case .denied, .provisional, .ephemeral:
-                delegate?.didUserDeniedRemoteNotifications()
+                self.delegate?.didUserDeniedRemoteNotifications()
             default:
-                requestUserAuthForRemoteNotifications()
+                self.requestUserAuthForRemoteNotifications()
             }
         }
     }

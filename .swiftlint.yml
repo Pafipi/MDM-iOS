@@ -80,7 +80,6 @@ opt_in_rules:
 - legacy_multiple
 - legacy_nsgeometry_functions
 - legacy_random
-- let_var_whitespace
 - line_length
 - lower_acl_than_parent
 - mark

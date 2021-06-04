@@ -15,12 +15,6 @@ protocol HomeViewControllerDelegate: AnyObject {
 
 public final class HomeViewController: UIViewController {
     
-    public class func create() -> HomeViewController {
-        let vc = HomeViewController()
-        vc.viewModel.output = vc
-        return vc
-    }
-    
     weak var delegate: HomeViewControllerDelegate?
     
     @LazyInjected private var viewModel: HomeViewModel
@@ -31,11 +25,17 @@ public final class HomeViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
+        viewModel.output = self
     }
 
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public class func create() -> HomeViewController {
+        let vc = HomeViewController()
+        return vc
     }
     
     override public func loadView() {
@@ -44,7 +44,6 @@ public final class HomeViewController: UIViewController {
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        mainView?.backgroundColor = Colors.Common.background
     }
 }
 

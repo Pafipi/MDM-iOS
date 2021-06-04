@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Core
+
+  Created by Piotr Fraccaro on 21/03/2021.
+  
+*/
+
+// MARK: - Common
+
+"ok" = "Ok";
+"settings" = "Ustawienia";
+"error" = "Błąd!";
+
+// MARK: - Home
+
+"home_tab_title" = "Główna";
+
+// MARK: - Validation Errors
+
+"field_cannot_be_empty" = "To pole nie może być puste";
+"invalid_url" = "Podany adres jest nieprawidłowy";
+
+// MARK: - Remote Notifications
+
+"remote_notifications_denied_alert_title" = "Wymagana autoryzacja powiadomień zdalnych!";
+"remote_notifications_denied_alert_message" = "Ta aplikacja wymaga Twojej autoryzacji dla zdalnych powiadomień. Zdalne powiadomienia są używane przez serwer MDM do komunikacji z tym urządzeniem. Możesz je autoryzować w ustawieniach swojego urządzenia. Bez uprawnień do odbierania zdalnych powiadomień aplikacja nie może zostać uruchomiona.";
+"remote_notifications_error_alert_title" = "Błąd notyfikacji!";
+"remote_notifications_error_alert_message" = "Wymagane jest ponowne uruchomienie aplikacji. Jeśli to się powtórzy, skontaktuj się z administratorem";
+
+// MARK: - Enrollment
+"enroll_button_title" = "Zarejestruj";
+"address_input_placeholder" = "Wprowadź adres serwera MDM";
