@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Core
+
+  Created by Piotr Fraccaro on 29/04/2021.
+  
+*/
+
+// MARK: - Common
+
+"ok" = "Ok";
+"settings" = "Ustawienia";
+"error" = "Błąd!";
+
+// MARK: - Validation Errors
+
+"field_cannot_be_empty" = "To pole nie może być puste";
+"invalid_url" = "Podany adres jest nieprawidłowy";

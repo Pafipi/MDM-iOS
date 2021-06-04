@@ -48,6 +48,7 @@ final class EnrollmentCoordinator: NSObject, StackCoordinable, TabCoordinatorAct
 
 extension EnrollmentCoordinator: EnrollmentViewControllerDelegate {
     
+    func onEnrollmentFinish() { }
 }
 
 // MARK: - EnrollmentViewControllerDelegate

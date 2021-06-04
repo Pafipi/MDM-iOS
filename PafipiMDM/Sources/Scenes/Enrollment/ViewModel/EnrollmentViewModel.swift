@@ -23,7 +23,9 @@ protocol EnrollmentViewModelOutput: AnyObject {
     
     func onUrlValidationSuccess()
     func onUrlValidationError(with message: String)
+    func onEnrollmentFinished()
     func onEnrollmentError(with message: String)
+    func onUnknownError()
 }
 
 final class EnrollmentViewModelImpl: EnrollmentViewModel {
@@ -33,8 +35,11 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = "https://"
-    private var deviceToken: Data?
+    private var enrollmentAddress: String = ""
+    private var deviceToken: String?
+    private var deviceId: String? {
+        return UIDevice.current.identifierForVendor?.uuidString
+    }
     
     init() {
         repository.delegate = self
@@ -49,15 +54,16 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     }
     
     func setDeviceToken(_ token: Data?) {
-        print(token ?? "")
-        deviceToken = token
+        deviceToken = token?.hexString
     }
 
     func validateEnrollmentAddress() {
         switch urlValidator.validate(enrollmentAddress) {
         case .invalid(let error):
             if let error = error as? ValidationError {
-                output?.onUrlValidationError(with: getErrorMessage(for: error))
+                output?.onUrlValidationError(with: error.localizedDescription)
+            } else {
+                output?.onUnknownError()
             }
         case .valid:
             output?.onUrlValidationSuccess()
@@ -65,10 +71,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     }
     
     func startEnrollment() {
-        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            return
-
-        }
+        guard let deviceId = deviceId else { return }
         UserDefaults.mdmServerAddress = enrollmentAddress
         repository.fetchDeviceUUID(with: deviceId)
     }
@@ -79,38 +82,43 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
 extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
 
     func onGetDeviceUUIDSuccess(with uuid: String) {
-        guard let deviceToken = deviceToken else {
-            return
-        }
-        repository.putDeviceToken(deviceToken, forDeviceWith: uuid)
+        guard let deviceToken = deviceToken,
+              let deviceId = deviceId else { return }
+        
+        UserDefaults.deviceUUID = uuid
+        repository.putDeviceToken(deviceToken, forDeviceWith: deviceId)
     }
     
     func onGetDeviceUUIDFailure(with error: Error) {
-        
+        guard let error = error as? NetworkingError else {
+            output?.onUnknownError()
+            return
+        }
+        output?.onEnrollmentError(with: error.localizedDescription)
     }
     
     func onPutDeviceTokenSuccess() {
-        
+        guard let deviceId = deviceId else { return }
+        repository.requestEnrollmentPush(forDeviceWith: deviceId)
     }
     
     func onPutDeviceTokenFailure(with error: Error) {
-        
-    }
-}
-
-// MARK: - Private methods
-
-private extension EnrollmentViewModelImpl {
-    
-    func getErrorMessage(for error: ValidationError) -> String {
-        switch error {
-        case .urlValidationError(let reason):
-            switch reason {
-            case .isEmpty:
-                return L10n.fieldCannotBeEmpty
-            case .isNotURL:
-                return L10n.invalidUrl
-            }
+        guard let error = error as? NetworkingError else {
+            output?.onUnknownError()
+            return
         }
+        output?.onEnrollmentError(with: error.localizedDescription)
+    }
+    
+    func onRequestEnrollmentPushSuccess() {
+        output?.onEnrollmentFinished()
+    }
+    
+    func onRequestEnrollmentPushFailure(with error: Error) {
+        guard let error = error as? NetworkingError else {
+            output?.onUnknownError()
+            return
+        }
+        output?.onEnrollmentError(with: error.localizedDescription)
     }
 }

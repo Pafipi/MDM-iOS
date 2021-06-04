@@ -20,15 +20,21 @@ extension NetworkingError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return "todo"
+            return "Invalid URL"
         case .invalidURLParameters:
-            return "todo"
+            return "Invalid URL Params"
         case .invalidJSONParameters:
-            return "todo"
+            return "Invalid JSON Params"
         case .notHttpResponse:
-            return "todo"
+            return "Not HTTP Response"
         case .apiError(let code, let data):
-            return "todo"
+            var description = "Api error: \(code);"
+            guard let data = data,
+                  let message = String(data: data, encoding: .utf8) else {
+                return description
+            }
+            description += "\nError message: \(message);"
+            return description
         }
     }
 }

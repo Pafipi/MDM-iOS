@@ -1,0 +1,11 @@
+ input_dir: BackupContacts/
+ output_dir: BackupContacts/Generated
+
+ strings:
+   inputs:
+     - Resources/Localizations/en.lproj
+   outputs:
+     - templateName: structured-swift5
+       params:
+         enumName: Localizations
+       output: Strings+Generated.swift

@@ -21,3 +21,18 @@ public enum ValidationError: Error {
     
     case urlValidationError(_ reason: URLValidationErrorReason)
 }
+
+extension ValidationError: LocalizedError {
+
+    public var errorDescription: String? {
+        switch self {
+        case .urlValidationError(let reason):
+            switch reason {
+            case .isEmpty:
+                return CoreLocalizations.fieldCannotBeEmpty
+            case .isNotURL:
+                return CoreLocalizations.invalidUrl
+            }
+        }
+    }
+}

@@ -13,7 +13,7 @@ class BaseNetworking {
         self.client = client
     }
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
+    func perform<T: Codable, U: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<U> {
         return client.perform(request)
     }
 }

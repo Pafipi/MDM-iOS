@@ -83,8 +83,8 @@ public class Button: UIView {
     }
 
     public var isEnabled: Bool {
-        set { base.isEnabled = newValue }
         get { return base.isEnabled }
+        set { base.isEnabled = newValue }
     }
 
     public func setBackgroundImage(_ image: UIImage?, for state: UIControl.State) {

@@ -9,17 +9,21 @@
 // MARK: - Common
 
 "ok" = "Ok";
-"settings" = "Settings";
-"error" = "Error!";
+
+// MARK: - Error
+
+"unknown_error_alert_title" = "Unknown error!";
+"unknown_error_alert_message" = "An unknown error occured! Contact with MDM Service provider to get more informations";
 
 // MARK: - Home
 
 "home_tab_title" = "Home";
 
-// MARK: - Validation Errors
+// MARK: - Enrollment
 
-"field_cannot_be_empty" = "This field cannot be empty";
-"invalid_url" = "Given address is invalid";
+"enroll_button_title" = "Enroll";
+"address_input_placeholder" = "Enter MDM Server address";
+"enroll_error_alert_title" = "Enrollment error!";
 
 // MARK: - Remote Notifications
 
@@ -27,8 +31,3 @@
 "remote_notifications_denied_alert_message" = "This application requires your authorization for remote notifications. Remote notifications are used by MDM Server to communicate with this device. You can authorize them in your system settings. Without permission to receive remote notifications, the application cannot start.";
 "remote_notifications_error_alert_title" = "Remote notifications error!";
 "remote_notifications_error_alert_message" = "Application restart is required. If it happen again, contact with administrator.";
-
-// MARK: - Enrollment
-
-"enroll_button_title" = "Enroll";
-"address_input_placeholder" = "Enter MDM Server address";

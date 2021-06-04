@@ -20,12 +20,13 @@ final class EnrollmentView: UIView {
     
     weak var delegate: EnrollmentViewDelegate?
     
+    private weak var keyboardScrollHelper: KeyboardScrollHelper?
+    
     private lazy var scrollView = UIScrollView()
     private lazy var scrollContentView = UIView()
     private lazy var appLogoImageView = createAppLogoImageView()
     private lazy var serverAddressInput = createServerAddressInput()
     private lazy var enrollButton = createEnrollButton()
-    private var keyboardScrollHelper: KeyboardScrollHelper?
     
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
@@ -53,7 +54,7 @@ final class EnrollmentView: UIView {
 private extension EnrollmentView {
     
     func setupLayout() {
-        backgroundColor = Asset.Colors.Common.background.color
+        backgroundColor = Colors.Common.background.color
         setupScrollViewLayout()
         setupAppLogoImageViewLayout()
         setupServerAddressInputLayout()
@@ -112,11 +113,11 @@ private extension EnrollmentView {
             padding: Constants.Padding.enrollButton,
             size: Constants.Size.enrollButton
         )
-        enrollButton.setUserInteractionEnabled(false)
+        enrollButton.setUserInteractionEnabled(true)
     }
     
     func createAppLogoImageView() -> UIImageView {
-        let appLogo = Asset.Assets.pafipiLogo.image
+        let appLogo = Asset.pafipiLogo.image
         let imageView = UIImageView(image: appLogo)
         imageView.contentMode = .scaleAspectFit
         imageView.accessibilityIdentifier = Accessibility.Identifiers.appLogoImageView
@@ -125,49 +126,51 @@ private extension EnrollmentView {
     }
     
     func createEnrollButton() -> Button {
-        Button(
-            title: L10n.enrollButtonTitle,
+        let enrollButton = Button(
+            title: Localizations.enrollButtonTitle,
             font: .boldMainStyleFont(ofSize: .mediumLarge),
-            tintColor: Asset.Colors.Common.justWhite.color,
-            textColor: Asset.Colors.Common.justWhite.color,
-            backgroundColor: Asset.Colors.Common.tint.color,
-            disabledColor: Asset.Colors.Common.disabledButtonColor.color,
+            tintColor: Colors.Common.justWhite.color,
+            textColor: Colors.Common.justWhite.color,
+            backgroundColor: Colors.Common.tint.color,
+            disabledColor: Colors.Common.disabledButtonColor.color,
             cornerRadius: Constants.CornerRadius.enrollButton,
             textAlignment: .center,
             accessibilityIdentifier: Accessibility.Identifiers.enrollButton,
-            accessibilityLabel: L10n.enrollButtonTitle
+            accessibilityLabel: Localizations.enrollButtonTitle
         )
+        enrollButton.addTarget(self, action: #selector(didTapEnrollButton), for: .touchUpInside)
+        
+        return enrollButton
     }
     
     func createServerAddressInput() -> FormTextInput {
         let textField = TextField(
-            placeholder: L10n.addressInputPlaceholder,
+            placeholder: Localizations.addressInputPlaceholder,
             font: .regularMainStyleFont(ofSize: .medium),
             cornerRadius: Constants.CornerRadius.serverAddressTextField,
             alignment: .left,
             returnButtonType: .done,
             autocapitalizationType: .none,
-            textColor: Asset.Colors.Common.black.color,
-            placeholderColor: Asset.Colors.Form.placeholder.color,
-            backgroundColor: Asset.Colors.Form.inputBackground.color,
+            textColor: Colors.Common.black.color,
+            placeholderColor: Colors.Form.placeholder.color,
+            backgroundColor: Colors.Form.inputBackground.color,
             borderWidth: Constants.Border.serverAddressTextFieldWidth,
-            borderColor: Asset.Colors.Common.tint.color,
-            debounceContentChange: true,
+            borderColor: Colors.Common.tint.color,
             accessibilityIdentifier: Accessibility.Identifiers.enrollmentAddressTextField,
             accessibilityLabel: Accessibility.Labels.enrollmentAddressTextField
         )
         let errorLabel = Label(
             font: .boldMainStyleFont(ofSize: .smallest),
             alignment: .left,
-            color: Asset.Colors.Common.error.color,
+            color: Colors.Common.error.color,
             accessibilityLabel: Accessibility.Identifiers.enrollmentAddressErrorLabel,
             accessibilityIdentifier: Accessibility.Labels.enrollmentAddressErrorLabel
         )
         let formInput = FormTextInput(
             textField: textField,
-            borderColor: Asset.Colors.Common.tint.color,
+            borderColor: Colors.Common.tint.color,
             errorLabel: errorLabel,
-            errorColor: Asset.Colors.Common.error.color,
+            errorColor: Colors.Common.error.color,
             accessibilityIdentifier: Accessibility.Identifiers.enrollmentAddressInput,
             accessibilityLabel: Accessibility.Labels.enrollmentAddressInput
         )
@@ -176,6 +179,15 @@ private extension EnrollmentView {
     
     func createKeyboardScrollHelper() -> KeyboardScrollHelper {
         KeyboardScrollHelper(scrollView: scrollView, viewToBeShown: serverAddressInput)
+    }
+}
+
+// MARK: - Selectors
+
+private extension EnrollmentView {
+    
+    @objc func didTapEnrollButton() {
+        delegate?.didTapEnrollButton()
     }
 }
 

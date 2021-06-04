@@ -23,9 +23,9 @@ final class HomeCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         let controller = HomeViewController.create()
         controller.delegate = self
         controller.tabBarItem = self.createTabBarItem(
-            title: L10n.homeTabTitle,
-            image: Asset.Assets.Home.homeOutline.image,
-            selectedImage: Asset.Assets.Home.homeOutline.image,
+            title: Localizations.homeTabTitle,
+            image: Asset.Home.homeOutline.image,
+            selectedImage: Asset.Home.homeOutline.image,
             accessbilityIdentifier: Accessibility.Identifiers.homeTab,
             accessibilityLabel: Accessibility.Labels.homeTab
         )

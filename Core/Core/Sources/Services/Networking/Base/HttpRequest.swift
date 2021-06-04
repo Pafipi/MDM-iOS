@@ -1,20 +1,26 @@
 //
 //  HttpRequest.swift
-//  PafipiMDM
+//  Core
 //
 //  Created by Piotr Fraccaro on 10/04/2021.
 //
+
+import Foundation
+
+public struct EmptyBody: Codable { }
 
 enum HttpMethod: String {
     case get
     case post
     case put
+    case delete
 }
 
 final class HttpRequest<T: Codable> {
     
     let url: URL
     let method: HttpMethod
+    let body: T?
     let config: HttpRequestConfig
     
     var parameters: Parameters {
@@ -31,9 +37,11 @@ final class HttpRequest<T: Codable> {
     
     init(url: URL,
          method: HttpMethod,
+         body: T? = nil,
          requestConfig: HttpRequestConfig) {
         self.url = url
         self.method = method
+        self.body = body
         self.config = requestConfig
     }
     
@@ -42,6 +50,7 @@ final class HttpRequest<T: Codable> {
         [\(method.rawValue.uppercased())] \(url)
         Headers: \(headers)
         Parameters: \(parameters)
+        Body: \(String(data: (try? JSONEncoder().encode(body)) ?? Data(), encoding: .utf8) ?? "")
         """
     }
 }

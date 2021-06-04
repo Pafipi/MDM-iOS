@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationBootloader.delegate = self
         applicationBootloader.boot()
         
+        checkIfLaunchedFromNotification(for: launchOptions)
+        
         return true
     }
     
@@ -34,6 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFailToRegisterForRemoteNotificationsWithError error: Error) {
         rootCoordinator.showRemoteNotificationsErrorAlert()
+    }
+    
+    func application(_ application: UIApplication,
+                     didReceiveRemoteNotification userInfo: [AnyHashable: Any],
+                     fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        completionHandler(.newData)
     }
 }
 
@@ -59,5 +67,12 @@ private extension AppDelegate {
         rootCoordinator.start()
         window?.rootViewController = rootCoordinator.rootViewController
         window?.makeKeyAndVisible()
+    }
+    
+    func checkIfLaunchedFromNotification(for launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        let notificationOption = launchOptions?[.remoteNotification]
+
+        if let notification = notificationOption as? [String: AnyObject],
+           let aps = notification["aps"] as? [String: AnyObject] { }
     }
 }

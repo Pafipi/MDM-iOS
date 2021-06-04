@@ -13,7 +13,6 @@
 		CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */; };
 		CA6B56BE26217DC000BEE52E /* Core+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56BD26217DC000BEE52E /* Core+Injection.swift */; };
 		CA6B56C7262181D900BEE52E /* Root+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56C6262181D900BEE52E /* Root+Injection.swift */; };
-		CA6B56CB262186E200BEE52E /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA6B56CA262186E200BEE52E /* Colors.xcassets */; };
 		CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56D826218BA500BEE52E /* HomeViewModel.swift */; };
 		CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E026218BB000BEE52E /* HomeViewController.swift */; };
 		CA6B56E526218E7900BEE52E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56E426218E7900BEE52E /* HomeView.swift */; };
@@ -23,11 +22,6 @@
 		CA6B56FD2621D79800BEE52E /* EnrollmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */; };
 		CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57002621D79E00BEE52E /* EnrollmentView.swift */; };
 		CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */; };
-		CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B574F2622365A00BEE52E /* Lato-Light.ttf */; };
-		CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57502622365A00BEE52E /* Lato-Black.ttf */; };
-		CA6B57562622365A00BEE52E /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57512622365A00BEE52E /* Lato-Thin.ttf */; };
-		CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57522622365A00BEE52E /* Lato-Regular.ttf */; };
-		CA6B57582622365A00BEE52E /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA6B57532622365A00BEE52E /* Lato-Bold.ttf */; };
 		CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6B57912622855000BEE52E /* Enrollment+Injection.swift */; };
 		CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE723260D1E7800132DC0 /* Coordinable.swift */; };
 		CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */; };
@@ -45,12 +39,17 @@
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
-		CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */; };
 		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
-		CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */; };
 		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
 		CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; };
 		CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CAFA7076263A89D200C1F4A5 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFA7074263A89D200C1F4A5 /* XCAssets+Generated.swift */; };
+		CAFA7077263A89D200C1F4A5 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFA7075263A89D200C1F4A5 /* Strings+Generated.swift */; };
+		CAFA70BA263A9F1200C1F4A5 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFA70B5263A9F1200C1F4A5 /* Lato-Bold.ttf */; };
+		CAFA70BB263A9F1200C1F4A5 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFA70B6263A9F1200C1F4A5 /* Lato-Black.ttf */; };
+		CAFA70BC263A9F1200C1F4A5 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFA70B7263A9F1200C1F4A5 /* Lato-Light.ttf */; };
+		CAFA70BD263A9F1200C1F4A5 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFA70B8263A9F1200C1F4A5 /* Lato-Regular.ttf */; };
+		CAFA70BE263A9F1200C1F4A5 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFA70B9263A9F1200C1F4A5 /* Lato-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,7 +92,6 @@
 		CA6B56A726217A5B00BEE52E /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56BD26217DC000BEE52E /* Core+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Core+Injection.swift"; sourceTree = "<group>"; };
 		CA6B56C6262181D900BEE52E /* Root+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Injection.swift"; sourceTree = "<group>"; };
-		CA6B56CA262186E200BEE52E /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		CA6B56D826218BA500BEE52E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CA6B56E026218BB000BEE52E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CA6B56E426218E7900BEE52E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -103,11 +101,6 @@
 		CA6B56FC2621D79800BEE52E /* EnrollmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentViewModel.swift; sourceTree = "<group>"; };
 		CA6B57002621D79E00BEE52E /* EnrollmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentView.swift; sourceTree = "<group>"; };
 		CA6B57082621D7AE00BEE52E /* EnrollmentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentRepository.swift; sourceTree = "<group>"; };
-		CA6B574F2622365A00BEE52E /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		CA6B57502622365A00BEE52E /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
-		CA6B57512622365A00BEE52E /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
-		CA6B57522622365A00BEE52E /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
-		CA6B57532622365A00BEE52E /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		CA6B57912622855000BEE52E /* Enrollment+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enrollment+Injection.swift"; sourceTree = "<group>"; };
 		CA9CE723260D1E7800132DC0 /* Coordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinable.swift; sourceTree = "<group>"; };
 		CA9CE729260D1E7F00132DC0 /* StackCoordinable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackCoordinable.swift; sourceTree = "<group>"; };
@@ -131,10 +124,15 @@
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
-		CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		CAF2CD4D26319AFD003DF959 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFA7074263A89D200C1F4A5 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		CAFA7075263A89D200C1F4A5 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		CAFA70B5263A9F1200C1F4A5 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		CAFA70B6263A9F1200C1F4A5 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		CAFA70B7263A9F1200C1F4A5 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		CAFA70B8263A9F1200C1F4A5 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		CAFA70B9263A9F1200C1F4A5 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,7 +189,6 @@
 			children = (
 				CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */,
 				CACC36FC25F5261C00E51C29 /* Assets.xcassets */,
-				CA6B56CA262186E200BEE52E /* Colors.xcassets */,
 				CA6B574D2622357F00BEE52E /* Fonts */,
 				CAF2CD192630B2C4003DF959 /* Localizations */,
 			);
@@ -293,17 +290,18 @@
 			children = (
 				CA6B574E2622358E00BEE52E /* Lato */,
 			);
-			path = Fonts;
+			name = Fonts;
+			path = ../../Core/Core/Resources/Fonts;
 			sourceTree = "<group>";
 		};
 		CA6B574E2622358E00BEE52E /* Lato */ = {
 			isa = PBXGroup;
 			children = (
-				CA6B57502622365A00BEE52E /* Lato-Black.ttf */,
-				CA6B57532622365A00BEE52E /* Lato-Bold.ttf */,
-				CA6B574F2622365A00BEE52E /* Lato-Light.ttf */,
-				CA6B57522622365A00BEE52E /* Lato-Regular.ttf */,
-				CA6B57512622365A00BEE52E /* Lato-Thin.ttf */,
+				CAFA70B6263A9F1200C1F4A5 /* Lato-Black.ttf */,
+				CAFA70B5263A9F1200C1F4A5 /* Lato-Bold.ttf */,
+				CAFA70B7263A9F1200C1F4A5 /* Lato-Light.ttf */,
+				CAFA70B8263A9F1200C1F4A5 /* Lato-Regular.ttf */,
+				CAFA70B9263A9F1200C1F4A5 /* Lato-Thin.ttf */,
 			);
 			path = Lato;
 			sourceTree = "<group>";
@@ -330,6 +328,15 @@
 				CA6B56EC2621D6F300BEE52E /* EnrollmentCoordinator.swift */,
 			);
 			path = Enrollment;
+			sourceTree = "<group>";
+		};
+		CA8588022639A26900EB6E84 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				CAFA7075263A89D200C1F4A5 /* Strings+Generated.swift */,
+				CAFA7074263A89D200C1F4A5 /* XCAssets+Generated.swift */,
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 		CA9CE719260D1D8500132DC0 /* Scenes */ = {
@@ -436,7 +443,7 @@
 				CA2998D42603FC8400A2748C /* Configuration */,
 				CA2998D52603FD0700A2748C /* Sources */,
 				CA2998D62603FD2B00A2748C /* Resources */,
-				CAF901D0262E27FD0057CF5B /* Generated */,
+				CA8588022639A26900EB6E84 /* Generated */,
 			);
 			path = PafipiMDM;
 			sourceTree = "<group>";
@@ -471,15 +478,6 @@
 				CAF2CD4D26319AFD003DF959 /* Core.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CAF901D0262E27FD0057CF5B /* Generated */ = {
-			isa = PBXGroup;
-			children = (
-				CAF2CD312630C0D7003DF959 /* XCAssets+Generated.swift */,
-				CAF2CD3D2630CB41003DF959 /* Strings+Generated.swift */,
-			);
-			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,7 +549,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					CACC36EF25F5261B00E51C29 = {
 						CreatedOnToolsVersion = 12.4;
@@ -595,18 +593,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA6B57582622365A00BEE52E /* Lato-Bold.ttf in Resources */,
+				CAFA70BC263A9F1200C1F4A5 /* Lato-Light.ttf in Resources */,
+				CAFA70BB263A9F1200C1F4A5 /* Lato-Black.ttf in Resources */,
 				CA2998ED2604037300A2748C /* .swiftlint.yml in Resources */,
-				CA6B57562622365A00BEE52E /* Lato-Thin.ttf in Resources */,
 				CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */,
 				CA2998F22604044400A2748C /* README.md in Resources */,
-				CA6B56CB262186E200BEE52E /* Colors.xcassets in Resources */,
-				CA6B57552622365A00BEE52E /* Lato-Black.ttf in Resources */,
+				CAFA70BA263A9F1200C1F4A5 /* Lato-Bold.ttf in Resources */,
 				CA2998E72604024800A2748C /* .gitignore in Resources */,
-				CA6B57572622365A00BEE52E /* Lato-Regular.ttf in Resources */,
+				CAFA70BE263A9F1200C1F4A5 /* Lato-Thin.ttf in Resources */,
+				CAFA70BD263A9F1200C1F4A5 /* Lato-Regular.ttf in Resources */,
 				CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */,
 				CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */,
-				CA6B57542622365A00BEE52E /* Lato-Light.ttf in Resources */,
 				CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -684,14 +681,14 @@
 				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
 				CA6B56F72621D78E00BEE52E /* EnrollmentViewController.swift in Sources */,
-				CAF2CD322630C0D7003DF959 /* XCAssets+Generated.swift in Sources */,
+				CAFA7076263A89D200C1F4A5 /* XCAssets+Generated.swift in Sources */,
 				CA6B57922622855000BEE52E /* Enrollment+Injection.swift in Sources */,
 				CA9CE73B260D21EE00132DC0 /* CoordinableView.swift in Sources */,
 				CA6B56E126218BB000BEE52E /* HomeViewController.swift in Sources */,
 				CA9CE724260D1E7800132DC0 /* Coordinable.swift in Sources */,
 				CA9CE732260D203500132DC0 /* CoordinatorActions.swift in Sources */,
 				CA6B56D926218BA500BEE52E /* HomeViewModel.swift in Sources */,
-				CAF2CD3E2630CB41003DF959 /* Strings+Generated.swift in Sources */,
+				CAFA7077263A89D200C1F4A5 /* Strings+Generated.swift in Sources */,
 				CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */,
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 				CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */,
@@ -755,6 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -816,6 +814,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

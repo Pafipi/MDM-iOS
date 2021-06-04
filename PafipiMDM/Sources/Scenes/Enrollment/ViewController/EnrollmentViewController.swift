@@ -10,6 +10,7 @@ import Resolver
 
 protocol EnrollmentViewControllerDelegate: AnyObject {
     
+    func onEnrollmentFinish()
 }
 
 protocol EnrollmentViewControllerInput: AnyObject {
@@ -55,7 +56,7 @@ public final class EnrollmentViewController: UIViewController {
 // MARK: - EnrollmentViewModelOutput
 
 extension EnrollmentViewController: EnrollmentViewModelOutput {
-    
+
     func onUrlValidationSuccess() {
         mainView?.updateEnrollmentAddressInput(isValid: true)
         mainView?.shouldEnableEnrollButton(true)
@@ -63,12 +64,40 @@ extension EnrollmentViewController: EnrollmentViewModelOutput {
     
     func onUrlValidationError(with message: String) {
         mainView?.updateEnrollmentAddressInput(isValid: false, message: message)
-        mainView?.shouldEnableEnrollButton(false)
+        mainView?.shouldEnableEnrollButton(true)
     }
     
     func onEnrollmentError(with message: String) {
+        let alert = UIAlertController(
+            title: Localizations.enrollErrorAlertTitle,
+            message: message,
+            preferredStyle: .alert
+        )
         
+        let okAction = UIAlertAction(
+            title: Localizations.ok,
+            style: .default) { _ in }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
+    
+    func onUnknownError() {
+        let alert = UIAlertController(
+            title: Localizations.unknownErrorAlertTitle,
+            message: Localizations.unknownErrorAlertMessage,
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(
+            title: Localizations.ok,
+            style: .default) { _ in }
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    func onEnrollmentFinished() { }
 }
 
 // MARK: - EnrollmentViewDelegate

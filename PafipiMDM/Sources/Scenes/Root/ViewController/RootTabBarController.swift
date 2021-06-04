@@ -34,9 +34,9 @@ final class RootTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Asset.Colors.Common.background.color
+        view.backgroundColor = Colors.Common.background.color
         viewControllers = tabBarViews
-        tabBar.tintColor = Asset.Colors.Common.tint.color
+        tabBar.tintColor = Colors.Common.tint.color
     }
 }
 

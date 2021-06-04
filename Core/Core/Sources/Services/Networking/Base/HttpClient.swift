@@ -1,6 +1,6 @@
 //
 //  HttpClient.swift
-//  IteoTemplate
+//  Core
 //
 //  Created by Piotr Fraccaro on 19/04/2021.
 //
@@ -8,13 +8,14 @@
 import Foundation
 import Combine
 
-public typealias NetworkingResultPublisher<T: Codable> = AnyPublisher<T, Error>
-
 public struct EmptyResponse: Codable { }
+
+public typealias NetworkingResultPublisher<U: Codable> = AnyPublisher<U, Error>
+public typealias NetworkingEmptyResultPublisher = NetworkingResultPublisher<EmptyResponse>
 
 protocol HttpClient: AnyObject {
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T>
+    func perform<T: Codable, U: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<U>
 }
 
 final class HttpClientImpl: NSObject, HttpClient {
@@ -29,7 +30,7 @@ final class HttpClientImpl: NSObject, HttpClient {
         super.init()
     }
     
-    func perform<T: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
+    func perform<T: Codable, U: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<U> {
         log(.networkRequest, "\(request.string)")
         
         guard var components = URLComponents(url: request.url, resolvingAgainstBaseURL: true) else {
@@ -53,8 +54,9 @@ final class HttpClientImpl: NSObject, HttpClient {
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
         
-        if request.method != .get && !request.parameters.isEmpty {
-            guard let data = try? JSONSerialization.data(withJSONObject: request.parameters, options: [])
+        if request.body != nil {
+            guard
+                let data = try? JSONEncoder().encode(request.body)
             else {
                 return Fail(error: NetworkingError.invalidJSONParameters).eraseToAnyPublisher()
             }
@@ -68,8 +70,8 @@ final class HttpClientImpl: NSObject, HttpClient {
 
 private extension URLSession.DataTaskPublisher {
     
-    func networkingResultPublisher<T: Codable>(for request: HttpRequest<T>) -> NetworkingResultPublisher<T> {
-        tryMap { data, response in
+    func networkingResultPublisher<T: Codable, U: Codable>(for request: HttpRequest<T>) -> NetworkingResultPublisher<U> {
+        tryMap { data, response -> Data in
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkingError.notHttpResponse
             }
@@ -86,7 +88,16 @@ private extension URLSession.DataTaskPublisher {
             
             return data
         }
-        .decode(type: T.self, decoder: JSONDecoder())
+        .compactMap { data -> U? in
+            if U.self == EmptyResponse.self,
+               let empty = EmptyResponse() as? U {
+                return empty
+            }
+            
+            let decoder = JSONDecoder()
+            let decoded = try? decoder.decode(U.self, from: data)
+            return decoded
+        }
         .mapError { error -> Error in
             log(.networkResponse,
                 """

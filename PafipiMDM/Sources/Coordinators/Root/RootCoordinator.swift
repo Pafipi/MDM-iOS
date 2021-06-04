@@ -34,7 +34,7 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         homeCoordinator.start()
         tabBarViews.append(homeNavigationController)
         
-        if KeychainWrapper.deviceUUID == nil {
+        if UserDefaults.deviceUUID == nil {
             let enrollmentCoordinator = EnrollmentCoordinator()
             enrollmentCoordinator.start(with: deviceToken)
             rootViewController = enrollmentCoordinator.rootViewController
@@ -70,13 +70,13 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     
     func getRemoteNotificationsDeniedAlert() -> UIAlertController {
         let alert = UIAlertController(
-            title: L10n.remoteNotificationsDeniedAlertTitle,
-            message: L10n.remoteNotificationsDeniedAlertMessage,
+            title: Localizations.remoteNotificationsDeniedAlertTitle,
+            message: Localizations.remoteNotificationsDeniedAlertMessage,
             preferredStyle: .alert
         )
         
         let settingsAction = UIAlertAction(
-            title: L10n.settings,
+            title: CoreLocalizations.settings,
             style: .default) { _ in
                 self.openSystemSettings()
         }
@@ -88,8 +88,8 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     
     func getRemoteNotificationsErrorAlert() -> UIAlertController {
         let alert = UIAlertController(
-            title: L10n.remoteNotificationsErrorAlertTitle,
-            message: L10n.remoteNotificationsErrorAlertMessage,
+            title: Localizations.remoteNotificationsErrorAlertTitle,
+            message: Localizations.remoteNotificationsErrorAlertMessage,
             preferredStyle: .alert
         )
         
@@ -108,6 +108,7 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
 
 extension RootCoordinator: EnrollmentViewControllerDelegate {
     
+    func onEnrollmentFinish() { }
 }
 
 // MARK: - RootTabBarControllerDelegate

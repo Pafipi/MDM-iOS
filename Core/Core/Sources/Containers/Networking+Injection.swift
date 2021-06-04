@@ -11,6 +11,7 @@ import Resolver
 public extension Resolver {
     
     static func registerNetworking() {
+        register { DeviceNetworkingImpl() as DeviceNetworking }
         register { EnrollmentNetworkingImpl() as EnrollmentNetworking }
     }
 }
