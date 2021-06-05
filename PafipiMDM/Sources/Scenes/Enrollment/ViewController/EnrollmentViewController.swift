@@ -46,6 +46,7 @@ public final class EnrollmentViewController: UIViewController {
     
     override public func loadView() {
         self.view = EnrollmentView(delegate: self)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override public func viewDidLoad() {
@@ -97,7 +98,9 @@ extension EnrollmentViewController: EnrollmentViewModelOutput {
         present(alert, animated: true)
     }
     
-    func onEnrollmentFinished() { }
+    func onEnrollmentFinished() {
+        delegate?.onEnrollmentFinish()
+    }
 }
 
 // MARK: - EnrollmentViewDelegate

@@ -12,6 +12,7 @@ import Core
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private let applicationBootloader = ApplicationBootloaderImpl()
+    private let remoteNotificationsHandler = RemoteNotificationsHandlerImpl()
     private let rootCoordinator = RootCoordinator()
     
     var window: UIWindow?
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         configureWindow()
+        remoteNotificationsHandler.delegate = self
         applicationBootloader.delegate = self
         applicationBootloader.boot()
         
@@ -41,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        remoteNotificationsHandler.didReceiveNotification(with: userInfo)
         completionHandler(.newData)
     }
 }
@@ -58,6 +61,16 @@ extension AppDelegate: ApplicationBootloaderDelegate {
     }
 }
 
+// MARK: - RemoteNotificationsHandlerDelegate
+
+extension AppDelegate: RemoteNotificationsHandlerDelegate {
+    
+    func shouldShowMobileConfigInstallScene() {
+        rootCoordinator.showMobileConfigInstallationScene()
+    }
+}
+
+
 // MARK: - Private methods
 
 private extension AppDelegate {
@@ -72,7 +85,7 @@ private extension AppDelegate {
     func checkIfLaunchedFromNotification(for launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         let notificationOption = launchOptions?[.remoteNotification]
 
-        if let notification = notificationOption as? [String: AnyObject],
-           let aps = notification["aps"] as? [String: AnyObject] { }
+        guard let notification = notificationOption as? [AnyHashable: Any] else { return }
+        remoteNotificationsHandler.didReceiveNotification(with: notification)
     }
 }

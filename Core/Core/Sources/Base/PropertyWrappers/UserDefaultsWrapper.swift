@@ -30,6 +30,6 @@ public extension UserDefaults {
     @UserDefault(key: "mdm_server_address", defaultValue: nil)
     static var mdmServerAddress: String?
     
-    @UserDefault(key: "deviceUUID", defaultValue: nil)
-    static var deviceUUID: String?
+    @UserDefault(key: "isEnrolled", defaultValue: false)
+    static var isEnrolled: Bool
 }

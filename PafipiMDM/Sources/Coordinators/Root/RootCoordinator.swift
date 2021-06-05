@@ -19,8 +19,9 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     
     private var deviceToken: Data?
     
-    required init(rootNavigationController: NavigationController? = nil) {
+    required init(rootNavigationController: NavigationController? = NavigationController()) {
         self.rootNavigationController = rootNavigationController
+        self.rootViewController = rootNavigationController
         self.childCoordinators = []
         super.init()
     }
@@ -28,22 +29,21 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     func start() {
         var tabBarViews: [UIViewController] = []
         
-        let homeNavigationController = NavigationController()
+        guard let homeNavigationController = rootNavigationController else { return }
         let homeCoordinator = HomeCoordinator(rootNavigationController: homeNavigationController)
         add(homeCoordinator)
         homeCoordinator.start()
         tabBarViews.append(homeNavigationController)
+        let rootTabBarController = RootTabBarController(tabBarViews: tabBarViews)
+        rootTabBarController.controllerDelegate = self
+        rootViewController = rootTabBarController
         
-        if UserDefaults.deviceUUID == nil {
-            let enrollmentCoordinator = EnrollmentCoordinator()
-            enrollmentCoordinator.start(with: deviceToken)
-            rootViewController = enrollmentCoordinator.rootViewController
-            enrollmentCoordinatorInput = enrollmentCoordinator
+        if !UserDefaults.isEnrolled {
+            let enrollmentCoordinator = EnrollmentCoordinator(rootNavigationController: rootNavigationController)
+            enrollmentCoordinator.delegate = self
             add(enrollmentCoordinator)
-        } else {
-            let rootTabBarController = RootTabBarController(tabBarViews: tabBarViews)
-            rootTabBarController.controllerDelegate = self
-            rootViewController = rootTabBarController
+            enrollmentCoordinator.start(with: deviceToken)
+            enrollmentCoordinatorInput = enrollmentCoordinator
         }
     }
     
@@ -52,11 +52,19 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         enrollmentCoordinatorInput?.didRegisterForRemoteNotifications(with: deviceToken)
     }
     
+    func showMobileConfigInstallationScene() {
+        let mobileConfigCoordinator = MobileConfigCoordinator(rootNavigationController: rootNavigationController)
+        mobileConfigCoordinator.delegate = self
+        add(mobileConfigCoordinator)
+        mobileConfigCoordinator.start()
+        rootViewController = mobileConfigCoordinator.rootNavigationController
+    }
+    
     func showRemoteNotificationsDeniedAlert() {
         Thread.asyncOnMain { [weak self] in
             guard let self = self else { return }
             let alert = self.getRemoteNotificationsDeniedAlert()
-            self.rootViewController?.present(alert, animated: true)
+            self.rootNavigationController?.present(alert, animated: true)
         }
     }
     
@@ -64,7 +72,7 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
         Thread.asyncOnMain { [weak self] in
             guard let self = self else { return }
             let alert = self.getRemoteNotificationsErrorAlert()
-            self.rootViewController?.present(alert, animated: true)
+            self.rootNavigationController?.present(alert, animated: true)
         }
     }
     
@@ -104,11 +112,24 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     }
 }
 
-// MARK: - EnrollmentViewControllerDelegate
+// MARK: - EnrollmentCoordinatorDelegate
 
-extension RootCoordinator: EnrollmentViewControllerDelegate {
+extension RootCoordinator: EnrollmentCoordinatorDelegate {
     
-    func onEnrollmentFinish() { }
+    func didFinish(coordinator: EnrollmentCoordinator) {
+        removeChild(coordinator)
+    }
+}
+
+// MARK: - MobileConfigCoordinatorDelegate
+
+extension RootCoordinator: MobileConfigCoordinatorDelegate {
+    
+    func didFinish(coordinator: MobileConfigCoordinator) {
+        removeChild(coordinator)
+        rootNavigationController?.popViewController(animated: true)
+        UserDefaults.isEnrolled = true
+    }
 }
 
 // MARK: - RootTabBarControllerDelegate

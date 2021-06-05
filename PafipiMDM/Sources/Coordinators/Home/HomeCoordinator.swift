@@ -29,7 +29,7 @@ final class HomeCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
             accessbilityIdentifier: Accessibility.Identifiers.homeTab,
             accessibilityLabel: Accessibility.Labels.homeTab
         )
-        rootNavigationController?.viewControllers.append(controller)
+        rootNavigationController?.pushViewController(controller, animated: true)
     }
 }
 
