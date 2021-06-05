@@ -35,7 +35,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = ""
+    private var enrollmentAddress: String = "192.168.1.66"
     private var deviceToken: String?
     private var deviceId: String? {
         return UIDevice.current.identifierForVendor?.uuidString
@@ -85,15 +85,11 @@ extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
         guard let deviceToken = deviceToken,
               let deviceId = deviceId else { return }
         
-        UserDefaults.deviceUUID = uuid
+//        UserDefaults.deviceUUID = uuid
         repository.putDeviceToken(deviceToken, forDeviceWith: deviceId)
     }
     
     func onGetDeviceUUIDFailure(with error: Error) {
-        guard let error = error as? NetworkingError else {
-            output?.onUnknownError()
-            return
-        }
         output?.onEnrollmentError(with: error.localizedDescription)
     }
     
@@ -103,10 +99,6 @@ extension EnrollmentViewModelImpl: EnrollmentRepositoryDelegate {
     }
     
     func onPutDeviceTokenFailure(with error: Error) {
-        guard let error = error as? NetworkingError else {
-            output?.onUnknownError()
-            return
-        }
         output?.onEnrollmentError(with: error.localizedDescription)
     }
     

@@ -8,6 +8,11 @@
 import UIKit
 import Core
 
+protocol EnrollmentCoordinatorDelegate: AnyObject {
+    
+    func didFinish(coordinator: EnrollmentCoordinator)
+}
+
 protocol EnrollmentCoordinatorInput: AnyObject {
     
     func didRegisterForRemoteNotifications(with deviceToken: Data)
@@ -15,13 +20,14 @@ protocol EnrollmentCoordinatorInput: AnyObject {
 
 final class EnrollmentCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     
+    weak var delegate: EnrollmentCoordinatorDelegate?
     weak var enrollmentViewControllerInput: EnrollmentViewControllerInput?
     
     var childCoordinators: [StackCoordinable]
     var rootNavigationController: NavigationController?
     var rootViewController: UIViewController?
     
-    required init(rootNavigationController: NavigationController? = nil) {
+    required init(rootNavigationController: NavigationController? = NavigationController()) {
         self.rootNavigationController = rootNavigationController
         self.childCoordinators = []
         super.init()
@@ -32,7 +38,8 @@ final class EnrollmentCoordinator: NSObject, StackCoordinable, TabCoordinatorAct
         controller.delegate = self
         enrollmentViewControllerInput = controller
         rootViewController = controller
-        rootNavigationController?.viewControllers.append(controller)
+        controller.hidesBottomBarWhenPushed = true
+        rootNavigationController?.pushViewController(controller, animated: true)
     }
     
     func start(with deviceToken: Data? = nil) {
@@ -40,7 +47,8 @@ final class EnrollmentCoordinator: NSObject, StackCoordinable, TabCoordinatorAct
         controller.delegate = self
         enrollmentViewControllerInput = controller
         rootViewController = controller
-        rootNavigationController?.viewControllers.append(controller)
+        controller.hidesBottomBarWhenPushed = true
+        rootNavigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -48,7 +56,9 @@ final class EnrollmentCoordinator: NSObject, StackCoordinable, TabCoordinatorAct
 
 extension EnrollmentCoordinator: EnrollmentViewControllerDelegate {
     
-    func onEnrollmentFinish() { }
+    func onEnrollmentFinish() {
+        delegate?.didFinish(coordinator: self)
+    }
 }
 
 // MARK: - EnrollmentViewControllerDelegate

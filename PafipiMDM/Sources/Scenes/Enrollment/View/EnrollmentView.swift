@@ -20,18 +20,17 @@ final class EnrollmentView: UIView {
     
     weak var delegate: EnrollmentViewDelegate?
     
-    private weak var keyboardScrollHelper: KeyboardScrollHelper?
-    
     private lazy var scrollView = UIScrollView()
     private lazy var scrollContentView = UIView()
     private lazy var appLogoImageView = createAppLogoImageView()
     private lazy var serverAddressInput = createServerAddressInput()
     private lazy var enrollButton = createEnrollButton()
+    private var keyboardScrollHelper: KeyboardScrollHelper?
     
     init(delegate: EnrollmentViewDelegate? = nil) {
         super.init(frame: .zero)
         self.delegate = delegate
-        keyboardScrollHelper = createKeyboardScrollHelper()
+        self.keyboardScrollHelper = createKeyboardScrollHelper()
         setupLayout()
     }
     
