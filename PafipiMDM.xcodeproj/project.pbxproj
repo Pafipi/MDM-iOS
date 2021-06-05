@@ -39,6 +39,9 @@
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
+		CAD44D78266A611A0079140E /* RemoteNotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD44D77266A611A0079140E /* RemoteNotificationsHandler.swift */; };
+		CAD44D7B266A63CD0079140E /* MobileConfigCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD44D7A266A63CD0079140E /* MobileConfigCoordinator.swift */; };
+		CAD44D89266A67150079140E /* MobileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD44D88266A67150079140E /* MobileConfigViewController.swift */; };
 		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
 		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
 		CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; };
@@ -123,6 +126,9 @@
 		CACC370C25F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CACC371125F5261C00E51C29 /* PafipiMDMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PafipiMDMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC371725F5261C00E51C29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD44D77266A611A0079140E /* RemoteNotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationsHandler.swift; sourceTree = "<group>"; };
+		CAD44D7A266A63CD0079140E /* MobileConfigCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileConfigCoordinator.swift; sourceTree = "<group>"; };
+		CAD44D88266A67150079140E /* MobileConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileConfigViewController.swift; sourceTree = "<group>"; };
 		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		CAF2CD4D26319AFD003DF959 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +182,7 @@
 		CA2998D52603FD0700A2748C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				CAD44D76266A610D0079140E /* APNs */,
 				CAAE1AB12607D4810048872D /* Bootloader */,
 				CA60C53F26173D8900CCBC8D /* Containers */,
 				CA9CE71B260D1DCC00132DC0 /* Coordinators */,
@@ -343,8 +350,9 @@
 			isa = PBXGroup;
 			children = (
 				CAA5E4D926111C33002557AD /* Root */,
-				CA6B56D426218B4B00BEE52E /* Home */,
 				CA6B56F02621D72300BEE52E /* Enrollment */,
+				CAD44D7C266A64170079140E /* MobileConfig */,
+				CA6B56D426218B4B00BEE52E /* Home */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -355,6 +363,7 @@
 				CA9CE722260D1E6E00132DC0 /* Protocol */,
 				CA6B57732622810F00BEE52E /* Root */,
 				CA6B57752622811900BEE52E /* Enrollment */,
+				CAD44D79266A63C10079140E /* MobileConfig */,
 				CA6B57742622811300BEE52E /* Home */,
 			);
 			path = Coordinators;
@@ -462,6 +471,38 @@
 				CACC371725F5261C00E51C29 /* Info.plist */,
 			);
 			path = PafipiMDMUITests;
+			sourceTree = "<group>";
+		};
+		CAD44D76266A610D0079140E /* APNs */ = {
+			isa = PBXGroup;
+			children = (
+				CAD44D77266A611A0079140E /* RemoteNotificationsHandler.swift */,
+			);
+			path = APNs;
+			sourceTree = "<group>";
+		};
+		CAD44D79266A63C10079140E /* MobileConfig */ = {
+			isa = PBXGroup;
+			children = (
+				CAD44D7A266A63CD0079140E /* MobileConfigCoordinator.swift */,
+			);
+			path = MobileConfig;
+			sourceTree = "<group>";
+		};
+		CAD44D7C266A64170079140E /* MobileConfig */ = {
+			isa = PBXGroup;
+			children = (
+				CAD44D7E266A642A0079140E /* ViewController */,
+			);
+			path = MobileConfig;
+			sourceTree = "<group>";
+		};
+		CAD44D7E266A642A0079140E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CAD44D88266A67150079140E /* MobileConfigViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CAF2CD192630B2C4003DF959 /* Localizations */ = {
@@ -670,6 +711,7 @@
 			files = (
 				CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */,
 				CAA5E4E026111E7D002557AD /* RootTabBarViewModel.swift in Sources */,
+				CAD44D78266A611A0079140E /* RemoteNotificationsHandler.swift in Sources */,
 				CA6B56ED2621D6F300BEE52E /* EnrollmentCoordinator.swift in Sources */,
 				CAA5E4D626111BE5002557AD /* RootTabBarController.swift in Sources */,
 				CA9CE72A260D1E7F00132DC0 /* StackCoordinable.swift in Sources */,
@@ -677,6 +719,7 @@
 				CA6B56E526218E7900BEE52E /* HomeView.swift in Sources */,
 				CA6B56C7262181D900BEE52E /* Root+Injection.swift in Sources */,
 				CA9CE743260DC38000132DC0 /* TabCoordinatorActions.swift in Sources */,
+				CAD44D89266A67150079140E /* MobileConfigViewController.swift in Sources */,
 				CA6B56BE26217DC000BEE52E /* Core+Injection.swift in Sources */,
 				CA6B56A826217A5B00BEE52E /* AppDelegate+Injection.swift in Sources */,
 				CAAE1AB32607D4810048872D /* ApplicationBootloader.swift in Sources */,
@@ -692,6 +735,7 @@
 				CA6B56E92621A71800BEE52E /* Home+Injection.swift in Sources */,
 				CA9CE73F260D268C00132DC0 /* RootCoordinator.swift in Sources */,
 				CA6B57092621D7AE00BEE52E /* EnrollmentRepository.swift in Sources */,
+				CAD44D7B266A63CD0079140E /* MobileConfigCoordinator.swift in Sources */,
 				CA6B57012621D79E00BEE52E /* EnrollmentView.swift in Sources */,
 				CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */,
 				CA6B56FD2621D79800BEE52E /* EnrollmentViewModel.swift in Sources */,
