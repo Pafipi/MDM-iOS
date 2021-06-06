@@ -10,13 +10,6 @@ import Resolver
 
 internal extension Resolver {
     
-    static func registerHomeServices() {
-        registerHomeScene()
-    }
-}
-
-private extension Resolver {
-
     static func registerHomeScene() {
         register { HomeViewModelImpl() as HomeViewModel }
     }

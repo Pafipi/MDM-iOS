@@ -10,13 +10,6 @@ import Resolver
 
 internal extension Resolver {
     
-    static func registerRootServices() {
-        registerRootScene()
-    }
-}
-
-private extension Resolver {
-
     static func registerRootScene() {
         register { RootTabBarViewModelImpl() as RootTabBarViewModel }
     }
