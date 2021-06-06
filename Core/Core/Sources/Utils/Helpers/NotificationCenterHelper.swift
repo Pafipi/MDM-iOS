@@ -7,11 +7,11 @@
 
 import UIKit
 
-typealias UserInfo = [AnyHashable: Any]?
+public typealias UserInfo = [AnyHashable: Any]?
 
 public final class NotificationCenterHelper {
     
-    static let shared = NotificationCenterHelper()
+    public static let shared = NotificationCenterHelper()
     
     private let notificationCenter: NotificationCenter
     
@@ -19,26 +19,28 @@ public final class NotificationCenterHelper {
         self.notificationCenter = notificationCenter
     }
     
-    func addObserver(observer: Any, selector: Selector, name: NSNotification.Name, object: Any? = nil) {
+    public func addObserver(observer: Any, selector: Selector, name: NSNotification.Name, object: Any? = nil) {
         notificationCenter.addObserver(observer, selector: selector, name: name, object: object)
         log(.debug, "\(observer.self) observing \"\(name.rawValue)\"")
     }
     
-    func removeObserver(observer: Any, name: NSNotification.Name, object: Any? = nil) {
+    public func removeObserver(observer: Any, name: NSNotification.Name, object: Any? = nil) {
         notificationCenter.removeObserver(observer, name: name, object: object)
         log(.debug, "\(observer.self) stop observing \"\(name.rawValue)\"")
     }
     
-    func post(name: Notification.Name, object: Any?, userInfo: UserInfo) {
+    public func post(name: Notification.Name, object: Any?, userInfo: UserInfo) {
         notificationCenter.post(name: name, object: object, userInfo: userInfo)
         log(.event, "\"\(name.rawValue)\"")
     }
 }
 
-extension Notification.Name {
+public extension Notification.Name {
     
     static let applicationDidEnterBackground = UIApplication.didEnterBackgroundNotification
     static let applicationWillEnterForeground = UIApplication.willEnterForegroundNotification
     static let keyboardWillShow = UIResponder.keyboardWillShowNotification
     static let keyboardWillHide = UIResponder.keyboardWillHideNotification
+    static let batteryLevelDidChange = UIDevice.batteryLevelDidChangeNotification
+    static let batteryStateDidChange = UIDevice.batteryStateDidChangeNotification
 }

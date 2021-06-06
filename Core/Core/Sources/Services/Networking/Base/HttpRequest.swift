@@ -9,14 +9,14 @@ import Foundation
 
 public struct EmptyBody: Codable { }
 
-enum HttpMethod: String {
+public enum HttpMethod: String {
     case get
     case post
     case put
     case delete
 }
 
-final class HttpRequest<T: Codable> {
+public final class HttpRequest<T: Codable> {
     
     let url: URL
     let method: HttpMethod
@@ -35,10 +35,10 @@ final class HttpRequest<T: Codable> {
         config.timeout
     }
     
-    init(url: URL,
-         method: HttpMethod,
-         body: T? = nil,
-         requestConfig: HttpRequestConfig) {
+    public init(url: URL,
+                method: HttpMethod,
+                body: T? = nil,
+                requestConfig: HttpRequestConfig) {
         self.url = url
         self.method = method
         self.body = body
