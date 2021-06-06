@@ -1,5 +1,5 @@
 //
-//  BatteryEndpoint.swift
+//  BatteryInfoEndpoint.swift
 //  BatteryInfo
 //
 //  Created by Piotr Fraccaro on 05/06/2021.
@@ -7,7 +7,7 @@
 
 import Core
 
-struct BatteryEndpoint: Endpoint {
+struct BatteryInfoEndpoint: Endpoint {
     
     var host: String
     var path: String
@@ -38,13 +38,13 @@ struct BatteryEndpoint: Endpoint {
 
 // MARK: - Enrollment API
 
-extension BatteryEndpoint {
+extension BatteryInfoEndpoint {
     
     static var batteryLevel: Self {
-        return BatteryEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/battery/level")
+        return BatteryInfoEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/battery/level")
     }
     
     static var batteryStatus: Self {
-        return BatteryEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/battery/state")
+        return BatteryInfoEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/battery/state")
     }
 }

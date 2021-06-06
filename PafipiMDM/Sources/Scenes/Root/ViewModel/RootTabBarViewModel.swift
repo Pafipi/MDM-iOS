@@ -19,7 +19,7 @@ protocol RootTabBarViewModelOutput: AnyObject {
 
 final class RootTabBarViewModelImpl: RootTabBarViewModel {
     
-    @Injected private var batteryService: BatteryService
+    @Injected private var batteryService: BatteryInfoService
     
     weak var output: RootTabBarViewModelOutput?
 }

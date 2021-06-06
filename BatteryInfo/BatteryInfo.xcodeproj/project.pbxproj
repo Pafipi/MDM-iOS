@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		CAF0F4AE266BC24600E467D7 /* BatteryInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF0F4A4266BC24600E467D7 /* BatteryInfo.framework */; };
 		CAF0F4B5266BC24600E467D7 /* BatteryInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = CAF0F4A7266BC24600E467D7 /* BatteryInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAF0F4C1266BC2AB00E467D7 /* BatteryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4C0266BC2AB00E467D7 /* BatteryService.swift */; };
-		CAF0F4C7266BC42600E467D7 /* BatteryNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4C6266BC42600E467D7 /* BatteryNetworking.swift */; };
-		CAF0F4CB266BC45700E467D7 /* BatteryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4CA266BC45700E467D7 /* BatteryEndpoint.swift */; };
+		CAF0F4C1266BC2AB00E467D7 /* BatteryInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4C0266BC2AB00E467D7 /* BatteryInfoService.swift */; };
+		CAF0F4C7266BC42600E467D7 /* BatteryInfoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4C6266BC42600E467D7 /* BatteryInfoNetworking.swift */; };
+		CAF0F4CB266BC45700E467D7 /* BatteryInfoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4CA266BC45700E467D7 /* BatteryInfoEndpoint.swift */; };
 		CAF0F4CD266BCB2D00E467D7 /* BatteryInfo+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF0F4CC266BCB2D00E467D7 /* BatteryInfo+Injection.swift */; };
 		CAF0F4D7266BCDEC00E467D7 /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAF0F4D6266BCDEC00E467D7 /* Resolver-Dynamic */; };
 		CAF0F4D8266BCDEC00E467D7 /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAF0F4D6266BCDEC00E467D7 /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -49,9 +49,9 @@
 		CAF0F4A8266BC24600E467D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CAF0F4AD266BC24600E467D7 /* BatteryInfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryInfoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF0F4B4266BC24600E467D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAF0F4C0266BC2AB00E467D7 /* BatteryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryService.swift; sourceTree = "<group>"; };
-		CAF0F4C6266BC42600E467D7 /* BatteryNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryNetworking.swift; sourceTree = "<group>"; };
-		CAF0F4CA266BC45700E467D7 /* BatteryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryEndpoint.swift; sourceTree = "<group>"; };
+		CAF0F4C0266BC2AB00E467D7 /* BatteryInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfoService.swift; sourceTree = "<group>"; };
+		CAF0F4C6266BC42600E467D7 /* BatteryInfoNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfoNetworking.swift; sourceTree = "<group>"; };
+		CAF0F4CA266BC45700E467D7 /* BatteryInfoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfoEndpoint.swift; sourceTree = "<group>"; };
 		CAF0F4CC266BCB2D00E467D7 /* BatteryInfo+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BatteryInfo+Injection.swift"; sourceTree = "<group>"; };
 		CAF0F4DB266BCF0100E467D7 /* PostBatteryLevelRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatteryLevelRequestBody.swift; sourceTree = "<group>"; };
 		CAF0F4DD266BCF0900E467D7 /* PostBatteryStateRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostBatteryStateRequestBody.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				CAF0F4C2266BC32200E467D7 /* Networking */,
-				CAF0F4C0266BC2AB00E467D7 /* BatteryService.swift */,
+				CAF0F4C0266BC2AB00E467D7 /* BatteryInfoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -136,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				CAF0F4DA266BCEED00E467D7 /* Codable */,
-				CAF0F4CA266BC45700E467D7 /* BatteryEndpoint.swift */,
-				CAF0F4C6266BC42600E467D7 /* BatteryNetworking.swift */,
+				CAF0F4CA266BC45700E467D7 /* BatteryInfoEndpoint.swift */,
+				CAF0F4C6266BC42600E467D7 /* BatteryInfoNetworking.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -283,9 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAF0F4DC266BCF0100E467D7 /* PostBatteryLevelRequestBody.swift in Sources */,
-				CAF0F4C1266BC2AB00E467D7 /* BatteryService.swift in Sources */,
-				CAF0F4C7266BC42600E467D7 /* BatteryNetworking.swift in Sources */,
-				CAF0F4CB266BC45700E467D7 /* BatteryEndpoint.swift in Sources */,
+				CAF0F4C1266BC2AB00E467D7 /* BatteryInfoService.swift in Sources */,
+				CAF0F4C7266BC42600E467D7 /* BatteryInfoNetworking.swift in Sources */,
+				CAF0F4CB266BC45700E467D7 /* BatteryInfoEndpoint.swift in Sources */,
 				CAF0F4CD266BCB2D00E467D7 /* BatteryInfo+Injection.swift in Sources */,
 				CAF0F4DE266BCF0900E467D7 /* PostBatteryStateRequestBody.swift in Sources */,
 			);

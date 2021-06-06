@@ -11,7 +11,7 @@ import Resolver
 public extension Resolver {
     
     static func registerBatteryInfoServices() {
-        register { BatteryNetworkingImpl() as BatteryNetworking }
-        register { BatteryServiceImpl() as BatteryService }
+        register { BatteryInfoNetworkingImpl() as BatteryInfoNetworking }
+        register { BatteryInfoServiceImpl() as BatteryInfoService }
     }
 }

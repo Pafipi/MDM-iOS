@@ -1,5 +1,5 @@
 //
-//  BatteryNetworking.swift
+//  BatteryInfoNetworking.swift
 //  BatteryInfo
 //
 //  Created by Piotr Fraccaro on 05/06/2021.
@@ -9,16 +9,16 @@ import Combine
 import Core
 import Resolver
 
-protocol BatteryNetworking {
+protocol BatteryInfoNetworking {
     
     func postBatteryLevel(level: Float, forDeviceWith uuid: String) -> NetworkingEmptyResultPublisher
     func postBatteryState(state: Int, forDeviceWith uuid: String) -> NetworkingEmptyResultPublisher
 }
 
-final class BatteryNetworkingImpl: BaseNetworking, BatteryNetworking {
+final class BatteryInfoNetworkingImpl: BaseNetworking, BatteryInfoNetworking {
     
     func postBatteryLevel(level: Float, forDeviceWith uuid: String) -> NetworkingEmptyResultPublisher {
-        let endpoint = BatteryEndpoint.batteryLevel
+        let endpoint = BatteryInfoEndpoint.batteryLevel
         let config = HttpRequestConfig(
             parameters: [:],
             headers: endpoint.headers,
@@ -37,7 +37,7 @@ final class BatteryNetworkingImpl: BaseNetworking, BatteryNetworking {
     }
     
     func postBatteryState(state: Int, forDeviceWith uuid: String) -> NetworkingEmptyResultPublisher {
-        let endpoint = BatteryEndpoint.batteryStatus
+        let endpoint = BatteryInfoEndpoint.batteryStatus
         let config = HttpRequestConfig(
             parameters: [:],
             headers: endpoint.headers,
@@ -58,7 +58,7 @@ final class BatteryNetworkingImpl: BaseNetworking, BatteryNetworking {
 
 // MARK: - Constants
 
-private extension BatteryNetworkingImpl {
+private extension BatteryInfoNetworkingImpl {
     
     struct Constants {
         static let deviceUuidParameterKey: String = "deviceID"

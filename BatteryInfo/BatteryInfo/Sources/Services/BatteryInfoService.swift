@@ -1,5 +1,5 @@
 //
-//  BatteryService.swift
+//  BatteryInfoService.swift
 //  BatteryInfo
 //
 //  Created by Piotr Fraccaro on 05/06/2021.
@@ -10,15 +10,15 @@ import Core
 import Combine
 import Resolver
 
-public protocol BatteryService {
+public protocol BatteryInfoService {
     
     func updateBatteryLevel()
     func updateBatteryState()
 }
 
-final class BatteryServiceImpl: BatteryService {
+final class BatteryInfoServiceImpl: BatteryInfoService {
     
-    @LazyInjected private var networking: BatteryNetworking
+    @LazyInjected private var networking: BatteryInfoNetworking
     
     private var deviceUUID: String? {
         return UIDevice.current.identifierForVendor?.uuidString
@@ -73,7 +73,7 @@ final class BatteryServiceImpl: BatteryService {
 
 // MARK: - Private methods
 
-private extension BatteryServiceImpl {
+private extension BatteryInfoServiceImpl {
     
     func addObservers() {
         NotificationCenterHelper.shared.addObserver(
@@ -96,7 +96,7 @@ private extension BatteryServiceImpl {
 
 // MARK: - Selectors
 
-private extension BatteryServiceImpl {
+private extension BatteryInfoServiceImpl {
     
     @objc func onBatteryLevelDidChange() {
         log(.debug, "Battery level did change")
