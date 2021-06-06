@@ -42,6 +42,8 @@
 		CAD44D78266A611A0079140E /* RemoteNotificationsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD44D77266A611A0079140E /* RemoteNotificationsHandler.swift */; };
 		CAD44D7B266A63CD0079140E /* MobileConfigCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD44D7A266A63CD0079140E /* MobileConfigCoordinator.swift */; };
 		CAD44D89266A67150079140E /* MobileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD44D88266A67150079140E /* MobileConfigViewController.swift */; };
+		CAF0F4D1266BCD1B00E467D7 /* BatteryInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF0F4D0266BCD1A00E467D7 /* BatteryInfo.framework */; };
+		CAF0F4D2266BCD1B00E467D7 /* BatteryInfo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAF0F4D0266BCD1A00E467D7 /* BatteryInfo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CAF2CD3A2630C59E003DF959 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD392630C59E003DF959 /* swiftgen.yml */; };
 		CAF2CD472630CED7003DF959 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAF2CD182630B2C4003DF959 /* Localizable.strings */; };
 		CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF2CD4D26319AFD003DF959 /* Core.framework */; };
@@ -81,6 +83,7 @@
 			files = (
 				CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */,
 				CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */,
+				CAF0F4D2266BCD1B00E467D7 /* BatteryInfo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +132,7 @@
 		CAD44D77266A611A0079140E /* RemoteNotificationsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationsHandler.swift; sourceTree = "<group>"; };
 		CAD44D7A266A63CD0079140E /* MobileConfigCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileConfigCoordinator.swift; sourceTree = "<group>"; };
 		CAD44D88266A67150079140E /* MobileConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileConfigViewController.swift; sourceTree = "<group>"; };
+		CAF0F4D0266BCD1A00E467D7 /* BatteryInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BatteryInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF2CD172630B2C4003DF959 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CAF2CD392630C59E003DF959 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		CAF2CD4D26319AFD003DF959 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +152,7 @@
 			files = (
 				CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */,
 				CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */,
+				CAF0F4D1266BCD1B00E467D7 /* BatteryInfo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +521,7 @@
 		CAF2CD4C26319AFD003DF959 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAF0F4D0266BCD1A00E467D7 /* BatteryInfo.framework */,
 				CAF2CD4D26319AFD003DF959 /* Core.framework */,
 			);
 			name = Frameworks;

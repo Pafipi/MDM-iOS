@@ -10,4 +10,7 @@
    <FileRef
       location = "group:BackupContacts/BackupContacts.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:BatteryInfo/BatteryInfo.xcodeproj">
+   </FileRef>
 </Workspace>

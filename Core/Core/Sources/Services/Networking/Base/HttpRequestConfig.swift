@@ -15,6 +15,15 @@ public struct HttpRequestConfig {
     var parameters: Parameters
     var headers: Headers
     var timeout: TimeInterval
+    
+    public init(
+        parameters: Parameters,
+        headers: Headers,
+        timeout: TimeInterval) {
+        self.parameters = parameters
+        self.headers = headers
+        self.timeout = timeout
+    }
 }
 
 extension Parameters {

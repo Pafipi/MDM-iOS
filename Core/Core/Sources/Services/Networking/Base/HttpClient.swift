@@ -13,24 +13,24 @@ public struct EmptyResponse: Codable { }
 public typealias NetworkingResultPublisher<U: Codable> = AnyPublisher<U, Error>
 public typealias NetworkingEmptyResultPublisher = NetworkingResultPublisher<EmptyResponse>
 
-protocol HttpClient: AnyObject {
+public protocol HttpClient: AnyObject {
     
     func perform<T: Codable, U: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<U>
 }
 
-final class HttpClientImpl: NSObject, HttpClient {
+public final class HttpClientImpl: NSObject, HttpClient {
     
     private let session: URLSession
     
-    init(sessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
-         sessionDelegate: URLSessionDelegate) {
+    public init(sessionConfiguration: URLSessionConfiguration = URLSessionConfiguration.default,
+                sessionDelegate: URLSessionDelegate) {
         self.session = URLSession(configuration: sessionConfiguration,
                                   delegate: sessionDelegate,
                                   delegateQueue: OperationQueue())
         super.init()
     }
     
-    func perform<T: Codable, U: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<U> {
+    public func perform<T: Codable, U: Codable>(_ request: HttpRequest<T>) -> NetworkingResultPublisher<U> {
         log(.networkRequest, "\(request.string)")
         
         guard var components = URLComponents(url: request.url, resolvingAgainstBaseURL: true) else {

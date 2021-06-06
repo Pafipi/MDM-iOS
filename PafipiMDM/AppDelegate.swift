@@ -70,7 +70,6 @@ extension AppDelegate: RemoteNotificationsHandlerDelegate {
     }
 }
 
-
 // MARK: - Private methods
 
 private extension AppDelegate {

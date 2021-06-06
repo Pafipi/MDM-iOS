@@ -28,6 +28,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CAF0F4A3266BC24600E467D7"
+               BuildableName = "BatteryInfo.framework"
+               BlueprintName = "BatteryInfo"
+               ReferencedContainer = "container:BatteryInfo/BatteryInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CACC36EF25F5261B00E51C29"
                BuildableName = "PafipiMDM.app"
                BlueprintName = "PafipiMDM"

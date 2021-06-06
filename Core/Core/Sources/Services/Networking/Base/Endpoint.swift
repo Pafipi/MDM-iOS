@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Endpoint {
+public protocol Endpoint {
     
     var url: URL { get }
     var headers: Headers { get }
