@@ -45,9 +45,9 @@ final class BatteryInfoServiceImpl: BatteryInfoService {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    print(error)
+                    log(.error, "Battery level post request failed with error: \(error.localizedDescription)")
                 case .finished:
-                    print("battery level updated with http 200 response")
+                    log(.success, "Battery level post request finished successfully")
                 }
             }, receiveValue: { _ in })
             .store(in: &disposeBag)
@@ -62,9 +62,9 @@ final class BatteryInfoServiceImpl: BatteryInfoService {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let error):
-                    print(error)
+                    log(.error, "Battery state post request failed with error: \(error.localizedDescription)")
                 case .finished:
-                    print("battery state updated with http 200 response")
+                    log(.success, "Battery state post request finished successfully")
                 }
             }, receiveValue: { _ in })
             .store(in: &disposeBag)

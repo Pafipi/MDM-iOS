@@ -36,6 +36,8 @@
 		CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; };
 		CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = CAAE1AB82607D4AE0048872D /* Resolver-Dynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CAB76563262F8FCE00953696 /* EnrollmentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB76562262F8FCE00953696 /* EnrollmentError.swift */; };
+		CAC4C5D5266CF4F9001A7D98 /* DeviceInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC4C5D4266CF4F9001A7D98 /* DeviceInfo.framework */; };
+		CAC4C5D6266CF4F9001A7D98 /* DeviceInfo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CAC4C5D4266CF4F9001A7D98 /* DeviceInfo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CACC36F425F5261C00E51C29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC36F325F5261C00E51C29 /* AppDelegate.swift */; };
 		CACC36FD25F5261C00E51C29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FC25F5261C00E51C29 /* Assets.xcassets */; };
 		CACC370025F5261C00E51C29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CACC36FE25F5261C00E51C29 /* LaunchScreen.storyboard */; };
@@ -81,6 +83,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CAC4C5D6266CF4F9001A7D98 /* DeviceInfo.framework in Embed Frameworks */,
 				CAAE1ABA2607D4AE0048872D /* Resolver-Dynamic in Embed Frameworks */,
 				CAF2CD4F26319AFD003DF959 /* Core.framework in Embed Frameworks */,
 				CAF0F4D2266BCD1B00E467D7 /* BatteryInfo.framework in Embed Frameworks */,
@@ -120,6 +123,7 @@
 		CAAA686626319E8C00DFFF06 /* PafipiMDM.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PafipiMDM.entitlements; sourceTree = "<group>"; };
 		CAAE1AB22607D4810048872D /* ApplicationBootloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationBootloader.swift; sourceTree = "<group>"; };
 		CAB76562262F8FCE00953696 /* EnrollmentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnrollmentError.swift; sourceTree = "<group>"; };
+		CAC4C5D4266CF4F9001A7D98 /* DeviceInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DeviceInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F025F5261C00E51C29 /* PafipiMDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PafipiMDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACC36F325F5261C00E51C29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CACC36FC25F5261C00E51C29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC4C5D5266CF4F9001A7D98 /* DeviceInfo.framework in Frameworks */,
 				CAAE1AB92607D4AE0048872D /* Resolver-Dynamic in Frameworks */,
 				CAF2CD4E26319AFD003DF959 /* Core.framework in Frameworks */,
 				CAF0F4D1266BCD1B00E467D7 /* BatteryInfo.framework in Frameworks */,
@@ -521,6 +526,7 @@
 		CAF2CD4C26319AFD003DF959 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAC4C5D4266CF4F9001A7D98 /* DeviceInfo.framework */,
 				CAF0F4D0266BCD1A00E467D7 /* BatteryInfo.framework */,
 				CAF2CD4D26319AFD003DF959 /* Core.framework */,
 			);

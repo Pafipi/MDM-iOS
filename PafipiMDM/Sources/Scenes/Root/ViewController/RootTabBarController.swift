@@ -37,6 +37,7 @@ final class RootTabBarController: UITabBarController {
         view.backgroundColor = Colors.Common.background.color
         viewControllers = tabBarViews
         tabBar.tintColor = Colors.Common.tint.color
+        viewModel.onViewDidLoad()
     }
 }
 

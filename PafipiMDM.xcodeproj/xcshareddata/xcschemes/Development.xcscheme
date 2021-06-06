@@ -42,6 +42,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CA207395266CE31700ECAFC5"
+               BuildableName = "DeviceInfo.framework"
+               BlueprintName = "DeviceInfo"
+               ReferencedContainer = "container:DeviceInfo/DeviceInfo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CACC36EF25F5261B00E51C29"
                BuildableName = "PafipiMDM.app"
                BlueprintName = "PafipiMDM"

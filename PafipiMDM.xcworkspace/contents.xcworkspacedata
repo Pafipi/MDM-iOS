@@ -13,4 +13,7 @@
    <FileRef
       location = "group:BatteryInfo/BatteryInfo.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:DeviceInfo/DeviceInfo.xcodeproj">
+   </FileRef>
 </Workspace>

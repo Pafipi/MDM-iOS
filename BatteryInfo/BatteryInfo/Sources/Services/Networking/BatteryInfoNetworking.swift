@@ -22,7 +22,7 @@ final class BatteryInfoNetworkingImpl: BaseNetworking, BatteryInfoNetworking {
         let config = HttpRequestConfig(
             parameters: [:],
             headers: endpoint.headers,
-            timeout: Constants.requestEnrollmentPushTimeout
+            timeout: Constants.postBatteryLevelTimeout
         )
         let request = HttpRequest(
             url: endpoint.url,
@@ -41,7 +41,7 @@ final class BatteryInfoNetworkingImpl: BaseNetworking, BatteryInfoNetworking {
         let config = HttpRequestConfig(
             parameters: [:],
             headers: endpoint.headers,
-            timeout: Constants.requestEnrollmentPushTimeout
+            timeout: Constants.postBatteryStateTimeout
         )
         let request = HttpRequest(
             url: endpoint.url,
@@ -62,6 +62,8 @@ private extension BatteryInfoNetworkingImpl {
     
     struct Constants {
         static let deviceUuidParameterKey: String = "deviceID"
-        static let requestEnrollmentPushTimeout: TimeInterval = 30
+        static let postBatteryLevelTimeout: TimeInterval = 30
+        static let postBatteryStateTimeout: TimeInterval = 30
+
     }
 }

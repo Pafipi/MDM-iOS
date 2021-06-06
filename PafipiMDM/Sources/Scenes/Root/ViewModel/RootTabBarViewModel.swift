@@ -8,9 +8,12 @@
 import Foundation
 import Resolver
 import BatteryInfo
+import DeviceInfo
 
 protocol RootTabBarViewModel {
     var output: RootTabBarViewModelOutput? { get set }
+    
+    func onViewDidLoad()
 }
 
 protocol RootTabBarViewModelOutput: AnyObject {
@@ -19,7 +22,12 @@ protocol RootTabBarViewModelOutput: AnyObject {
 
 final class RootTabBarViewModelImpl: RootTabBarViewModel {
     
-    @Injected private var batteryService: BatteryInfoService
+    @Injected private var batteryInfoService: BatteryInfoService
+    @Injected private var deviceInfoService: DeviceInfoService
     
     weak var output: RootTabBarViewModelOutput?
+    
+    func onViewDidLoad() {
+        deviceInfoService.postDeviceInfo()
+    }
 }
