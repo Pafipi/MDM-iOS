@@ -1,7 +1,8 @@
 ## Generated code
-*/Generated
-*/Generated/
-Generated/
+PafipiMDM/Generated/*
+!PafipiMDM/Generated/*.gitkeep
+Core/Core/Generated/*
+!Core/Core/Generated/.gitkeep 
 
 ## User settings
 xcuserdata/
