@@ -35,7 +35,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = "192.168.1.66"
+    private var enrollmentAddress: String = "https://192.168.1.66"
     private var deviceToken: String?
     private var deviceId: String? {
         return UIDevice.current.identifierForVendor?.uuidString

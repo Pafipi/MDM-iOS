@@ -22,11 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         configureWindow()
         remoteNotificationsHandler.delegate = self
-        applicationBootloader.delegate = self
-        applicationBootloader.boot()
-        
         checkIfLaunchedFromNotification(for: launchOptions)
         
+        applicationBootloader.delegate = self
+        applicationBootloader.boot()
+                
         return true
     }
     

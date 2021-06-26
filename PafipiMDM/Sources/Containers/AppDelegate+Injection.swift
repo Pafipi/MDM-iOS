@@ -16,5 +16,6 @@ extension Resolver: ResolverRegistering {
         registerHomeScene()
         registerEnrollmentScene()
         registerBatteryInfoServices()
+        registerDeviceInfoServices()
     }
 }
