@@ -100,11 +100,23 @@ private extension BatteryInfoServiceImpl {
     
     @objc func onBatteryLevelDidChange() {
         log(.debug, "Battery level did change")
+        
+        guard UserDefaults.isEnrolled else {
+            log(.debug, "Battery level not updated cause device is not enrolled")
+            return
+        }
+        
         updateBatteryLevel()
     }
     
     @objc func onBatteryStateDidChange() {
         log(.debug, "Battery state did change")
+        
+        guard UserDefaults.isEnrolled else {
+            log(.debug, "Battery state not updated cause device is not enrolled")
+            return
+        }
+        
         updateBatteryState()
     }
 }

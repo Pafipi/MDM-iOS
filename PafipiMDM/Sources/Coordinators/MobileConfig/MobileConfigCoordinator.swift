@@ -28,7 +28,7 @@ final class MobileConfigCoordinator: NSObject, StackCoordinable, TabCoordinatorA
     
     func start() {
         guard let mobileConfigURL = URL(
-            string: "https://xn-mgqaaaabaa.eu"// + Constants.mobileConfigFilePath
+            string: "https://" + (UserDefaults.mdmServerAddress ?? "") + Constants.mobileConfigFilePath
         ) else { return }
         let controller = MobileConfigViewController.create(with: mobileConfigURL)
         controller.viewControllerDelegate = self
@@ -50,5 +50,5 @@ extension MobileConfigCoordinator: MobileConfigViewControllerDelegate {
 
 private struct Constants {
     
-    static let mobileConfigFilePath = "/drop.html"
+    static let mobileConfigFilePath = "/config/download"
 }

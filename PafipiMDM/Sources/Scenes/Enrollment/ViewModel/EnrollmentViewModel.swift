@@ -35,7 +35,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     @LazyInjected private var repository: EnrollmentRepository
     @LazyInjected private var urlValidator: URLValidator
     
-    private var enrollmentAddress: String = "https://192.168.1.66"
+    private var enrollmentAddress: String = "https://pafipimdm.eu"
     private var deviceToken: String?
     private var deviceId: String? {
         return UIDevice.current.identifierForVendor?.uuidString
@@ -72,6 +72,7 @@ final class EnrollmentViewModelImpl: EnrollmentViewModel {
     
     func startEnrollment() {
         guard let deviceId = deviceId else { return }
+        enrollmentAddress.removeFirst("https://".count)
         UserDefaults.mdmServerAddress = enrollmentAddress
         repository.fetchDeviceUUID(with: deviceId)
     }

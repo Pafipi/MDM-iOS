@@ -40,6 +40,6 @@ struct DeviceInfoEndpoint: Endpoint {
 extension DeviceInfoEndpoint {
 
     static var deviceInfo: Self {
-        return DeviceInfoEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device")
+        return DeviceInfoEndpoint(host: UserDefaults.mdmServerAddress ?? "", path: "/device/info")
     }
 }

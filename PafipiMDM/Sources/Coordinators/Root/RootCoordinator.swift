@@ -8,6 +8,8 @@
 import UIKit
 import Resolver
 import Core
+import BatteryInfo
+import DeviceInfo
 
 final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     
@@ -16,6 +18,9 @@ final class RootCoordinator: NSObject, StackCoordinable, TabCoordinatorActions {
     var childCoordinators: [StackCoordinable]
     var rootNavigationController: NavigationController?
     var rootViewController: UIViewController?
+    
+    @Injected private var batteryInfoService: BatteryInfoService
+    @Injected private var deviceInfoService: DeviceInfoService
     
     private var deviceToken: Data?
     
@@ -127,8 +132,11 @@ extension RootCoordinator: MobileConfigCoordinatorDelegate {
     
     func didFinish(coordinator: MobileConfigCoordinator) {
         removeChild(coordinator)
-        rootNavigationController?.popViewController(animated: true)
         UserDefaults.isEnrolled = true
+        deviceInfoService.postDeviceInfo()
+        batteryInfoService.updateBatteryLevel()
+        batteryInfoService.updateBatteryState() 
+        rootNavigationController?.popViewController(animated: true)
     }
 }
 
